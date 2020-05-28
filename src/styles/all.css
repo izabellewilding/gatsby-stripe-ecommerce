@@ -1,0 +1,166 @@
+/* fonts */
+.chivo-reg {
+  font-family: "chivo-reg";
+}
+
+.garamond {
+  font-family: "garamond";
+}
+
+.beenie {
+  font-family: "beenie";
+}
+
+td {
+  border-bottom: 0ch;
+}
+
+td:first-child {
+  padding-left: 0.75rem;
+}
+
+td:last-child {
+  padding-right: 1.25rem;
+}
+
+th:first-child {
+  padding-left: 0.75rem;
+}
+
+.margin-bottom {
+  margin-bottom: 1.666rem;
+}
+
+.square {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  margin: 1.66%;
+  position: relative;
+
+  @media (min-width: 768px) {
+    width: 500px;
+    height: 500px;
+
+    & .img-item {
+      transition: all 0.25s ease-in-out;
+    }
+
+    &:hover .img-item {
+      transform: scale(1.2);
+    }
+  }
+}
+/* 
+.image-title {
+  background-color: rgba(22, 22, 22, 0.781);
+  color: white;
+  transition: all 0.15s;
+  padding: 0.75rem;
+  bottom: -6rem;
+} */
+
+.photo {
+  overflow: hidden;
+}
+.photo:hover .image-title {
+  transform: translateY(-6em);
+}
+
+.removeIcon {
+  fill: #718096;
+  transition: all 0.1s;
+}
+.removeIcon:hover {
+  fill: rgba(0, 0, 0, 0.918);
+}
+.basket {
+  fill: white;
+}
+
+.checkoutButton:hover .basket {
+  fill: #2d3748;
+}
+
+.patterns {
+  fill: #2d3748;
+  top: -7rem;
+  left: 4rem;
+  /* height: 69%; */
+  height: 29rem;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.underlined {
+  position: relative;
+  margin: 3px;
+  &:hover,
+  &:focus,
+  &:active {
+    /* cursor: pointer;*/
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    height: 1px;
+    background-color: #2d3748;
+    width: 100%;
+  }
+}
+
+.button-padding {
+  padding: 0.5rem;
+}
+
+/* mdc overrides */
+
+.mdc-button:not(:disabled) {
+  color: #d6fffb;
+}
+
+.mdc-snackbar__label {
+  font-family: "garamond";
+  color: white;
+  font-size: 1rem;
+}
+
+.mdc-snackbar__surface {
+  background-color: #2d3748;
+}
+
+.hero {
+  background-image: url(../art-images/tom-crew-U9gXnSGSB3w-unsplash.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.top {
+  top: 309px;
+  /* @media (mi-width: 320px) {
+    top: 329px;
+  } */
+  @media (min-width: 680px) {
+    top: 205px;
+  }
+}
+
+.h-65vh {
+  height: 65vh;
+}
+
+.footer-padding {
+  padding-bottom: 22rem;
+  @media (min-width: 680px) {
+    padding-bottom: 14rem;
+  }
+}

@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "chivo-reg";
+  src: url(../fonts/Chivo-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "garamond";
+  src: url(../fonts/CormorantGaramond-Regular.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "beenie";
+  src: url(../fonts/ReenieBeanie-Regular.ttf);
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: "avant";
+  src: url(../fonts/AvantGardeBookBT.ttf);
+  font-display: swap;
+} */
