@@ -95,23 +95,15 @@ th:first-child {
 .underlined {
   position: relative;
   margin: 3px;
-  &:hover,
-  &:focus,
-  &:active {
-    /* cursor: pointer;*/
-    &:after {
-      width: 100%;
-    }
-  }
 
   &:after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -7px;
-    height: 1px;
-    background-color: #2d3748;
-    width: 100%;
+    bottom: -20px;
+    height: 2px;
+    background-color: #dbdbdb;
+    width: 65%;
   }
 }
 
@@ -136,21 +128,16 @@ th:first-child {
 }
 
 .hero {
-  background-image: url(../art-images/tom-crew-U9gXnSGSB3w-unsplash.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 500px;
-  background-size: cover;
-  background-attachment: fixed;
+  height: 63vh;
 }
 
 .top {
-  top: 309px;
+  top: 138px;
   /* @media (mi-width: 320px) {
     top: 329px;
   } */
   @media (min-width: 680px) {
-    top: 205px;
+    top: 138px;
   }
 }
 

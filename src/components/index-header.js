@@ -6,7 +6,6 @@ import { CartContext } from "./shop/context"
 import Etsy from "../assets/etsy-drawn-logo.svg"
 import Flickr from "../assets/flickr.svg"
 import Banner from "../assets/pagan-symbol-banner-final-WHITE.svg"
-import cx from "classnames"
 // import Bird from "../assets/bird-green.svg"
 // import { CartContext } from "../components/shop/context"
 
@@ -22,7 +21,7 @@ const Header = () => {
           <Banner className="absolute right-0  min-h-full patterns" />{" "}
           {/* <div className=""> */}
           <Link to="/" className=" m-auto">
-            <Logo className=" mt-12 mb-6" style={{ width: "188px" }} />{" "}
+            <Logo className=" mt-4" style={{ width: "188px" }} />{" "}
           </Link>
           {/* </div> */}{" "}
           <div className="w-full md:text-sm uppercase whitespace-no-wrap flex flex-col justify-between md:flex-row text-gray-800 text-center">
@@ -89,15 +88,6 @@ const Header = () => {
             </div>{" "}
           </div>{" "}
         </section>
-        {/* <div className="">
-            <a
-              href="https://www.flickr.com/photos/144107298@N03/"
-              target="blank_"
-              rel="noreffer noopener"
-            >
-              <Flickr className="h-8" />
-            </a>{" "}
-          </div> */}
       </header>
     </>
   )

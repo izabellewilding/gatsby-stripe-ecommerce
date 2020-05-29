@@ -8,40 +8,40 @@ const stripePromise = loadStripe("pk_test_mLs1oZpbyJJL6FsDwf84KHyg00KrDIpfUW")
 
 const LatestItems = () => {
   return (
-    <StaticQuery
-      query={graphql`
-        query LatestProducts {
-          skus: allStripeSku(limit: 3) {
-            edges {
-              node {
-                id
-                price
-                currency
-                attributes {
-                  name
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={({ skus }) => (
-        <div className="flex justify-center bg-gray-100 flex-col m-auto border-gray-800 shadow-md mb-6 max-w-4xl p-2 pb-8">
-          <h1 className="text-center p-4 uppercase text-2xl m-4">
-            Latest Shop Items
-          </h1>
-          <div className="flex flex-col md:flex-row ">
-            {skus.edges.map(({ node: sku }) => (
+    // <StaticQuery
+    //   query={graphql`
+    //     query LatestProducts {
+    //       skus: allStripeSku(limit: 3) {
+    //         edges {
+    //           node {
+    //             id
+    //             price
+    //             currency
+    //             attributes {
+    //               name
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   `}
+    //   render={({ skus }) => (
+    <div className="flex justify-center bg-gray-100 flex-col m-auto border-gray-800 shadow-md mb-6 max-w-4xl p-2 pb-8">
+      <h1 className="text-center p-4 uppercase text-2xl m-4">
+        Latest Shop Items
+      </h1>
+      <div className="flex flex-col md:flex-row ">
+        {/* {skus.edges.map(({ node: sku }) => (
               <LatestItem
                 key={sku.id}
                 sku={sku}
                 stripePromise={stripePromise}
               />
-            ))}
-          </div>
-        </div>
-      )}
-    />
+            ))} */}
+      </div>
+    </div>
+    //   )}
+    // />
   )
 }
 

@@ -12,7 +12,7 @@ const Shop = () => {
       <div className="">
         <TestBreadcrumb />
         <div className="flex bg-white  justify-center max-w-6xl m-auto">
-          <ItemsList />
+          {/* <ItemsList /> */}
         </div>
       </div>
     </Layout>

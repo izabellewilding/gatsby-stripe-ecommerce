@@ -5,7 +5,7 @@ module.exports = {
     title: `Pottery`,
     description: `Artist's ecommerce website`,
     author: `@izabellewilding`,
-    image: "/images/site-screenshot.PNG", // Path to your image you placed in the 'static' folder
+    image: "/images/name.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,6 +23,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
@@ -38,6 +39,7 @@ module.exports = {
         icon: `src/images/name.png`, // This path is relative to the root of the site.
       },
     },
+
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -51,7 +53,7 @@ module.exports = {
       resolve: "gatsby-source-stripe",
       options: {
         objects: ["Sku"],
-        secretKey: `sk_test_v4DRQ2Zio9i0cHWAkKhnzM3b00pCHQK3zm`,
+        secretKey: `sk_test_2PECtktQNqsL5vWpIUuWWWh000wvy5gZuc`,
         downloadFiles: true,
       },
     },
@@ -75,15 +77,12 @@ module.exports = {
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       },
     },
-
     {
-      resolve: "gatsby-source-flickr",
+      resolve: "gatsby-background-image",
       options: {
-        api_key: process.env.FLICKR_API_KEY,
-        user_id: process.env.FLICKR_USER_ID,
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: "/:",
       },
-    }, // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    },
   ],
 }

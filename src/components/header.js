@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import Logo from "../assets/name.svg"
 import Basket from "../assets/supermarket.svg"
@@ -6,25 +6,17 @@ import { CartContext } from "../components/shop/context"
 import Etsy from "../assets/etsy-drawn-logo.svg"
 import Flickr from "../assets/flickr.svg"
 import Banner from "../assets/pagan-symbol-banner-final-WHITE.svg"
-import cx from "classnames"
-// import Bird from "../assets/bird-green.svg"
-// import { CartContext } from "../components/shop/context"
 
 const Header = () => {
-  const [cartOpen, setCartOpen] = useState(false)
   const cartCtx = useContext(CartContext)
-  // const ctx = useContext(CartContext)
   return (
     <>
       <header className="relative flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 ">
-        {/* <Bird className="bird" />{" "} */}
         <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
           <Banner className="absolute right-0 min-h-full patterns" />{" "}
-          {/* <div className=""> */}
           <Link to="/" className=" m-auto">
             <Logo className=" mt-12 mb-6" style={{ width: "145px" }} />{" "}
           </Link>
-          {/* </div> */}{" "}
           <div className="w-full md:text-sm uppercase whitespace-no-wrap flex flex-col justify-between md:flex-row text-gray-800 text-center">
             <nav className="chivo-reg flex flex-col md:flex-row">
               <Link
