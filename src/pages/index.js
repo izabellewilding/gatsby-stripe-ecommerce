@@ -3,6 +3,7 @@ import Img from "gatsby-image"
 import Layout from "../components/index-layout"
 import Helmet from "react-helmet"
 import Loader from "../components/hero"
+import InfoBar from "../components/info-bar"
 
 const ArtGallery = ({ data }) => {
   console.log("MY LOG", data)
@@ -16,8 +17,12 @@ const ArtGallery = ({ data }) => {
 
       <div
         className="w-full h-full top relative m-auto footer-padding"
-        style={{ zIndex: 4000 }}
+        style={{}}
       >
+        <InfoBar />
+        <h1 className="p-8 text-center bg-white text-2xl max-w-6xl raleway uppercase text-gray-900 mr-auto ml-auto">
+          Browse the Pastel Gallery
+        </h1>
         <div className="flex flex-wrap justify-center max-w-6xl m-auto sticky bg-white">
           {data.allFile.edges.map(({ node }) => (
             <div className=" square photo">

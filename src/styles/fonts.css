@@ -21,3 +21,8 @@
   src: url(../fonts/AvantGardeBookBT.ttf);
   font-display: swap;
 } */
+
+@font-face {
+  font-family: "raleway";
+  src: url("../fonts/Raleway-Light.ttf");
+}

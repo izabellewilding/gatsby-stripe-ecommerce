@@ -10,14 +10,15 @@ import CloseIcon from "../assets/close-24px.svg"
 const StyledDrawer = styled(Drawer)`
   background-color: #ffffff;
   top: 0;
-  bottom: 0;
-  z-index: 2;
+  left: 0;
+  right: 0;
+  width: 100vw;
 `
 
 const StyledList = styled(List)`
   && {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     list-style: none;
   }
 `
@@ -35,7 +36,6 @@ const NavDrawer = () => {
       </button>
 
       <StyledDrawer
-        className="z-50"
         dir="ltr"
         modal
         open={navOpen}
@@ -45,9 +45,6 @@ const NavDrawer = () => {
           {" "}
           <DrawerTitle>
             {" "}
-            <Link>
-              {/* <Logo className="h-12 nav-logo svg-darkPrimary" /> */}
-            </Link>
             <button className="h-8 w-8" onClick={() => setNavOpen(false)}>
               <CloseIcon onclick={() => setNavOpen(!navOpen)} />
             </button>

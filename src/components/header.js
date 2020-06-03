@@ -16,7 +16,9 @@ const Header = () => {
         <NavDrawer />
         <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
           <Link to="/" className=" m-auto">
-            <Logo className=" mt-12 mb-6" style={{ width: "145px" }} />{" "}
+            <h1 className="text-gray-900 mt-6 text-2xl pt-6 uppercase chivo-reg">
+              Pastel Ceramics
+            </h1>
           </Link>
           <div className="w-full md:text-sm uppercase whitespace-no-wrap flex flex-col justify-between md:flex-row text-gray-800 text-center">
             <nav className="invisible md:visible chivo-reg flex flex-col md:flex-row">
@@ -27,13 +29,6 @@ const Header = () => {
               >
                 Home
               </Link>
-              {/* <Link
-                to="/photography"
-                className="p-2 text-center md:w-2/6 hover:text-gray-700"
-                activeClassName="text-semibold text-gray-900"
-              >
-                <button className="button">Photography</button>
-              </Link> */}
               <Link
                 to="/shop"
                 className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"

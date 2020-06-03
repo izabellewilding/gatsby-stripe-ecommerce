@@ -14,7 +14,7 @@ import Header from "./header"
 import Footer from "./footer"
 
 import "../styles/fonts.css"
-import "./layout.css"
+import "../styles/layout.css"
 import "../styles/tailwind.css"
 import "../styles/all.css"
 

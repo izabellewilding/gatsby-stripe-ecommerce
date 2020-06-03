@@ -11,6 +11,10 @@
   font-family: "beenie";
 }
 
+.raleway {
+  font-family: "raleway";
+}
+
 td {
   border-bottom: 0ch;
 }
@@ -128,7 +132,7 @@ th:first-child {
 }
 
 .hero {
-  height: 63vh;
+  height: 65vh;
 }
 
 .top {
@@ -137,7 +141,7 @@ th:first-child {
     top: 329px;
   } */
   @media (min-width: 680px) {
-    top: 138px;
+    top: 129px;
   }
 }
 
@@ -150,4 +154,8 @@ th:first-child {
   @media (min-width: 680px) {
     padding-bottom: 14rem;
   }
+}
+
+.opacity-95 {
+  opacity: 0.95;
 }

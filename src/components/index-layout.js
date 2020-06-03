@@ -14,7 +14,7 @@ import IndexHeader from "./index-header"
 import Footer from "./footer"
 
 import "../styles/fonts.css"
-import "./layout.css"
+import "../styles/layout.css"
 import "../styles/tailwind.css"
 import "../styles/all.css"
 import Hero from "../components/hero"
@@ -24,7 +24,7 @@ const IndexLayout = ({ children }) => {
       {/* <SEO /> */}
       <IndexHeader />
       <Hero />
-      <main>{children}</main>
+      <main className="">{children}</main>
       <Footer />
     </>
   )

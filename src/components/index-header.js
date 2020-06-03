@@ -20,10 +20,12 @@ const Header = () => {
 
         <section className=" relative w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
           {/* <div className=""> */}
-          <NavDrawer />
           <Link to="/" className=" m-auto">
-            <Logo className=" mt-4" style={{ width: "188px" }} />{" "}
+            <h1 className="text-gray-900 mt-6 text-2xl pt-6 uppercase chivo-reg">
+              Pastel Ceramics
+            </h1>
           </Link>
+          <NavDrawer />
           {/* </div> */}{" "}
           <div className="w-full md:text-sm uppercase whitespace-no-wrap flex flex-col justify-between md:flex-row text-gray-800 text-center">
             <nav className="hidden md:block chivo-reg flex flex-col md:flex-row">

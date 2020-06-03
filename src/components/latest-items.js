@@ -11,12 +11,15 @@ const LatestItems = () => {
     <StaticQuery
       query={graphql`
         query latestItems {
-          skus: allStripeSku(limit: 3) {
+          skus: allStripeSku {
             edges {
               node {
                 id
                 currency
                 price
+                product {
+                  name
+                }
               }
             }
           }
@@ -45,7 +48,7 @@ const LatestItems = () => {
 const LatestItem = ({ sku }) => {
   return (
     <Link
-      to={`/${sku.name.replace(/ /g, "_")}`}
+      to={`/${sku.product.name.replace(/ /g, "_")}`}
       className="w-full flex justify-center "
     >
       <div
@@ -63,7 +66,7 @@ const LatestItem = ({ sku }) => {
             <Link
               role="button"
               className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
-              to={`/${sku.name.replace(/ /g, "_")}`}
+              to={`/${sku.product.name.replace(/ /g, "_")}`}
             >
               View Item
             </Link>

@@ -16,7 +16,7 @@ const Hero = () => {
         }
 
         desktopBanner: file(
-          relativePath: { eq: "tom-crew-t9sRlYIzfIQ-unsplash.jpg" }
+          relativePath: { eq: "tom-crew-YA2E3d7a9Wo-unsplash.jpg" }
         ) {
           childImageSharp {
             fluid(quality: 100) {
@@ -43,14 +43,14 @@ const Hero = () => {
         fluid={source}
       >
         <div className="flex p-6 max-w-4xl md:items-start flex-col w-2/3 md:w-1/2 md:p-5 ">
-          <h2 className="text-4xl md:text-5xl garamond underlined text-gray-300">
-            Affordable original handmade pottery.
+          <h2 className="text-3xl md:text-5xl raleway uppercase underlined text-white">
+            Affordable unique handmade pottery
           </h2>{" "}
-          <h1 className="text-2xl md:text-3xl chivo-reg text-gray-500 mt-8 ">
-            Nordic Collection
+          <h1 className="text-2xl md:text-3xl chivo-reg text-white mt-8 ">
+            New Collection
           </h1>{" "}
           <Link
-            className=" chivo-reg uppercase mt-8 text-xl text-center text-gray-200 border-teal-600 shadow-md border-2 py-2 px-3 whitespace-no-wrap bg-teal-600 border-gray-700 hover:bg-teal-800 hover:border-teal-800 transition-all duration-75"
+            className=" chivo-reg uppercase mt-8 text-xl text-center text-white border-white shadow-md border-2 py-2 px-3 whitespace-no-wrap border-white hover:bg-gray-800 hover:border-gray-800 hover:bg-gray-800 transition-all duration-75"
             to="/shop"
           >
             Shop Now
