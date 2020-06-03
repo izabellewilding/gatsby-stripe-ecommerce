@@ -27,7 +27,10 @@ const NavDrawer = () => {
 
   return (
     <div className="absolute top-0 right-0 m-4">
-      <button className="h-8 w-8" onClick={() => setNavOpen(!navOpen)}>
+      <button
+        className="h-8 w-8 block md:hidden"
+        onClick={() => setNavOpen(!navOpen)}
+      >
         <MenuIcon className="h-8 w-8" />
       </button>
 
@@ -46,7 +49,7 @@ const NavDrawer = () => {
               {/* <Logo className="h-12 nav-logo svg-darkPrimary" /> */}
             </Link>
             <button className="h-8 w-8" onClick={() => setNavOpen(false)}>
-              <CloseIcon />
+              <CloseIcon onclick={() => setNavOpen(!navOpen)} />
             </button>
           </DrawerTitle>
         </DrawerHeader>

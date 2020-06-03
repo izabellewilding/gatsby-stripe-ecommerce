@@ -15,12 +15,12 @@ const Header = () => {
   // const ctx = useContext(CartContext)
   return (
     <>
-      <header className="relative w-full fixed top-0 flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white">
+      <header className=" w-full fixed top-0 flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white">
         {/* <Bird className="bird" />{" "} */}
-        <NavDrawer />
 
-        <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
+        <section className=" relative w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
           {/* <div className=""> */}
+          <NavDrawer />
           <Link to="/" className=" m-auto">
             <Logo className=" mt-4" style={{ width: "188px" }} />{" "}
           </Link>
@@ -61,7 +61,7 @@ const Header = () => {
               className="flex pr-2 md:pr-8 items-center justify-between md:justify-end"
               style={{ right: "1rem" }}
             >
-              <div className="flex-row flex md:justify-end">
+              {/* <div className="flex-row flex md:justify-end">
                 {" "}
                 <a
                   href="https://www.flickr.com/photos/144107298@N03/"
@@ -78,7 +78,7 @@ const Header = () => {
                 >
                   <Etsy className="m-2 h-5" alt="etsy" />
                 </a>{" "}
-              </div>
+              </div> */}
 
               <Link to="checkout" className="flex items-center">
                 <Basket className="m-2 h-5" />

@@ -54,7 +54,7 @@ const Header = () => {
               className="flex pr-2 md:pr-8 items-center justify-between md:justify-end"
               style={{ right: "1rem" }}
             >
-              <div className="flex-row flex md:justify-end">
+              {/* <div className="flex-row flex md:justify-end">
                 {" "}
                 <a
                   href="https://www.flickr.com/photos/144107298@N03/"
@@ -71,7 +71,7 @@ const Header = () => {
                 >
                   <Etsy className="m-2 h-5" alt="etsy" />
                 </a>{" "}
-              </div>
+              </div> */}
 
               <Link to="checkout" className="flex items-center">
                 <Basket className="m-2 h-5" />
