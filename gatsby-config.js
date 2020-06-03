@@ -2,8 +2,8 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    title: `Pottery`,
-    description: `Artist's ecommerce website`,
+    title: `Pastel Pottery`,
+    description: `Ecommerce Website`,
     author: `@izabellewilding`,
     image: "/images/name.png", // Path to your image you placed in the 'static' folder
   },

@@ -51,7 +51,7 @@ const Hero = () => {
           </h1>{" "}
           <Link
             className=" chivo-reg uppercase mt-8 text-xl text-center text-gray-200 border-teal-600 shadow-md border-2 py-2 px-3 whitespace-no-wrap bg-teal-600 border-gray-700 hover:bg-teal-800 hover:border-teal-800 transition-all duration-75"
-            to="/contact"
+            to="/shop"
           >
             Shop Now
           </Link>
