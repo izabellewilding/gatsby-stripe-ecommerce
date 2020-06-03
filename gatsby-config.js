@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `art-images`,
-        path: `${__dirname}/src/art-images`,
+        name: `home-display-items`,
+        path: `${__dirname}/src/home-display-items`,
       },
     },
     {
@@ -53,7 +53,7 @@ module.exports = {
       resolve: "gatsby-source-stripe",
       options: {
         objects: ["Sku"],
-        secretKey: `sk_test_2PECtktQNqsL5vWpIUuWWWh000wvy5gZuc`,
+        secretKey: process.env.STRIPE_SECRET_KEY,
         downloadFiles: true,
       },
     },

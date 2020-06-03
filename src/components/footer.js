@@ -75,15 +75,6 @@ const Footer = () => {
           src="./../images/three-birds-web.jpg"
           className="hidden md:block w-screen h-full object-scale-down w-full"
         /> */}
-            <Bird
-              style={{
-                height: "32rem",
-                top: "-14.5rem",
-                opacity: "0.2",
-                zIndex: "1",
-              }}
-              className="absolute right-0"
-            />{" "}
           </div>{" "}
           <div className="flex flex-col garamond mt-4 md:mt-0 pt-4 md:pt-0 border-t border-gray-400 md:border-transparent">
             <h3 className="font-semibold garamond">Payment Methods</h3>

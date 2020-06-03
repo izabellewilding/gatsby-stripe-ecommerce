@@ -10,7 +10,7 @@ function totalPrice(items) {
   return items.reduce((acc, item) => acc + item.quantity * item.price, 0.0)
 }
 
-const stripePromise = loadStripe("pk_test_mLs1oZpbyJJL6FsDwf84KHyg00KrDIpfUW")
+const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
 const Cart = () => {
   const ctx = useContext(CartContext)

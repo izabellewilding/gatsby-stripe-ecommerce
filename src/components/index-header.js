@@ -18,7 +18,6 @@ const Header = () => {
       <header className="w-full fixed top-0 flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white">
         {/* <Bird className="bird" />{" "} */}
         <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
-          <Banner className="absolute right-0  min-h-full patterns" />{" "}
           {/* <div className=""> */}
           <Link to="/" className=" m-auto">
             <Logo className=" mt-4" style={{ width: "188px" }} />{" "}

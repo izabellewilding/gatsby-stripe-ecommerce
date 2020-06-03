@@ -41,7 +41,7 @@ const ArtGallery = ({ data }) => {
 
 export const query = graphql`
   {
-    allFile(filter: { sourceInstanceName: { eq: "art-images" } }) {
+    allFile(filter: { sourceInstanceName: { eq: "home-display-items" } }) {
       edges {
         node {
           relativePath

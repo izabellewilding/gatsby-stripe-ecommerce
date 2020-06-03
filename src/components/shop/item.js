@@ -14,13 +14,13 @@ const Item = ({ sku }) => {
         <div className="bg-cover w-full">
           <Img
             src={`/images/${sku.id}.jpg`}
-            alt={sku.attributes.name}
+            alt={sku.product.name}
             className="h-64 m-4"
           />
         </div>
         <div className=" w-full p-4">
           <h1 className="text-gray-900 font-bold text-2xl garamond">
-            {sku.attributes.name}
+            {sku.product.name}
           </h1>
 
           <div className="flex item-center mt-2"></div>
@@ -32,7 +32,7 @@ const Item = ({ sku }) => {
             <Link
               role="button"
               className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
-              to={`/${sku.attributes.name.replace(/ /g, "_")}`}
+              to={`/${sku.product.name.replace(/ /g, "_")}`}
             >
               View Item
             </Link>

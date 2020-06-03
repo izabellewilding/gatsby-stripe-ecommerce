@@ -4,51 +4,48 @@ import Img from "./image"
 import { StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
 
-const stripePromise = loadStripe("pk_test_mLs1oZpbyJJL6FsDwf84KHyg00KrDIpfUW")
+const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
 const LatestItems = () => {
   return (
-    // <StaticQuery
-    //   query={graphql`
-    //     query LatestProducts {
-    //       skus: allStripeSku(limit: 3) {
-    //         edges {
-    //           node {
-    //             id
-    //             price
-    //             currency
-    //             attributes {
-    //               name
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `}
-    //   render={({ skus }) => (
-    <div className="flex justify-center bg-gray-100 flex-col m-auto border-gray-800 shadow-md mb-6 max-w-4xl p-2 pb-8">
-      <h1 className="text-center p-4 uppercase text-2xl m-4">
-        Latest Shop Items
-      </h1>
-      <div className="flex flex-col md:flex-row ">
-        {/* {skus.edges.map(({ node: sku }) => (
+    <StaticQuery
+      query={graphql`
+        query latestItems {
+          skus: allStripeSku(limit: 3) {
+            edges {
+              node {
+                id
+                currency
+                price
+              }
+            }
+          }
+        }
+      `}
+      render={({ skus }) => (
+        <div className="flex justify-center bg-gray-100 flex-col m-auto border-gray-800 shadow-md mb-6 max-w-4xl p-2 pb-8">
+          <h1 className="text-center p-4 uppercase text-2xl m-4">
+            Latest Shop Items
+          </h1>
+          <div className="flex flex-col md:flex-row ">
+            {skus.edges.map(({ node: sku }) => (
               <LatestItem
                 key={sku.id}
                 sku={sku}
                 stripePromise={stripePromise}
               />
-            ))} */}
-      </div>
-    </div>
-    //   )}
-    // />
+            ))}
+          </div>
+        </div>
+      )}
+    />
   )
 }
 
 const LatestItem = ({ sku }) => {
   return (
     <Link
-      to={`/${sku.attributes.name.replace(/ /g, "_")}`}
+      to={`/${sku.name.replace(/ /g, "_")}`}
       className="w-full flex justify-center "
     >
       <div
@@ -59,19 +56,17 @@ const LatestItem = ({ sku }) => {
           <Img src={`/images/${sku.id}.jpg`} className=" h-40 w-48 my-2" />
         </div>
         <div className=" w-full p-4">
-          <h1 className="text-gray-900 font-bold garamond">
-            {sku.attributes.name}
-          </h1>
+          <h1 className="text-gray-900 font-bold garamond">{sku.name}</h1>
 
           <div className="flex item-center mt-2"></div>
           <div className="flex item-center justify-between mt-3">
-            {/* <Link
+            <Link
               role="button"
               className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
-              to={`/${sku.attributes.name.replace(/ /g, "_")}`}
+              to={`/${sku.name.replace(/ /g, "_")}`}
             >
               View Item
-            </Link> */}
+            </Link>
           </div>
         </div>
       </div>

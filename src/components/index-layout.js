@@ -21,7 +21,7 @@ import Hero from "../components/hero"
 const IndexLayout = ({ children }) => {
   return (
     <>
-      <SEO />
+      {/* <SEO /> */}
       <IndexHeader />
       <Hero />
       <main>{children}</main>

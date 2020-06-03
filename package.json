@@ -6,7 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@rmwc/button": "^6.0.14",
+    "@rmwc/drawer": "^6.0.14",
     "@rmwc/image-list": "^6.0.14",
+    "@rmwc/list": "^6.0.14",
     "@rmwc/snackbar": "^6.0.14",
     "@stripe/stripe-js": "^1.5.0",
     "@svgr/webpack": "^5.4.0",
@@ -23,7 +25,7 @@
     "gatsby-plugin-sharp": "^2.6.3",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-source-filesystem": "^2.3.3",
-    "gatsby-source-stripe": "^3.0.7",
+    "gatsby-source-stripe": "^3.1.0",
     "gatsby-transformer-remark": "^2.8.8",
     "gatsby-transformer-sharp": "^2.5.2",
     "intersection-observer": "^0.10.0",

@@ -7,34 +7,34 @@ const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
 const Products = () => {
   return (
-    // <StaticQuery
-    //   query={graphql`
-    //     query SkusForProduct {
-    //       skus: allStripeSku {
-    //         edges {
-    //           node {
-    //             id
-    //             price
-    //             currency
-    //             attributes {
-    //               name
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `}
-    //   render={({ skus }) => {
-    //     console.warn("SKUS", skus)
-    // return (
-    <div className="flex justify-evenly flex-wrap">
-      {/* {skus.edges.map(({ node: sku }) => (
+    <StaticQuery
+      query={graphql`
+        query AllItems {
+          skus: allStripeSku {
+            edges {
+              node {
+                id
+                currency
+                price
+                product {
+                  name
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={({ skus }) => {
+        console.warn("SKUS", skus)
+        return (
+          <div className="flex justify-evenly flex-wrap">
+            {skus.edges.map(({ node: sku }) => (
               <Item key={sku.id} sku={sku} stripePromise={stripePromise} />
-            ))} */}
-    </div>
-    // )
-    //   }}
-    // />
+            ))}
+          </div>
+        )
+      }}
+    />
   )
 }
 

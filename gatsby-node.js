@@ -15,20 +15,17 @@ exports.createPages = async function({ actions, graphql, reporter }) {
   )
 
   const result = await graphql(`
-    query SkusForProduct {
-      skus: allStripeSku {
-        edges {
-          node {
-            id
-            price
-            currency
-            attributes {
-              name
+      query ProductsForPages {
+        skus: allStripeSku {
+          edges {
+            node {
+              id
+              currency
+              price
             }
           }
         }
-      }
-    }
+      
   `)
 
   if (result.errors) {

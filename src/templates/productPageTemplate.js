@@ -6,33 +6,12 @@ import Img from "../components/image"
 import Layout from "../components/layout"
 import Helmet from "react-helmet"
 
-const stripePromise = loadStripe("pk_test_mLs1oZpbyJJL6FsDwf84KHyg00KrDIpfUW")
+const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
 const Template = ({ pageContext }) => {
   const ctx = useContext(CartContext)
-  console.warn("MY LOG 3", pageContext)
 
   return (
-    // <StaticQuery
-    //   query={graphql`
-    //     query pageContextsForProducts($id: String) {
-    //       pageContexts: allStripepageContext {
-    //         edges {
-    //           node(id: { eq: $id }) {
-    //             id
-    //             price
-    //             currency
-    //             attributes {
-    //               name
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `}
-    // render={({ data: { node } }) => (
-    // console.warn('SKEWER', pageContext)
-
     <Layout stripePromise={stripePromise}>
       <Helmet>
         <meta charSet="utf-8" />
@@ -88,15 +67,5 @@ const Template = ({ pageContext }) => {
     </Layout>
   )
 }
-
-// export const pageQuery = graphql`
-//   query($path: String!) {
-//     markdownRemark(frontmatter: { path: { eq: $path } }) {
-//       html
-//       frontmatter {
-//         path
-//       }
-//     }
-//   }
 
 export default Template

@@ -6,19 +6,20 @@ import { CartContext } from "../components/shop/context"
 import Etsy from "../assets/etsy-drawn-logo.svg"
 import Flickr from "../assets/flickr.svg"
 import Banner from "../assets/pagan-symbol-banner-final-WHITE.svg"
+import NavDrawer from "../components/nav-drawer"
 
 const Header = () => {
   const cartCtx = useContext(CartContext)
   return (
     <>
       <header className="relative flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 ">
+        {/* <NavDrawer /> */}
         <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
-          <Banner className="absolute right-0 min-h-full patterns" />{" "}
           <Link to="/" className=" m-auto">
             <Logo className=" mt-12 mb-6" style={{ width: "145px" }} />{" "}
           </Link>
           <div className="w-full md:text-sm uppercase whitespace-no-wrap flex flex-col justify-between md:flex-row text-gray-800 text-center">
-            <nav className="chivo-reg flex flex-col md:flex-row">
+            <nav className="invisible md:visible chivo-reg flex flex-col md:flex-row">
               <Link
                 to="/"
                 className="p-2 chivo-pr-4 text-center md:w-2/6 "
