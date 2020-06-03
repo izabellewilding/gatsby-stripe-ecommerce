@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <>
       <header className="relative flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 ">
-        {/* <NavDrawer /> */}
+        <NavDrawer />
         <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
           <Link to="/" className=" m-auto">
             <Logo className=" mt-12 mb-6" style={{ width: "145px" }} />{" "}

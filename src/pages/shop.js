@@ -9,9 +9,9 @@ import TestBreadcrumb from "../components/test-breadcrumb.js"
 const Shop = () => {
   return (
     <Layout>
-      <div className="">
+      <div className=" bg-gray-700">
         <TestBreadcrumb />
-        <div className="flex bg-white  justify-center max-w-6xl m-auto">
+        <div className="flex justify-center max-w-6xl m-auto">
           <ItemsList />
         </div>
       </div>

@@ -26,19 +26,17 @@ const NavDrawer = () => {
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <div className="absolute top-0 left-0">
+    <div className="absolute top-0 right-0 m-4">
       <button className="h-8 w-8" onClick={() => setNavOpen(!navOpen)}>
         <MenuIcon className="h-8 w-8" />
       </button>
-      {/* <button className="h-8 w-8" onClick={setOpen(false)}>
-        <CloseIcon />
-      </button> */}
+
       <StyledDrawer
         className="z-50"
         dir="ltr"
         modal
         open={navOpen}
-        onClose={setNavOpen(false)}
+        onClose={() => setNavOpen(false)}
       >
         <DrawerHeader>
           {" "}
@@ -47,6 +45,9 @@ const NavDrawer = () => {
             <Link>
               {/* <Logo className="h-12 nav-logo svg-darkPrimary" /> */}
             </Link>
+            <button className="h-8 w-8" onClick={() => setNavOpen(false)}>
+              <CloseIcon />
+            </button>
           </DrawerTitle>
         </DrawerHeader>
         <DrawerContent>

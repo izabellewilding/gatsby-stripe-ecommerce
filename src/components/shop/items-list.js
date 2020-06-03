@@ -25,9 +25,8 @@ const Products = () => {
         }
       `}
       render={({ skus }) => {
-        console.warn("SKUS", skus)
         return (
-          <div className="flex justify-evenly flex-wrap">
+          <div className="flex justify-evenly flex-wrap bg-gray-700">
             {skus.edges.map(({ node: sku }) => (
               <Item key={sku.id} sku={sku} stripePromise={stripePromise} />
             ))}
