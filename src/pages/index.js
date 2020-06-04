@@ -1,12 +1,58 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import Img from "gatsby-image"
 import Layout from "../components/index-layout"
 import Helmet from "react-helmet"
-import Loader from "../components/hero"
 import InfoBar from "../components/info-bar"
+import styled, { css } from "styled-components"
+import cx from "classnames"
+
+const StyledScrim = styled.div`
+  position: fixed;
+  top: 130px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  transition: opacity 0.5s;
+`
+
+function debounce(func, wait, immediate) {
+  var timeout
+
+  return function executedFunction() {
+    var context = this
+    var args = arguments
+
+    var later = function() {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+
+    var callNow = immediate && !timeout
+
+    clearTimeout(timeout)
+
+    timeout = setTimeout(later, wait)
+
+    if (callNow) func.apply(context, args)
+  }
+}
 
 const ArtGallery = ({ data }) => {
-  console.log("MY LOG", data)
+  const galleryRef = useRef()
+  const [scrim, setScrim] = useState(false)
+
+  useEffect(() => {
+    const animateScrim = debounce(() => {
+      console.warn("GAL")
+      setScrim(galleryRef.current.getBoundingClientRect().y < 450)
+    }, 10)
+    window.addEventListener("scroll", animateScrim)
+    return () => {
+      window.removeEventListener("scroll", animateScrim)
+    }
+  }, [])
+
   return (
     <Layout page="home">
       <Helmet>
@@ -14,10 +60,13 @@ const ArtGallery = ({ data }) => {
         <title>Original Handmade Art | By Izabelle Wilding</title>
         <meta name="Artwork by Izabelle Wilding" content="Helmet application" />
       </Helmet>
+      <StyledScrim
+        className={cx({ "opacity-0": !scrim }, { "opacity-50": scrim })}
+      />
 
       <div
         className="w-full h-full top relative m-auto footer-padding"
-        style={{}}
+        ref={galleryRef}
       >
         <InfoBar />
         <h1 className="p-8 text-center bg-white text-2xl max-w-6xl raleway uppercase text-gray-900 mr-auto ml-auto">

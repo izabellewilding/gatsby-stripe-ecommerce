@@ -32,8 +32,8 @@ export default function CartProvider({ children }) {
     }
   }, [])
 
-  function addToCart(newItem) {
-    newItem.quantity = 1
+  function addToCart(newItem, quantity) {
+    newItem.quantity = quantity
     if (!items.find(item => item.id === newItem.id)) {
       const updatedItems = [...items, { ...newItem, sku: newItem.id }]
       console.warn("ITEMS", items)

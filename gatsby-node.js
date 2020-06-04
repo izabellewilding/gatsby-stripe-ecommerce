@@ -15,17 +15,20 @@ exports.createPages = async function({ actions, graphql, reporter }) {
   )
 
   const result = await graphql(`
-      query ProductsForPages {
-        skus: allStripeSku {
-          edges {
-            node {
-              id
-              currency
-              price
+    query ProductsForPages {
+      skus: allStripeSku {
+        edges {
+          node {
+            id
+            currency
+            price
+            product {
+              name
             }
           }
         }
-      
+      }
+    }
   `)
 
   if (result.errors) {
@@ -35,7 +38,7 @@ exports.createPages = async function({ actions, graphql, reporter }) {
   const productPages = result.data.skus.edges
 
   productPages.forEach(({ node }) => {
-    const itemPath = node.attributes.name.replace(/ /g, "_")
+    const itemPath = node.product.name.replace(/ /g, "_")
 
     console.warn("item-PATH", itemPath)
     createPage({
