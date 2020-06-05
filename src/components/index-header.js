@@ -15,82 +15,51 @@ const Header = () => {
   // const ctx = useContext(CartContext)
   return (
     <>
-      <header className=" w-full fixed bg-pattern  flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white">
+      <header className=" w-full fixed bg-pattern flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white">
         {/* <Bird className="bird" />{" "} */}
 
-        <section className=" relative w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
-          {/* <div className=""> */}
-          <Link to="/" className=" m-auto">
-            <h1 className="text-gray-900 mt-6 text-2xl pt-6 uppercase chivo-reg">
-              Pastel Ceramics
-            </h1>
-          </Link>
-          <NavDrawer />
-          {/* </div> */}{" "}
-          <div className="w-full md:text-sm uppercase whitespace-no-wrap flex flex-col justify-between md:flex-row text-gray-800 text-center">
-            <nav className="hidden md:block chivo-reg flex flex-col md:flex-row">
-              <Link
-                to="/"
-                className="p-2 chivo-pr-4 text-center md:w-2/6 "
-                activeClassName="text-semibold text-gray-900"
-              >
-                Home
-              </Link>
-              {/* <Link
-                to="/photography"
-                className="p-2 text-center md:w-2/6 hover:text-gray-700"
-                activeClassName="text-semibold text-gray-900"
-              >
-                <button className="button">Photography</button>
-              </Link> */}
-              <Link
-                to="/shop-home"
-                className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
-                activeClassName="text-semibold text-gray-900"
-              >
-                Shop
-              </Link>
-              <Link
-                to="/contact"
-                className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
-                activeClassName="text-semibold text-gray-900"
-              >
-                Contact
-              </Link>
-            </nav>
-            <div
-              name="shopping-cart"
-              className="flex pr-2 md:pr-8 items-center justify-between md:justify-end"
-              style={{ right: "1rem" }}
-            >
-              {/* <div className="flex-row flex md:justify-end">
-                {" "}
-                <a
-                  href="https://www.flickr.com/photos/144107298@N03/"
-                  className="flex item-center"
-                  target="_blank"
-                  alt="flickr"
+        <div className="relative w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
+          <div>
+            <Link to="/" className="m-auto bg-white">
+              <h1 className="text-gray-900 my-8 text-2xl text-center uppercase chivo-reg">
+                Pastel Ceramics
+              </h1>
+            </Link>
+            <div className="flex justify-between md:justify-end w-screen bg-white">
+              <nav className="hidden md:block chivo-reg flex flex-col md:flex-row">
+                <Link
+                  to="/"
+                  className="p-2 chivo-pr-4 text-center md:w-2/6 "
+                  activeClassName="text-semibold text-gray-900"
                 >
-                  <Flickr className="m-2 h-5" alt="flickr" />
-                </a>
-                <a
-                  href="https://www.etsy.com/uk/shop-home/izabelleArt"
-                  className="flex item-center"
-                  target="_blank"
-                >
-                  <Etsy className="m-2 h-5" alt="etsy" />
-                </a>{" "}
-              </div> */}
+                  Home
+                </Link>
 
-              <Link to="checkout" className="flex items-center">
+                <Link
+                  to="/shop-home"
+                  className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
+                  activeClassName="text-semibold text-gray-900"
+                >
+                  Shop
+                </Link>
+                <Link
+                  to="/contact"
+                  className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
+                  activeClassName="text-semibold text-gray-900"
+                >
+                  Contact
+                </Link>
+              </nav>
+              <Link to="checkout" className="flex items-center my-2 mx-4">
                 <Basket className="m-2 h-5" />
                 <span className="font-sans font-normal">
                   {cartCtx.totalItems(cartCtx.items)}
                 </span>
               </Link>
+              <NavDrawer />
             </div>{" "}
-          </div>{" "}
-        </section>
+          </div>
+        </div>
       </header>
     </>
   )

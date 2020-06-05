@@ -8,12 +8,14 @@ const TestBreadcrumb = () => {
         <Link
           to="/shop-plantpots"
           className="px-4 py-6 hover:bg-white h-full duration-100"
+          activeStyle={{ backgroundColor: "white" }}
         >
           Plant Pots
         </Link>
         <Link
           to="/shop-dining"
           className="px-4 py-6 h-full hover:bg-white duration-100"
+          activeStyle={{ backgroundColor: "white" }}
         >
           Dinnerware
         </Link>

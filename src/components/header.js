@@ -14,14 +14,14 @@ const Header = () => {
     <>
       <header className="relative flex bg-pattern justify-center overflow-hidden align-middle border-b border-gray-200 h-66 ">
         <NavDrawer />
-        <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
-          <Link to="/" className=" m-auto">
-            <h1 className="text-gray-900 mt-6 text-2xl pt-6 uppercase chivo-reg">
+        <section className="w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
+          <Link to="/" className="m-auto mt-8 flex items-center">
+            <h1 className="text-gray-900 text-2xl uppercase chivo-reg">
               Pastel Ceramics
             </h1>
           </Link>
           <div className="w-full md:text-sm uppercase whitespace-no-wrap flex flex-col justify-between md:flex-row text-gray-800 text-center">
-            <nav className="invisible md:visible chivo-reg flex flex-col md:flex-row">
+            <nav className="hidden md:block chivo-reg flex flex-col md:flex-row">
               <Link
                 to="/"
                 className="p-2 chivo-pr-4 text-center md:w-2/6 "
@@ -46,8 +46,7 @@ const Header = () => {
             </nav>
             <div
               name="shopping-cart"
-              className="flex pr-2 md:pr-8 items-center justify-between md:justify-end"
-              style={{ right: "1rem" }}
+              className="flex  justify-between md:justify-end"
             >
               {/* <div className="flex-row flex md:justify-end">
                 {" "}
@@ -68,8 +67,8 @@ const Header = () => {
                 </a>{" "}
               </div> */}
 
-              <Link to="checkout" className="flex items-center">
-                <Basket className="m-2 h-5" />
+              <Link to="checkout" className="flex items-center m-4">
+                <Basket className="h-5 m-2" />
                 <span className="font-sans font-normal">
                   {cartCtx.totalItems(cartCtx.items)}
                 </span>

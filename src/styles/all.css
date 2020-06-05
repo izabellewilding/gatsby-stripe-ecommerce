@@ -136,13 +136,14 @@ th:first-child {
 }
 
 .top {
-  top: 110px;
+  top: 155px;
+
   @media (min-width: 415px) and (max-width: 680px) {
-    top: 121px;
+    top: 161px;
   }
 
   @media (min-width: 680px) {
-    top: 125px;
+    top: 162px;
   }
 }
 

@@ -42,7 +42,7 @@ const Hero = () => {
         className="w-full bg-fixed flex flex-col justify-center md:justify-evenly hero items-start h-full"
         fluid={source}
       >
-        <div className="flex p-6 max-w-4xl md:items-start flex-col w-2/3 md:w-1/2 md:p-5 ">
+        <div className="flex p-6 md:items-start flex-col w-2/3 md:w-1/2 md:p-5 ml-2 ">
           <h2 className="text-2xl md:text-3xl raleway uppercase underlined text-white">
             Affordable unique handmade pottery
           </h2>{" "}

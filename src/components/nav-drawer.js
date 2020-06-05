@@ -27,7 +27,7 @@ const NavDrawer = () => {
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <div className="absolute top-0 right-0 m-4">
+    <div className="absolute bottom-0 right-0 mx-4 my-2 ">
       <button
         className="h-8 w-8 block md:hidden"
         onClick={() => setNavOpen(!navOpen)}
