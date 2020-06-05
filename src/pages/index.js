@@ -4,7 +4,6 @@ import Layout from "../components/index-layout"
 import Helmet from "react-helmet"
 import InfoBar from "../components/info-bar"
 import styled, { css } from "styled-components"
-import cx from "classnames"
 
 const StyledScrim = styled.div`
   position: fixed;
@@ -60,9 +59,7 @@ const ArtGallery = ({ data }) => {
         <title>Original Handmade Art | By Izabelle Wilding</title>
         <meta name="Artwork by Izabelle Wilding" content="Helmet application" />
       </Helmet>
-      <StyledScrim
-        className={cx({ "opacity-0": !scrim }, { "opacity-50": scrim })}
-      />
+      <StyledScrim className={`${scrim ? "opacity-50" : "opacity-0"}`} />
 
       <div
         className="w-full h-full top relative m-auto footer-padding"

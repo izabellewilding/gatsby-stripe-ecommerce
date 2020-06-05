@@ -57,19 +57,19 @@ const Footer = () => {
               to="/"
               className="chivo-reg text-sm text-gray-700 hover:text-gray-800 mb-2"
             >
-              Artwork
-            </Link>
-            <Link
-              to="/photography"
-              className="chivo-reg text-gray-700 text-sm hover:text-gray-800 mb-2"
-            >
-              Photography
+              Home
             </Link>
             <Link
               to="/shop"
-              className="chivo-reg text-sm text-gray-700 hover:text-gray-800 mb-2"
+              className="chivo-reg text-gray-700 text-sm hover:text-gray-800 mb-2"
             >
               Shop
+            </Link>
+            <Link
+              to="/contact"
+              className="chivo-reg text-sm text-gray-700 hover:text-gray-800 mb-2"
+            >
+              Contact
             </Link>
             {/* <Img
           src="./../images/three-birds-web.jpg"

@@ -159,3 +159,7 @@ th:first-child {
 .opacity-95 {
   opacity: 0.95;
 }
+
+.infoHeading {
+  font-size: 2rem;
+}
