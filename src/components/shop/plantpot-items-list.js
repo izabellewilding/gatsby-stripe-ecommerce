@@ -9,8 +9,10 @@ const Products = () => {
   return (
     <StaticQuery
       query={graphql`
-        query AllItems {
-          skus: allStripeSku {
+        query PlantpotItems {
+          skus: allStripeSku(
+            filter: { product: { metadata: { range: { in: "plantpots" } } } }
+          ) {
             edges {
               node {
                 id

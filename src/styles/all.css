@@ -136,12 +136,13 @@ th:first-child {
 }
 
 .top {
-  top: 138px;
-  /* @media (mi-width: 320px) {
-    top: 329px;
-  } */
+  top: 110px;
+  @media (min-width: 415px) and (max-width: 680px) {
+    top: 121px;
+  }
+
   @media (min-width: 680px) {
-    top: 129px;
+    top: 125px;
   }
 }
 
@@ -160,6 +161,7 @@ th:first-child {
   opacity: 0.95;
 }
 
-.infoHeading {
-  font-size: 2rem;
+.bg-pattern {
+  background-image: url(../images/concrete-texture/concrete-texture.png);
+  background-position: center;
 }

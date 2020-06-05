@@ -19,13 +19,13 @@ const Item = ({ sku }) => {
           />
         </div>
         <div className=" w-full p-4">
-          <h1 className="text-gray-900 font-bold text-2xl garamond">
+          <h1 className="text-gray-900 text-xl chivo-reg">
             {sku.product.name}
           </h1>
 
           <div className="flex item-center mt-2"></div>
           <div className="flex item-center justify-between mt-3">
-            <h1 className="text-gray-700 font-bold garamond">
+            <h1 className="text-gray-700 font-bold garamond m-1">
               {ctx.formatPrice(sku.price, sku.currency)}
             </h1>
             <div></div>

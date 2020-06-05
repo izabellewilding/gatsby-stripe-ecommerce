@@ -85,7 +85,7 @@ export default function CartProvider({ children }) {
             />,
             <SnackbarAction
               label="Keep Shopping"
-              onClick={() => navigate("/shop")}
+              onClick={() => navigate("/shop-home")}
             />,
           ]}
           stacked
@@ -100,7 +100,7 @@ export default function CartProvider({ children }) {
           action={[
             <SnackbarAction
               label="back to shop"
-              onClick={() => navigate("/shop")}
+              onClick={() => navigate("/shop-home")}
             />,
           ]}
           stacked

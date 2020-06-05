@@ -117,7 +117,8 @@ class ContactForm extends React.Component {
             </div>
           </form>
         </section>
-        <section className="w-1/2 flex justify-center items-center">
+        <section className="w-1/2 flex flex-col justify-center items-center">
+          <h1 className="text-2xl">Or find us in store...</h1>
           <Map />
         </section>
       </div>

@@ -2,9 +2,9 @@ var stripe = require("stripe")("sk_test_2PECtktQNqsL5vWpIUuWWWh000wvy5gZuc")
 
 stripe.products.create(
   {
-    name: "Wide Neck Plant Pot",
+    name: "Large Jug",
     type: "good",
-    metadata: { color: "white", size: "medium", width: "20cm" },
+    metadata: { color: "stone", size: "medium", width: "10cm" },
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
   },

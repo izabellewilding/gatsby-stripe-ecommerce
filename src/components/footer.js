@@ -5,11 +5,10 @@ import GooglePay from "../assets/google-pay-mark_800_gray.svg"
 import Amex from "../assets/american-express.svg"
 import StripeLogo from "../assets/Stripe-logo-slate.svg"
 
-import Bird from "../assets/bird-green.svg"
 const Footer = () => {
   return (
     <div>
-      <footer className="relative bg-gray-100 w-full m-auto flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden">
+      <footer className="relative bg-gray-100 bg-pattern w-full m-auto flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden">
         <section className=" max-w-6xl w-full flex flex-col md:flex-row m-auto">
           <div className="flex mb-4">
             <div className=" w-6/12 mr-12">
@@ -60,7 +59,7 @@ const Footer = () => {
               Home
             </Link>
             <Link
-              to="/shop"
+              to="/shop-home"
               className="chivo-reg text-gray-700 text-sm hover:text-gray-800 mb-2"
             >
               Shop
