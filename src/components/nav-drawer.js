@@ -55,7 +55,10 @@ const NavDrawer = () => {
             <Link to="/" className="hover:text-midPrimary cursor-pointer">
               <li className="text-darkPrimary nav-list-item mr-6 p-1">Home</li>
             </Link>
-            <Link to="/shop" className="hover:text-midPrimary cursor-pointer">
+            <Link
+              to="/shop-home"
+              className="hover:text-midPrimary cursor-pointer"
+            >
               {" "}
               <li className="text-darkPrimary nav-list-item  mr-6 p-1">Shop</li>
             </Link>

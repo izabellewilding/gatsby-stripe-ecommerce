@@ -12,7 +12,7 @@ const Header = () => {
   const cartCtx = useContext(CartContext)
   return (
     <>
-      <header className="relative flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 ">
+      <header className="relative flex bg-pattern justify-center overflow-hidden align-middle border-b border-gray-200 h-66 ">
         <NavDrawer />
         <section className=" w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
           <Link to="/" className=" m-auto">
@@ -30,7 +30,7 @@ const Header = () => {
                 Home
               </Link>
               <Link
-                to="/shop"
+                to="/shop-home"
                 className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
                 activeClassName="text-semibold text-gray-900"
               >
@@ -60,7 +60,7 @@ const Header = () => {
                   <Flickr className="m-2 h-5" alt="flickr" />
                 </a>
                 <a
-                  href="https://www.etsy.com/uk/shop/izabelleArt"
+                  href="https://www.etsy.com/uk/shop-home/izabelleArt"
                   className="flex item-center"
                   target="_blank"
                 >

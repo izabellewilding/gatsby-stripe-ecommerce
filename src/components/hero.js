@@ -43,15 +43,15 @@ const Hero = () => {
         fluid={source}
       >
         <div className="flex p-6 max-w-4xl md:items-start flex-col w-2/3 md:w-1/2 md:p-5 ">
-          <h2 className="text-3xl md:text-5xl raleway uppercase underlined text-white">
+          <h2 className="text-2xl md:text-3xl raleway uppercase underlined text-white">
             Affordable unique handmade pottery
           </h2>{" "}
-          <h1 className="text-2xl md:text-3xl chivo-reg text-white mt-8 ">
+          <h1 className="text-xl md:text-3xl chivo-reg text-white mt-6 ">
             New Collection
           </h1>{" "}
           <Link
-            className=" chivo-reg uppercase mt-8 text-xl text-center text-white border-white shadow-md border-2 py-2 px-3 whitespace-no-wrap border-white hover:bg-gray-800 hover:border-gray-800 hover:bg-gray-800 transition-all duration-75"
-            to="/shop"
+            className=" chivo-reg uppercase mt-6 text-md z-50 text-center text-white border-white shadow-md border-2 py-2 px-3 whitespace-no-wrap border-white hover:bg-gray-800 hover:border-gray-800 hover:bg-gray-800 transition-all duration-75"
+            to="/shop-home"
           >
             Shop Now
           </Link>

@@ -7,7 +7,7 @@ import Etsy from "../assets/etsy-drawn-logo.svg"
 import Flickr from "../assets/flickr.svg"
 import NavDrawer from "../components/nav-drawer"
 // import Bird from "../assets/bird-green.svg"
-// import { CartContext } from "../components/shop/context"
+// import { CartContext } from "../components/shop-home/context"
 
 const Header = () => {
   const [cartOpen, setCartOpen] = useState(false)
@@ -15,7 +15,7 @@ const Header = () => {
   // const ctx = useContext(CartContext)
   return (
     <>
-      <header className=" w-full fixed top-0 flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white">
+      <header className=" w-full fixed bg-pattern  flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white">
         {/* <Bird className="bird" />{" "} */}
 
         <section className=" relative w-screen flex justify-center items-center flex-col max-w-6xl md:pl-6">
@@ -44,7 +44,7 @@ const Header = () => {
                 <button className="button">Photography</button>
               </Link> */}
               <Link
-                to="/shop"
+                to="/shop-home"
                 className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
                 activeClassName="text-semibold text-gray-900"
               >
@@ -74,7 +74,7 @@ const Header = () => {
                   <Flickr className="m-2 h-5" alt="flickr" />
                 </a>
                 <a
-                  href="https://www.etsy.com/uk/shop/izabelleArt"
+                  href="https://www.etsy.com/uk/shop-home/izabelleArt"
                   className="flex item-center"
                   target="_blank"
                 >

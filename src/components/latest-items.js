@@ -11,7 +11,7 @@ const LatestItems = () => {
     <StaticQuery
       query={graphql`
         query latestItems {
-          skus: allStripeSku {
+          skus: allStripeSku(limit: 3) {
             edges {
               node {
                 id
