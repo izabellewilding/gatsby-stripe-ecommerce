@@ -8,7 +8,7 @@ import StripeLogo from "../assets/Stripe-logo-slate.svg"
 const Footer = () => {
   return (
     <div>
-      <footer className="relative bg-gray-100 bg-pattern w-full m-auto flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden">
+      <footer className="relative bg-gray-100 w-full m-auto flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden">
         <section className=" max-w-6xl w-full flex flex-col md:flex-row m-auto">
           <div className="flex mb-4">
             <div className=" w-6/12 mr-12">

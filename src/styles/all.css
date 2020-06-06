@@ -136,7 +136,7 @@ th:first-child {
 }
 
 .top {
-  top: 155px;
+  top: 143px;
 
   @media (min-width: 415px) and (max-width: 680px) {
     top: 161px;

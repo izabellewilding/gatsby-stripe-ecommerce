@@ -7,7 +7,7 @@ import styled, { css } from "styled-components"
 
 const StyledScrim = styled.div`
   position: fixed;
-  top: 130px;
+  top: 162px;
   bottom: 0;
   left: 0;
   right: 0;
