@@ -18,12 +18,12 @@ import "../styles/layout.css"
 import "../styles/tailwind.css"
 import "../styles/all.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, page }) => {
   return (
     <>
       {/* <SEO /> */}
       <div className="relative ">
-        <Header />
+        <Header page={page} />
         <main>{children}</main>
         <Footer />
       </div>

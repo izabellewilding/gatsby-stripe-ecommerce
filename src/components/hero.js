@@ -51,7 +51,7 @@ const Hero = () => {
               New Collection
             </h1>{" "}
             <Link
-              className=" chivo-reg uppercase mt-6 text-md z-50 text-center text-white border-white shadow-md border-2 py-2 px-3 whitespace-no-wrap border-white hover:bg-gray-800 hover:border-gray-800 hover:bg-gray-800 transition-all duration-75"
+              className=" chivo-reg uppercase mt-6 text-md text-center text-white border-white shadow-md border-2 py-2 px-3 whitespace-no-wrap border-white hover:bg-gray-800 hover:border-gray-800 hover:bg-gray-800 transition-all duration-75"
               to="/shop-home"
             >
               Shop Now

@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
 import Img from "gatsby-image"
-import Layout from "../components/index-layout"
+import Layout from "../components/layout"
 import Helmet from "react-helmet"
 import InfoBar from "../components/info-bar"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
+import Hero from "../components/hero"
 
 const StyledScrim = styled.div`
   position: fixed;
@@ -43,7 +44,6 @@ const ArtGallery = ({ data }) => {
 
   useEffect(() => {
     const animateScrim = debounce(() => {
-      console.warn("GAL")
       setScrim(galleryRef.current.getBoundingClientRect().y < 450)
     }, 10)
     window.addEventListener("scroll", animateScrim)
@@ -56,11 +56,13 @@ const ArtGallery = ({ data }) => {
     <Layout page="home">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Original Handmade Art | By Izabelle Wilding</title>
+        <title>Gatsby Stripe Ecommerce</title>
         <meta name="Artwork by Izabelle Wilding" content="Helmet application" />
       </Helmet>
+      <Hero />
+
       <StyledScrim
-        className={`${scrim ? "opacity-75 block" : "opacity-0 hidden"}`}
+        className={`${scrim ? "block opacity-75 " : "hidden opacity-0 "}`}
       />
 
       <div
