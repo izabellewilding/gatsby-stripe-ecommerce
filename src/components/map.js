@@ -111,11 +111,11 @@ const GoogleMap = () => {
   })
 
   return (
-    <div>
+    <div className="w-full h-full p-4">
       <div
         id="google-map"
         ref={googleMapRef}
-        style={{ width: 100, height: 100 }}
+        style={{ width: "100%", height: "100%" }}
       ></div>
     </div>
   )
