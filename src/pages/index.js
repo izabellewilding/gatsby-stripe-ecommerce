@@ -12,7 +12,7 @@ const StyledScrim = styled.div`
   left: 0;
   right: 0;
   background-color: black;
-  transition: opacity 0.5s;
+  transition: all 0.5s;
 `
 
 function debounce(func, wait, immediate) {
@@ -59,7 +59,9 @@ const ArtGallery = ({ data }) => {
         <title>Original Handmade Art | By Izabelle Wilding</title>
         <meta name="Artwork by Izabelle Wilding" content="Helmet application" />
       </Helmet>
-      <StyledScrim className={`${scrim ? "opacity-50" : "opacity-0"}`} />
+      <StyledScrim
+        className={`${scrim ? "opacity-75 block" : "opacity-0 hidden"}`}
+      />
 
       <div
         className="w-full h-full top relative m-auto footer-padding"
