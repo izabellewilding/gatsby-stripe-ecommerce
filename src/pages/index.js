@@ -10,8 +10,8 @@ const StyledScrim = styled.div`
   position: fixed;
   top: 145px;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0.5rem;
+  right: 0.5rem;
   background-color: black;
   transition: all 0.5s;
   @media (min-width: 768px) {

@@ -143,10 +143,10 @@ body {
 }
 
 .top {
-  top: 132px;
+  top: 149px;
 
   @media (min-width: 415px) and (max-width: 680px) {
-    top: 166px;
+    top: 167px;
   }
 
   @media (min-width: 680px) {
