@@ -146,11 +146,11 @@ body {
   top: 132px;
 
   @media (min-width: 415px) and (max-width: 680px) {
-    top: 1px;
+    top: 166px;
   }
 
   @media (min-width: 680px) {
-    top: 148px;
+    top: 165px;
   }
 }
 

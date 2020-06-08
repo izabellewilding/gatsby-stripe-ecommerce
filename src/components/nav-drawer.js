@@ -49,7 +49,7 @@ const NavDrawer = () => {
         <DrawerTitle>
           {" "}
           <button className="h-8 w-8" onClick={() => setNavOpen(false)}>
-            <CloseIcon onclick={() => setNavOpen(!navOpen)} />
+            <CloseIcon onClick={() => setNavOpen(!navOpen)} />
           </button>
         </DrawerTitle>
         <DrawerContent>

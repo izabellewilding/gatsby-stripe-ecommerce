@@ -4,8 +4,9 @@ stripe.skus.create(
   {
     price: 3000,
     currency: "gbp",
-    inventory: { type: "finite", quantity: 50 },
-    product: "prod_HPS69vviyiNynp",
+    attributes: { name: "Large Jug" },
+    inventory: { type: "infinite" },
+    product: "prod_HQdLjRufsohhQt",
   },
   function(err, sku) {
     if (err) return console.log("Error: ", err)

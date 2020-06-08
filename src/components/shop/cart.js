@@ -20,19 +20,20 @@ const Cart = () => {
     const stripe = await stripePromise
     const { error } = await stripe.redirectToCheckout({
       items: ctx.items.map(item => ({
-        quantity: item.quantity,
         sku: item.sku,
+        quantity: item.quantity,
       })),
+
+      mode: "payment",
       successUrl: `http://localhost:8000/success/`,
-      cancelUrl: `https://www.izabelleart.com/checkout`,
+      cancelUrl: `https://localhost:8000/checkout`,
     })
     if (error) {
       console.warn("Error:", error)
     }
   }
-
   return (
-    <div className="px-3 py-12 flex justify-center flex-col max-w-xl m-auto my-12">
+    <div className="px-3 py-16 flex justify-center flex-col max-w-xl m-auto ">
       <table className=" max-w-xl m-auto text-md bg-white shadow-md rounded mb-4 ">
         <tbody>
           <tr className="text-sm chivo-reg border-b text-gray-700">
@@ -48,7 +49,7 @@ const Cart = () => {
               <td className="pr-0">
                 <Img
                   src={`/images/${item.sku}.jpg`}
-                  alt={item.name}
+                  alt="product"
                   style={{ height: 80, width: 80 }}
                 />
               </td>
