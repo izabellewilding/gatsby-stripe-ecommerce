@@ -38,7 +38,7 @@ class ContactForm extends React.Component {
   render() {
     return (
       <div className="p-6 md:my-16 bg-gray-300 md:bg-white md:shadow-md flex flex-wrap border-white rounded-md w-full ">
-        <section className="w-1/2">
+        <section className="md:w-1/2 w-full">
           <div className="font-sans">
             <h1 className="text-3xl chivo-reg ml-4 mb-4 uppercase text-gray-800 text-center inline ">
               Contact{" "}
@@ -117,7 +117,7 @@ class ContactForm extends React.Component {
             </div>
           </form>
         </section>
-        <section className="w-1/2 flex flex-col justify-center items-center">
+        <section className="md:w-1/2 w-full flex flex-col justify-center items-center">
           <h1 className="text-2xl">Or find us in store...</h1>
           <Map />
         </section>

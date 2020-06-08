@@ -22,13 +22,13 @@ const Header = props => {
         <div className="relative w-full flex justify-center items-center flex-col">
           <div className="w-full">
             <Link to="/" className="m-auto">
-              <h1 className="text-gray-900 my-8 text-2xl text-center uppercase chivo-reg">
+              <h1 className="text-gray-900 my-8 text-2xl text-center uppercase garamond chivo-reg">
                 Pastel Ceramics
               </h1>
             </Link>
             <div className="bg-white w-full">
               <div className="max-w-5xl w-full m-auto flex justify-between items-center">
-                <nav className="hidden md:block chivo-reg flex flex-col md:flex-row">
+                <nav className="hidden md:block chivo-reg flex flex-col md:flex-row uppercase text-sm">
                   <Link
                     to="/"
                     className="p-2 chivo-pr-4 text-center md:w-2/6 "

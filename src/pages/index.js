@@ -8,12 +8,15 @@ import Hero from "../components/hero"
 
 const StyledScrim = styled.div`
   position: fixed;
-  top: 162px;
+  top: 145px;
   bottom: 0;
   left: 0;
   right: 0;
   background-color: black;
   transition: all 0.5s;
+  @media (min-width: 768px) {
+    top: 163px;
+  }
 `
 
 function debounce(func, wait, immediate) {

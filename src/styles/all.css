@@ -136,7 +136,7 @@ th:first-child {
 }
 
 .top {
-  top: 143px;
+  top: 145px;
 
   @media (min-width: 415px) and (max-width: 680px) {
     top: 161px;
@@ -152,7 +152,7 @@ th:first-child {
 }
 
 .footer-padding {
-  padding-bottom: 22rem;
+  padding-bottom: 12rem;
   @media (min-width: 680px) {
     padding-bottom: 14rem;
   }
