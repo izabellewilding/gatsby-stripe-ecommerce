@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import ItemsList from "../components/shop/items-list.js"
 import Layout from "../components/layout"
-import ShopNav from "../components/shop-nav.js"
+import ShopNav from "../components/shop/shop-nav.js"
 
 const ShopHome = () => {
   return (

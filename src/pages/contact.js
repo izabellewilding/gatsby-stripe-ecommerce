@@ -1,7 +1,7 @@
 import React from "react"
 import { navigate } from "gatsby-link"
 import Layout from "../components/layout"
-import LatestItems from "../components/latest-items"
+import LatestItems from "../components/shop/latest-items"
 import Map from "../components/map"
 
 function encode(data) {

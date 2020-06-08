@@ -24,6 +24,10 @@ exports.createPages = async function({ actions, graphql, reporter }) {
             price
             product {
               name
+              metadata {
+                color
+                width
+              }
             }
           }
         }

@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "./image"
+import Img from "../image"
 import { StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
 

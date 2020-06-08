@@ -20,6 +20,9 @@ const StyledList = styled(List)`
     display: flex;
     flex-direction: row;
     list-style: none;
+    font-family: chivo-reg;
+    text-transform: uppercase;
+    justify-content: center;
   }
 `
 
@@ -40,16 +43,15 @@ const NavDrawer = () => {
         modal
         open={navOpen}
         onClose={() => setNavOpen(false)}
+        style={{ maxHeight: 90 }}
       >
-        <DrawerHeader>
+        {" "}
+        <DrawerTitle>
           {" "}
-          <DrawerTitle>
-            {" "}
-            <button className="h-8 w-8" onClick={() => setNavOpen(false)}>
-              <CloseIcon onclick={() => setNavOpen(!navOpen)} />
-            </button>
-          </DrawerTitle>
-        </DrawerHeader>
+          <button className="h-8 w-8" onClick={() => setNavOpen(false)}>
+            <CloseIcon onclick={() => setNavOpen(!navOpen)} />
+          </button>
+        </DrawerTitle>
         <DrawerContent>
           <StyledList stlye={{ listStyle: "none" }}>
             <Link to="/" className="hover:text-midPrimary cursor-pointer">

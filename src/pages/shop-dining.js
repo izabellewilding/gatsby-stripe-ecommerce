@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import DiningItemsList from "../components/shop/dining-items-list"
 import Layout from "../components/layout"
-import ShopNav from "../components/shop-nav.js"
-import ThanksBreadcrumb from "../components/thanks-breadcrumb"
+import ShopNav from "../components/shop/shop-nav.js"
+import ThanksBreadcrumb from "../components/shop/thanks-breadcrumb"
 
 const Shop = () => {
   return (

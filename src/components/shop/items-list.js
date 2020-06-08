@@ -18,6 +18,10 @@ const Products = () => {
                 price
                 product {
                   name
+                  metadata {
+                    color
+                    width
+                  }
                 }
               }
             }

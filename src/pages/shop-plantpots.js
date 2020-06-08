@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 
 import PlantpotItemsList from "../components/shop/plantpot-items-list"
 import Layout from "../components/layout"
-import ShopNav from "../components/shop-nav.js"
+import ShopNav from "../components/shop/shop-nav.js"
 
 const Shop = () => {
   return (
