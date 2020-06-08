@@ -28,7 +28,7 @@ const Template = ({ pageContext }) => {
       </Helmet>
       <div className=" relative bg-white w-screen py-6 flex m-auto justify-center">
         <div className="flex flex-col md:flex-row bg-white overflow-hidden  shadow-md">
-          <div className="w-full flex items-center justify-center p-8 md:p-4">
+          <div className="w-full flex items-center justify-center  md:p-4">
             <Img
               src={`/images/${pageContext.node.id}.jpg`}
               style={{
@@ -39,8 +39,8 @@ const Template = ({ pageContext }) => {
               }}
             />
           </div>
-          <div className="w-full p-4 flex flex-col justify-start">
-            <h1 className="text-gray-900 font-bold text-2xl garamond mb-12">
+          <div className="w-full p-4 flex flex-col justify-start p-10">
+            <h1 className="text-gray-900 font-bold text-3xl garamond mb-8">
               {pageContext.node.product.name}
             </h1>
             <h1 className="text-gray-700 font-bold text-lg garamond mb-6">
@@ -53,7 +53,7 @@ const Template = ({ pageContext }) => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit In odit
               exercitationem fuga id nam quia
             </p>
-            <section className="flex flex-row  text-gray-600 text-sm chivo-reg">
+            <section className="flex flex-row  text-gray-600 text-sm chivo-reg mb-6">
               <span className="flex items-center rounded-lg bg-gray-100 px-3 mr-6 mb-4 h-8">
                 Color: {pageContext.node.product.metadata.color}
               </span>

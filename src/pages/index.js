@@ -69,14 +69,14 @@ const ArtGallery = ({ data }) => {
       />
 
       <div
-        className="w-full h-full top relative m-auto footer-padding"
+        className="w-full h-full top relative m-auto max-w-6xl  footer-padding"
         ref={galleryRef}
       >
         <InfoBar />
-        <h1 className="p-8 text-center bg-white text-2xl max-w-6xl raleway uppercase text-gray-900 mr-auto ml-auto">
+        <h1 className="p-8 text-center bg-white text-2xl  raleway uppercase text-gray-900 mr-auto ml-auto">
           Browse the Pastel Gallery
         </h1>
-        <div className="flex flex-wrap justify-center max-w-6xl m-auto sticky bg-white">
+        <div className="flex flex-wrap justify-center m-auto sticky bg-white">
           {data.allFile.edges.map(({ node }) => (
             <div className=" square photo">
               <Img

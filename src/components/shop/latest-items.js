@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import Img from "../image"
 import { StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
+import { CartContext } from "./context"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
@@ -46,6 +47,7 @@ const LatestItems = () => {
 }
 
 const LatestItem = ({ sku }) => {
+  const ctx = useContext(CartContext)
   return (
     <Link
       to={`/${sku.product.name.replace(/ /g, "_")}`}
@@ -53,15 +55,17 @@ const LatestItem = ({ sku }) => {
     >
       <div
         className=" m-2 bg-white overflow-hidden hover:shadow"
-        style={{ minWidth: 159, maxWidth: 252, maxHeight: 358 }}
+        style={{ minWidth: 180, maxWidth: 252, maxHeight: 358 }}
       >
         <div className="bg-cover w-full flex justify-center">
-          <Img src={`/images/${sku.id}.jpg`} className=" h-40 w-48 my-2" />
+          <Img src={`/images/${sku.id}.jpg`} className=" h-40 w-48 m-4" />
         </div>
         <div className=" w-full p-4">
-          <h1 className="text-gray-900 font-bold garamond">{sku.name}</h1>
+          <h1 className="text-gray-900 font-bold garamond mb-6">
+            {sku.product.name} &nbsp;&nbsp;&nbsp;{" "}
+            {ctx.formatPrice(sku.price, sku.currency)}
+          </h1>
 
-          <div className="flex item-center mt-2"></div>
           <div className="flex item-center justify-between mt-3">
             <Link
               role="button"

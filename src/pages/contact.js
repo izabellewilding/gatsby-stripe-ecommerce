@@ -68,7 +68,7 @@ class ContactForm extends React.Component {
                 </label>
                 <div className="control">
                   <input
-                    className="appearance-none mt-3 hover:border-teal-400  block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    className="appearance-none mt-3 hover:border-teal-400  block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     type={"text"}
                     name={"name"}
                     onChange={this.handleChange}
@@ -83,7 +83,7 @@ class ContactForm extends React.Component {
                 </label>
                 <div className="control">
                   <input
-                    className="appearance-none mt-3 hover:border-teal-400  block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                    className="appearance-none mt-3 hover:border-teal-400  block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                     type={"email"}
                     name={"email"}
                     onChange={this.handleChange}
@@ -99,7 +99,7 @@ class ContactForm extends React.Component {
               </label>
               <div className="control">
                 <textarea
-                  className="appearance-none mt-3 shadow-sm hover:border-teal-400  block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  className="appearance-none mt-3 shadow-sm hover:border-teal-400  block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   name={"message"}
                   onChange={this.handleChange}
                   id={"message"}
@@ -131,7 +131,7 @@ const ContactPage = () => {
     <Layout>
       {" "}
       <div className=" flex flex-col bg-gray-300 ">
-        <section className="flex justify-center w-screen md:max-w-4xl m-auto">
+        <section className="flex justify-center md:max-w-4xl m-auto">
           <ContactForm />
         </section>
         <aside className="">

@@ -111,7 +111,7 @@ const GoogleMap = () => {
   })
 
   return (
-    <div className="w-full h-full p-4">
+    <div className="w-full h-64 md:h-full p-2 md:p-4 mt-4">
       <div
         id="google-map"
         ref={googleMapRef}

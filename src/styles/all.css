@@ -64,6 +64,13 @@ th:first-child {
   bottom: -6rem;
 } */
 
+body {
+  background-color: #e1e0dd;
+}
+
+#___gatsby {
+  margin: 0.5rem;
+}
 .photo {
   overflow: hidden;
 }
@@ -136,14 +143,14 @@ th:first-child {
 }
 
 .top {
-  top: 145px;
+  top: 132px;
 
   @media (min-width: 415px) and (max-width: 680px) {
-    top: 161px;
+    top: 1px;
   }
 
   @media (min-width: 680px) {
-    top: 162px;
+    top: 148px;
   }
 }
 
@@ -165,4 +172,12 @@ th:first-child {
 .bg-pattern {
   background-image: url(../images/concrete-texture/concrete-texture.png);
   background-position: center;
+}
+
+.right-05 {
+  right: 0.5rem;
+}
+
+.left-05 {
+  left: 0.5rem;
 }
