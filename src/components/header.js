@@ -1,31 +1,100 @@
-import React, { useContext } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import Basket from "../assets/supermarket.svg"
-import { CartContext } from "./shop/context"
-import NavDrawer from "./nav-drawer"
-import cx from "classnames"
-import Logo from "../assets/name.svg"
+import AppBar from "@material-ui/core/AppBar"
+import Toolbar from "@material-ui/core/Toolbar"
+import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
+import Divider from "@material-ui/core/Divider"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import ListItemText from "@material-ui/core/ListItemText"
+import IconButton from "@material-ui/core/IconButton"
+import MenuIcon from "@material-ui/icons/Menu"
+import Drawer from "@material-ui/core/Drawer"
+
+const List = () => (
+  <div
+    role="presentation"
+    // onClick={() => setNavOpen(!navOpen)}
+    // onKeyDown={() => setNavOpen(navOpen)}
+  >
+    <List>
+      <ListItem>
+        <ListItemIcon></ListItemIcon>
+        <ListItemText />
+      </ListItem>
+    </List>
+    <Divider />
+    <List>
+      <ListItem button>
+        <ListItemIcon></ListItemIcon>
+        <ListItemText />
+      </ListItem>
+    </List>
+  </div>
+)
+
+const NavDrawer = () => {
+  const [navOpen, setNavOpen] = useState(false)
+
+  return (
+    <React.Fragment>
+      {/* <IconButton
+        edge="start"
+        // className={classes.menuButton}
+        color="inherit"
+        onClick={() => setNavOpen(true)}
+        aria-label="menu"
+      ></IconButton> */}
+      <Drawer anchor={"top"} open={navOpen} onClose={() => setNavOpen(false)}>
+        {" "}
+        <List />
+      </Drawer>
+    </React.Fragment>
+  )
+}
 
 const Header = props => {
-  const cartCtx = useContext(CartContext)
+  const [navOpen, setNavOpen] = useState(false)
 
   return (
     <>
-      <header
+      {/* <header
         className={cx(
-          " bg-pattern flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white",
+          "flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white",
           {
             "p-0 fixed right-05 left-05": props.page === "home",
             "p-0 relative": props.page !== "home",
           }
         )}
-      >
-        <div className="relative w-full flex justify-center items-center flex-col">
-          <div className="w-full flex flex-col">
-            <Link to="/" className="m-auto my-4 ">
+      > */}
+
+      <AppBar position="fixed">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            // className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+            onClick={() => setNavOpen(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography>Pastel Ceramics</Typography>
+        </Toolbar>
+
+        {/* <NavDrawer /> */}
+      </AppBar>
+      <Toolbar />
+
+      {/* <div className="relative w-full flex justify-center items-center flex-col">
+          <div className="w-full flex flex-col"> */}
+      {/* <Link to="/" className="m-auto my-4 ">
               <Logo className="w-32" />
-            </Link>
-            <div className="bg-white w-full">
+            </Link> */}
+      {/* <h1>Pastel</h1>
+            <div className="bg-white w-full border-gray-300 border-t">
               <div className="max-w-5xl w-full m-auto flex justify-between items-center">
                 <nav className="hidden md:block chivo-reg flex flex-col md:flex-row uppercase text-sm">
                   <Link
@@ -61,8 +130,8 @@ const Header = props => {
               </div>{" "}
             </div>
           </div>
-        </div>
-      </header>
+        </div> */}
+      {/* </header> */}
     </>
   )
 }

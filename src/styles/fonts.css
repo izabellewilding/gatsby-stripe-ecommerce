@@ -10,12 +10,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "beenie";
-  src: url(../fonts/ReenieBeanie-Regular.ttf);
-  font-display: swap;
-}
-
 /* @font-face {
   font-family: "avant";
   src: url(../fonts/AvantGardeBookBT.ttf);
@@ -24,5 +18,5 @@
 
 @font-face {
   font-family: "raleway";
-  src: url("../fonts/Raleway-Light.ttf");
+  src: url("../fonts/Raleway-Medium.ttf");
 }

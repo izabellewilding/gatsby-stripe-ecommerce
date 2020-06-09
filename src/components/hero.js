@@ -1,13 +1,15 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
-import styled from "styled-components"
+import Button from "@material-ui/core/Button"
 
 const Hero = () => {
   const { mobileBanner, desktopBanner } = useStaticQuery(
     graphql`
       query {
-        mobileBanner: file(relativePath: { eq: "single-bowl-cropped.jpg" }) {
+        mobileBanner: file(
+          relativePath: { eq: "jessica-ruscello-G8vPQ-XVxxY-unsplash.jpg" }
+        ) {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
@@ -16,7 +18,7 @@ const Hero = () => {
         }
 
         desktopBanner: file(
-          relativePath: { eq: "tom-crew-YA2E3d7a9Wo-unsplash.jpg" }
+          relativePath: { eq: "jessica-ruscello-G8vPQ-XVxxY-unsplash.jpg" }
         ) {
           childImageSharp {
             fluid(quality: 100) {
@@ -37,24 +39,24 @@ const Hero = () => {
   ]
 
   return (
-    <div className="sticky top ">
+    <div className="sticky top bg-gray-900">
       <BackgroundImage
-        className="w-full bg-fixed flex flex-col justify-center md:justify-evenly hero items-start h-full"
+        style={{ backgroundPosition: "left" }}
+        className="w-full bg-fixed fixed  flex flex-col justify-center md:justify-evenly hero items-start h-full"
         fluid={source}
       >
-        <div className="w-full max-w-6xl m-auto">
-          <div className="flex p-6 md:items-start flex-col w-4/5 md:w-1/2 md:ml-10 ">
-            <h2 className="text-3xl md:text-4xl raleway uppercase underlined text-white">
-              Affordable unique handmade pottery
+        <div className="w-full max-w-6xl  fixed">
+          <div className="flex p-6 text-center m-auto flex-col">
+            <h2 className="text-4xl md:text-4xl raleway uppercase underlined text-white">
+              Affordable handmade pottery
             </h2>{" "}
-            <h1 className="text-xl md:text-3xl chivo-reg text-white mt-6 ">
-              New Collection
+            <h1 className="text-xl md:text-3xl chivo-reg text-white my-8">
+              Get 15% off our new collection with code PASTEL01
             </h1>{" "}
-            <Link
-              className=" chivo-reg uppercase mt-6 text-md text-center text-white border-white shadow-md border-2 py-2 px-3 whitespace-no-wrap border-white hover:bg-gray-800 hover:border-gray-800 hover:bg-gray-800 transition-all duration-75"
-              to="/shop-home"
-            >
-              Shop Now
+            <Link to="/shop-home" className="">
+              <Button variant="contained" size="large" color="secondary">
+                Shop Now
+              </Button>
             </Link>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Helmet from "react-helmet"
 import InfoBar from "../components/info-bar"
 import styled from "styled-components"
 import Hero from "../components/hero"
+import CompanyValues from "../components/company-values"
 
 const StyledScrim = styled.div`
   position: fixed;
@@ -64,15 +65,15 @@ const ArtGallery = ({ data }) => {
       </Helmet>
       <Hero />
 
-      <StyledScrim
+      {/* <StyledScrim
         className={`${scrim ? "block opacity-75 " : "hidden opacity-0 "}`}
-      />
+      /> */}
 
       <div
         className="w-full h-full top relative m-auto max-w-6xl  footer-padding"
         ref={galleryRef}
       >
-        <InfoBar />
+        <CompanyValues />
         <h1 className="p-8 text-center bg-white text-2xl  raleway uppercase text-gray-900 mr-auto ml-auto">
           Browse the Pastel Gallery
         </h1>

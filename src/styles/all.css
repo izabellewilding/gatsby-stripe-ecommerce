@@ -64,13 +64,6 @@ th:first-child {
   bottom: -6rem;
 } */
 
-body {
-  background-color: #e1e0dd;
-}
-
-#___gatsby {
-  margin: 0.5rem;
-}
 .photo {
   overflow: hidden;
 }
@@ -114,7 +107,7 @@ body {
     bottom: -20px;
     height: 2px;
     background-color: #dbdbdb;
-    width: 65%;
+    width: 100%;
   }
 }
 
@@ -139,19 +132,7 @@ body {
 }
 
 .hero {
-  height: 65vh;
-}
-
-.top {
-  top: 149px;
-
-  @media (min-width: 415px) and (max-width: 680px) {
-    top: 167px;
-  }
-
-  @media (min-width: 680px) {
-    top: 165px;
-  }
+  height: 95vh;
 }
 
 .h-65vh {
