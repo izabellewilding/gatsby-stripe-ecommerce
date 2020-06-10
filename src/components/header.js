@@ -1,10 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import Basket from "../assets/supermarket.svg"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
-import Button from "@material-ui/core/Button"
 import Divider from "@material-ui/core/Divider"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
@@ -39,19 +37,17 @@ const NavDrawer = () => {
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <React.Fragment>
-      {/* <IconButton
+    /* <IconButton
         edge="start"
         // className={classes.menuButton}
         color="inherit"
         onClick={() => setNavOpen(true)}
         aria-label="menu"
-      ></IconButton> */}
-      <Drawer anchor={"top"} open={navOpen} onClose={() => setNavOpen(false)}>
-        {" "}
-        <List />
-      </Drawer>
-    </React.Fragment>
+      ></IconButton> */
+    <Drawer anchor={"top"} open={navOpen} onClose={() => setNavOpen(false)}>
+      {" "}
+      <List />
+    </Drawer>
   )
 }
 
@@ -70,7 +66,7 @@ const Header = props => {
         )}
       > */}
 
-      <AppBar position="fixed">
+      <AppBar position="relative">
         <Toolbar>
           <IconButton
             edge="start"
