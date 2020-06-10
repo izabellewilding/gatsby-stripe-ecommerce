@@ -23,11 +23,11 @@ const Hero = () => {
   const source = [desktopBanner.childImageSharp.fluid]
 
   return (
-    <div className="sticky top-0 bg-gray-900 ">
+    <div className="sticky bg-gray-900 " style={{ top: 56 }}>
       <div className="w-full  max-w-6xl relative">
         {" "}
         <Img
-          className="w-full bg-fixed absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center md:justify-evenly hero items-start h-screen opacity-75"
+          className="w-full bg-fixed absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center md:justify-evenly hero items-start h-screen opacity-50"
           fluid={source}
         />
         <div className="flex justify-center w-full items-center p-6 text-center flex-col absolute top-0 bottom-0 left-0">

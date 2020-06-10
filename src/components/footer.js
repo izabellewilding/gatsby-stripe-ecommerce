@@ -4,11 +4,20 @@ import Visa from "../assets/visa.svg"
 import GooglePay from "../assets/google-pay-mark_800_gray.svg"
 import Amex from "../assets/american-express.svg"
 import StripeLogo from "../assets/Stripe-logo-slate.svg"
+import { makeStyles } from "@material-ui/core"
+
+const useStyles = makeStyles(theme => ({
+  footer: {
+    backgroundColor: theme.palette.secondary.light,
+    position: "sticky",
+  },
+}))
 
 const Footer = () => {
+  const classes = useStyles()
   return (
-    <footer className="">
-      <section className="relative bg-gray-100 bg-white flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden m-auto">
+    <footer className={classes.footer}>
+      <section className="flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden m-auto">
         <div className="flex mb-4">
           <div className=" w-6/12 mr-12">
             <h3 className="font-semibold garamond margin-bottom whitespace-no-wrap">
@@ -82,7 +91,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      <div className="relative bg-gray-900">
+      {/* <div className="relative bg-gray-900">
         <p className="text-white p-10 text-center raleway">
           This project was made by{" "}
           <a
@@ -93,7 +102,7 @@ const Footer = () => {
             Izzy Wilding
           </a>{" "}
         </p>
-      </div>
+      </div> */}
     </footer>
   )
 }

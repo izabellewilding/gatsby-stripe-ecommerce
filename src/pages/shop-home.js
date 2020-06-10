@@ -6,7 +6,7 @@ import ShopNav from "../components/shop/shop-nav.js"
 const ShopHome = () => {
   return (
     <Layout>
-      <div className="bg-gray-400">
+      <div className="">
         <ShopNav />
         <div className="flex justify-center max-w-6xl m-auto">
           <ItemsList />

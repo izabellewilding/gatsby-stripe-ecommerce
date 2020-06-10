@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.secondary.light,
     display: "flex",
     fontFamily: "chivo-reg",
     justifyContent: "center",

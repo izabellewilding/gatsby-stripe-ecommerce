@@ -8,15 +8,12 @@ import InfoBar from "../components/info-bar"
 
 const StyledScrim = styled.div`
   position: fixed;
-  top: 145px;
+  top: 0;
   bottom: 0;
-  left: 0.5rem;
-  right: 0.5rem;
+  left: 0;
+  right: 0;
   background-color: black;
   transition: all 0.5s;
-  @media (min-width: 768px) {
-    top: 163px;
-  }
 `
 
 function debounce(func, wait, immediate) {
@@ -64,9 +61,7 @@ const ArtGallery = ({ data }) => {
       </Helmet>
       <Hero />
 
-      {/* <StyledScrim
-        className={`${scrim ? "block opacity-75 " : "hidden opacity-0 "}`}
-      /> */}
+      <StyledScrim className={`${scrim ? "opacity-75" : "z opacity-0 "}`} />
 
       <div
         className="w-full h-full top relative m-auto max-w-6xl  footer-padding"

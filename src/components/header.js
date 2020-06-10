@@ -66,7 +66,7 @@ const Header = props => {
         )}
       > */}
 
-      <AppBar position="relative">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"
