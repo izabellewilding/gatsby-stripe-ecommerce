@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from "react"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Helmet from "react-helmet"
-import InfoBar from "../components/info-bar"
 import styled from "styled-components"
 import Hero from "../components/hero"
-import CompanyValues from "../components/company-values"
+import InfoBar from "../components/info-bar"
 
 const StyledScrim = styled.div`
   position: fixed;
@@ -73,7 +72,7 @@ const ArtGallery = ({ data }) => {
         className="w-full h-full top relative m-auto max-w-6xl  footer-padding"
         ref={galleryRef}
       >
-        <CompanyValues />
+        <InfoBar />
         <h1 className="p-8 text-center bg-white text-2xl  raleway uppercase text-gray-900 mr-auto ml-auto">
           Browse the Pastel Gallery
         </h1>
