@@ -24,6 +24,9 @@ const rawTheme = createMuiTheme({
       xLight: green[50],
       main: green[500],
     },
+    ripple: {
+      color: "red",
+    },
   },
   typography: {
     fontFamily: "'Work Sans', sans-serif",

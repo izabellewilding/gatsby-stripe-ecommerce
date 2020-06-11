@@ -34,7 +34,7 @@ const Hero = () => {
           <h2 className="text-4xl md:text-4xl raleway uppercase underlined text-white">
             Affordable handmade pottery
           </h2>{" "}
-          <h1 className="text-xl md:text-3xl chivo-reg text-white my-8">
+          <h1 className=" text-lg md:text-2xl chivo-reg text-white my-8">
             Get 15% off our new collection with code PASTEL01
           </h1>{" "}
           <Link to="/shop-home" className="">
