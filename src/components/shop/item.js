@@ -2,55 +2,54 @@ import React, { useContext } from "react"
 import { Link } from "gatsby"
 import Img from "../../components/image"
 import { CartContext } from "./context.js"
+import { makeStyles } from "@material-ui/core/styles"
+import Card from "@material-ui/core/Card"
+import CardActionArea from "@material-ui/core/CardActionArea"
+import CardActions from "@material-ui/core/CardActions"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 325,
+    margin: "1rem",
+  },
+  media: {
+    height: 180,
+  },
+})
 
 const Item = ({ sku }) => {
+  const classes = useStyles()
   const ctx = useContext(CartContext)
   return (
-    <div className="py-6 w-full md:w-1/2 lg:w-1/3 flex flex justify-center">
-      <div
-        className="flex flex-col m-4 bg-white overflow-hidden shadow-md"
-        style={{ minWidth: 359, maxWidth: 345, maxHeight: 558 }}
-      >
-        <div className="bg-cover w-full">
-          <Img
-            src={`/images/${sku.id}.jpg`}
-            alt={sku.product.name}
-            className="h-64 m-4"
-          />
-        </div>
-        <div className=" w-full p-4">
-          <h1 className="text-gray-900 text-xl chivo-reg">
+    <Card className={classes.root}>
+      <CardActionArea>
+        <Img
+          className={classes.media}
+          src={`/images/${sku.id}.jpg`}
+          title="Contemplative Reptile"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
             {sku.product.name}
-          </h1>
-
-          <div className="flex item-center mt-2"></div>
-          <div className="flex item-center justify-between mt-3">
-            <h1 className="text-gray-700 font-bold garamond m-1">
-              {ctx.formatPrice(sku.price, sku.currency)}
-            </h1>
-            <div></div>
-            <Link
-              role="button"
-              className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
-              to={`/${sku.product.name.replace(/ /g, "_")}`}
-            >
-              View Item
-            </Link>
-            {/* <button
-              className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded"
-              onClick={() => {
-                cartCtx.addToCart(sku)
-              }}
-            >
-              Add to Cart
-            </button>
-            <button classNameNames="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-              <Link to="/checkout">Checkout </Link>{" "}
-            </button> */}
-          </div>
-        </div>
-      </div>
-    </div>
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Link to={`/${sku.product.name.replace(/ /g, "_")}`}>
+          <Button size="small" color="secondary" variant="outlined">
+            View Item
+          </Button>
+        </Link>
+      </CardActions>
+    </Card>
   )
 }
 
