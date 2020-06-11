@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
+import Img from "./image"
 import { makeStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
 import Divider from "@material-ui/core/Divider"
 import List from "@material-ui/core/List"
+import CurvyLines from "../images/CurvyLines.png"
 
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
@@ -21,8 +23,13 @@ import CloseIcon from "@material-ui/icons/Close"
 import ExpandLess from "@material-ui/icons/ExpandLess"
 import ExpandMore from "@material-ui/icons/ExpandMore"
 import MailIcon from "@material-ui/icons/Mail"
+import { Hidden } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
+  header: {
+    background: `url(${CurvyLines})` + theme.palette.primary.light,
+    backgroundPosition: "center",
+  },
   root: {
     width: "100%",
     maxWidth: 360,
@@ -31,6 +38,7 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(4),
   },
 }))
+
 const Header = () => {
   const classes = useStyles()
   const [navOpen, setNavOpen] = React.useState(false)
@@ -50,17 +58,7 @@ const Header = () => {
 
   return (
     <>
-      {/* <header
-        className={cx(
-          "flex justify-center overflow-hidden align-middle border-b border-gray-200 h-66 bg-white",
-          {
-            "p-0 fixed right-05 left-05": props.page === "home",
-            "p-0 relative": props.page !== "home",
-          }
-        )}
-      > */}
-
-      <AppBar position="fixed">
+      <AppBar position="fixed" className={classes.header}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -117,51 +115,6 @@ const Header = () => {
         </ListItemLink>
       </Drawer>
       <Toolbar />
-
-      {/* <div className="relative w-full flex justify-center items-center flex-col">
-          <div className="w-full flex flex-col"> */}
-      {/* <Link to="/" className="m-auto my-4 ">
-              <Logo className="w-32" />
-            </Link> */}
-      {/* <h1>Pastel</h1>
-            <div className="bg-white w-full border-gray-300 border-t">
-              <div className="max-w-5xl w-full m-auto flex justify-between items-center">
-                <nav className="hidden md:block chivo-reg flex flex-col md:flex-row uppercase text-sm">
-                  <Link
-                    to="/"
-                    className="p-2 chivo-pr-4 text-center md:w-2/6 "
-                    activeClassName="text-semibold text-gray-900"
-                  >
-                    Home
-                  </Link>
-
-                  <Link
-                    to="/shop-home"
-                    className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
-                    activeClassName="text-semibold text-gray-900"
-                  >
-                    Shop
-                  </Link>
-                  <Link
-                    to="/contact"
-                    className="p-2 pr-4 text-center hover:text-gray-700 md:w-2/6"
-                    activeClassName="text-semibold text-gray-900"
-                  >
-                    Contact
-                  </Link>
-                </nav>
-                <Link to="checkout" className="flex items-center my-2 mx-4">
-                  <Basket className="m-2 h-5" />
-                  <span className="font-sans font-normal">
-                    {cartCtx.totalItems(cartCtx.items)}
-                  </span>
-                </Link>
-                <NavDrawer />
-              </div>{" "}
-            </div>
-          </div>
-        </div> */}
-      {/* </header> */}
     </>
   )
 }
