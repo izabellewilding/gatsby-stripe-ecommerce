@@ -44,7 +44,7 @@ const Item = ({ sku }) => {
       </CardActionArea>
       <CardActions>
         <Link to={`/${sku.product.name.replace(/ /g, "_")}`}>
-          <Button size="small" color="secondary" variant="outlined">
+          <Button size="small" color="primary" variant="outlined">
             View Item
           </Button>
         </Link>
