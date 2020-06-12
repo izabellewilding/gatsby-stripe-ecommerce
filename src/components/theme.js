@@ -1,17 +1,22 @@
-import { createMuiTheme } from "@material-ui/core/styles"
-import { green, grey, red } from "@material-ui/core/colors"
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
+import { green, grey, red, white } from "@material-ui/core/colors"
 
 const rawTheme = createMuiTheme({
   palette: {
+    //blues
     primary: {
-      light: "#d7e5e8",
-      main: "#7e9fa7",
-      dark: "#006064",
+      light: "#f1f7fd",
+      main: "#27303c",
+      dark: "#27303c",
     },
+    //pinks
     secondary: {
       light: "#ffd9ca",
       main: "#e2a799",
       dark: "#af786b",
+    },
+    accent: {
+      main: white,
     },
     warning: {
       main: "#ffc071",
@@ -24,17 +29,14 @@ const rawTheme = createMuiTheme({
       xLight: green[50],
       main: green[500],
     },
-    ripple: {
-      color: "red",
-    },
   },
   typography: {
-    fontFamily: "'Work Sans', sans-serif",
+    fontFamily: "'chivo-reg', sans-serif",
     fontSize: 14,
     fontWeightLight: 300, // Work Sans
     fontWeightRegular: 400, // Work Sans
     fontWeightMedium: 700, // Roboto Condensed
-    fontFamilySecondary: "'Roboto Condensed', sans-serif",
+    fontFamilySecondary: "'raleway', sans-serif",
   },
 })
 
@@ -61,37 +63,31 @@ const theme = {
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
+      fontSize: 48,
       letterSpacing: 0,
-      fontSize: 60,
+      fontFamily: "raleway",
+      color: rawTheme.palette.accent.main,
     },
     h2: {
       ...rawTheme.typography.h2,
       ...fontHeader,
-      fontSize: 48,
+      fontSize: 42,
+      fontFamily: "raleway",
+      color: rawTheme.palette.primary.main,
     },
     h3: {
       ...rawTheme.typography.h3,
       ...fontHeader,
-      fontSize: 42,
+      fontSize: 38,
+      fontFamily: "raleway",
+      color: rawTheme.palette.accent.main,
     },
-    h4: {
-      ...rawTheme.typography.h4,
-      ...fontHeader,
-      fontSize: 36,
-    },
-    h5: {
-      ...rawTheme.typography.h5,
-      fontSize: 20,
-      fontWeight: rawTheme.typography.fontWeightLight,
-    },
-    h6: {
-      ...rawTheme.typography.h6,
-      ...fontHeader,
-      fontSize: 18,
-    },
+
     subtitle1: {
       ...rawTheme.typography.subtitle1,
       fontSize: 18,
+      fontFamily: "chivo-reg",
+      color: rawTheme.palette.primary.light,
     },
     body1: {
       ...rawTheme.typography.body2,
@@ -105,4 +101,4 @@ const theme = {
   },
 }
 
-export default theme
+export default responsiveFontSizes(theme)

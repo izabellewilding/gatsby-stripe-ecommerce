@@ -5,13 +5,30 @@ import GooglePay from "../assets/google-pay-mark_800_gray.svg"
 import Amex from "../assets/american-express.svg"
 import StripeLogo from "../assets/Stripe-logo-slate.svg"
 import { makeStyles } from "@material-ui/core"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.primary.light,
     position: "sticky",
   },
+  button: {
+    border: 2,
+  },
 }))
+
+function ButtonLink(props) {
+  return (
+    <Button
+      component={Link}
+      variant="outlined"
+      size="large"
+      color="primary"
+      {...props}
+    />
+  )
+}
 
 const Footer = () => {
   const classes = useStyles()
@@ -20,15 +37,15 @@ const Footer = () => {
       <section className="flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden m-auto">
         <div className="flex mb-4">
           <div className=" w-6/12 mr-12">
-            <h3 className="font-semibold garamond margin-bottom whitespace-no-wrap">
+            <Typography className="font-semibold garamond margin-bottom whitespace-no-wrap">
               Have a question?
-            </h3>
-            <Link
-              className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
+            </Typography>
+            <ButtonLink
               to="/contact"
+              className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
             >
               Get in touch{" "}
-            </Link>
+            </ButtonLink>
           </div>
 
           {/* social icons */}

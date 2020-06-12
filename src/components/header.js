@@ -38,6 +38,9 @@ const useStyles = makeStyles(theme => ({
   nested: {
     paddingLeft: theme.spacing(4),
   },
+  toolbar: {
+    minHeight: 73,
+  },
 }))
 
 const Header = () => {
@@ -70,7 +73,7 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Logo className=" h-16 ml-6 my-1 md:my-2" />
+          <Logo className=" h-16 ml-6 my-2" />
         </Toolbar>
       </AppBar>
       <Drawer

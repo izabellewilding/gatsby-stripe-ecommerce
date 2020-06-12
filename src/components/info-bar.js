@@ -1,16 +1,19 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
 
 import { makeStyles } from "@material-ui/core/styles"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.primary.dark,
     display: "flex",
-    fontFamily: "chivo-reg",
     justifyContent: "center",
   },
+  // subtitle1: {
+  //   color: theme.palette.primary,
+  // },
 }))
 
 const InfoBar = theme => {
@@ -24,7 +27,9 @@ const InfoBar = theme => {
         className="p-4 flex justify-center items-center text-center opacity-95"
       >
         <div className="ml-2">
-          <div className=" uppercase leading-8">Free shipping</div>
+          <Typography variant="subtitle1" className={classes.subtitle1}>
+            Free shipping
+          </Typography>
           <div>On orders over £35</div>
         </div>
       </Grid>
@@ -34,7 +39,10 @@ const InfoBar = theme => {
         className=" p-4 flex justify-center opacity-95 text-center items-center"
       >
         <div className="ml-2">
-          <div className=" uppercase leading-8">Online Ordering</div>
+          <Typography variant="subtitle1" className={classes.subtitle1}>
+            Online Ordering
+          </Typography>
+
           <div>Convenient shopping 24/7</div>
         </div>
       </Grid>
@@ -45,7 +53,10 @@ const InfoBar = theme => {
         items-center"
       >
         <div className="ml-2">
-          <div className="uppercase leading-8">Online Returns</div>
+          <Typography variant="subtitle1" className={classes.subtitle1}>
+            Online Returns
+          </Typography>
+
           <div>Return within 30 days</div>
         </div>
       </Grid>

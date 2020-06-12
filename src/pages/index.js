@@ -5,6 +5,20 @@ import Helmet from "react-helmet"
 import styled from "styled-components"
 import Hero from "../components/hero"
 import InfoBar from "../components/info-bar"
+import Container from "@material-ui/core/Container"
+import { makeStyles } from "@material-ui/core/styles"
+import Typography from "@material-ui/core/Typography"
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    //weird color behaviour need to revisit
+    backgroundColor: "#f1f7fd",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    width: "100%",
+  },
+}))
 
 const StyledScrim = styled.div`
   position: fixed;
@@ -39,6 +53,7 @@ function debounce(func, wait, immediate) {
 }
 
 const ArtGallery = ({ data }) => {
+  const classes = useStyles()
   const galleryRef = useRef()
   const [scrim, setScrim] = useState(false)
 
@@ -64,14 +79,19 @@ const ArtGallery = ({ data }) => {
       <StyledScrim className={`${scrim ? "opacity-75" : "z opacity-0 "}`} />
 
       <div
-        className="w-full h-full top relative m-auto max-w-6xl  footer-padding"
+        className="w-full h-full top relative m-auto z-10"
+        style={{ transform: "translate3d(0px,0px,0px)" }}
         ref={galleryRef}
       >
         <InfoBar />
-        <h1 className="p-8 text-center bg-white text-2xl  raleway uppercase text-gray-900 mr-auto ml-auto">
-          Browse the Pastel Gallery
-        </h1>
-        <div className="flex flex-wrap justify-center m-auto sticky bg-white">
+
+        <Container className={classes.container}>
+          <Typography
+            variant="h2"
+            className="p-8 text-center text-2xl  raleway uppercase text-gray-900 mr-auto ml-auto"
+          >
+            Browse the Pastel Gallery
+          </Typography>
           {data.allFile.edges.map(({ node }) => (
             <div className=" square photo">
               <Img
@@ -86,7 +106,7 @@ const ArtGallery = ({ data }) => {
               </div>
             </div>
           ))}
-        </div>
+        </Container>
       </div>
     </Layout>
   )
