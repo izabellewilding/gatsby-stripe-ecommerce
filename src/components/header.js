@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import Img from "./image"
+import Logo from "../assets/name.svg"
 import { makeStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
@@ -69,7 +70,7 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography>Pastel Ceramics</Typography>
+          <Logo className=" h-16 ml-6 my-1 md:my-2" />
         </Toolbar>
       </AppBar>
       <Drawer

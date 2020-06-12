@@ -23,8 +23,11 @@ const Hero = () => {
   const source = [desktopBanner.childImageSharp.fluid]
 
   return (
-    <div className="sticky bg-gray-900 " style={{ top: 56 }}>
-      <div className="w-full  max-w-6xl relative">
+    <div
+      className="sticky bg-gray-900 "
+      style={{ top: 56, position: "sticky" }}
+    >
+      <div className="w-full max-w-6xl relative m-auto">
         {" "}
         <Img
           className="w-full bg-fixed absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center md:justify-evenly hero items-start h-screen opacity-50"
@@ -47,12 +50,5 @@ const Hero = () => {
     </div>
   )
 }
-
-// const StyledHeroImages = styled(HeroImages)`
-//   height: 90vh;
-//   @media (min-width: 750px) {
-//     height: 75px;
-//   }
-// `
 
 export default Hero
