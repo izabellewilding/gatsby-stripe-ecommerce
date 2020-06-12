@@ -4,12 +4,15 @@ import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 
 import { makeStyles } from "@material-ui/core/styles"
+import autoprefixer from "autoprefixer"
 
 const useStyles = makeStyles(theme => ({
-  container: {
+  gridContainer: {
     backgroundColor: theme.palette.primary.dark,
     display: "flex",
     justifyContent: "center",
+    maxWidth: 1970,
+    margin: "auto",
   },
   // subtitle1: {
   //   color: theme.palette.primary,
@@ -20,7 +23,7 @@ const InfoBar = theme => {
   const classes = useStyles()
 
   return (
-    <Grid container className={classes.container}>
+    <Grid container className={classes.gridContainer}>
       <Grid
         item
         md

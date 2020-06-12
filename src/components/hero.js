@@ -52,12 +52,7 @@ const Hero = () => {
             className="flex flex-col justify-end"
             style={{ height: "50%" }}
           >
-            <Typography
-              variant="h1"
-              className="text-4xl md:text-4xl raleway uppercase underlined text-white"
-            >
-              Affordable handmade pottery
-            </Typography>{" "}
+            <Typography variant="h1">Affordable handmade pottery</Typography>{" "}
           </section>
           <section
             className="flex flex-col justify-center"

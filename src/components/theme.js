@@ -7,7 +7,7 @@ const rawTheme = createMuiTheme({
     primary: {
       light: "#f1f7fd",
       main: "#27303c",
-      dark: "#27303c",
+      dark: "#151621",
     },
     //pinks
     secondary: {
@@ -44,7 +44,6 @@ const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
   fontFamily: rawTheme.typography.fontFamilySecondary,
-  textTransform: "uppercase",
 }
 
 const theme = {
@@ -63,10 +62,10 @@ const theme = {
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
-      fontSize: 48,
+      fontSize: 58,
       letterSpacing: 0,
-      fontFamily: "raleway",
-      color: rawTheme.palette.accent.main,
+      fontFamily: "fairplay",
+      color: rawTheme.palette.primary.light,
     },
     h2: {
       ...rawTheme.typography.h2,
