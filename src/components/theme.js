@@ -44,6 +44,7 @@ const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
   fontFamily: rawTheme.typography.fontFamilySecondary,
+  textTransform: "uppercase",
 }
 
 const theme = {
@@ -62,9 +63,9 @@ const theme = {
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
-      fontSize: 58,
+      fontSize: 48,
       letterSpacing: 0,
-      fontFamily: "fairplay",
+      fontFamily: "raleway",
       color: rawTheme.palette.primary.light,
     },
     h2: {

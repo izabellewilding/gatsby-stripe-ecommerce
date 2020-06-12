@@ -7,7 +7,6 @@ import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles({
   subtitle1: {
-    marginTop: "1.5rem",
     padding: "0.75rem",
   },
   button: {
@@ -52,7 +51,9 @@ const Hero = () => {
             className="flex flex-col justify-end"
             style={{ height: "50%" }}
           >
-            <Typography variant="h1">Affordable handmade pottery</Typography>{" "}
+            <Typography variant="h1" className="underlined">
+              Affordable handmade pottery
+            </Typography>{" "}
           </section>
           <section
             className="flex flex-col justify-center"
