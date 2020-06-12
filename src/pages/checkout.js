@@ -5,7 +5,7 @@ import Layout from "../components/layout.js"
 const Checkout = () => {
   return (
     <Layout>
-      <div className="h-full bg-white">
+      <div className="h-screen bg-white">
         <Cart />
       </div>
     </Layout>

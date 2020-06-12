@@ -15,14 +15,23 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 325,
     margin: "1rem",
+    minWidth: 325,
   },
   media: {
-    height: 180,
+    height: 275,
+  },
+  cardAction: {
+    padding: 17,
+  },
+  button: {
+    borderRadius: 0,
+    border: 2,
   },
 })
 
 const Item = ({ sku }) => {
   const classes = useStyles()
+  console.warn("SKU:", sku)
   const ctx = useContext(CartContext)
   return (
     <Card className={classes.root}>
@@ -34,17 +43,22 @@ const Item = ({ sku }) => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {sku.product.name}
+            {sku.product.name}{" "}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography variant="subheading1" color="textSecondary" component="p">
+            {ctx.formatPrice(sku.price, sku.currency)}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className={classes.cardAction}>
         <Link to={`/${sku.product.name.replace(/ /g, "_")}`}>
-          <Button size="small" color="primary" variant="outlined">
+          <Button
+            size="small"
+            color="primary"
+            variant="outlined"
+            classname={classes.button}
+            style={{ borderRadius: 0, border: "solid 1.5px" }}
+          >
             View Item
           </Button>
         </Link>

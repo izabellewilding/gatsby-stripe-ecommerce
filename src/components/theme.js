@@ -5,7 +5,7 @@ const rawTheme = createMuiTheme({
   palette: {
     //blues
     primary: {
-      light: "#f1f7fd",
+      light: "#e1e4e6",
       main: "#27303c",
       dark: "#151621",
     },
@@ -63,7 +63,7 @@ const theme = {
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
-      fontSize: 48,
+      fontSize: 48.828,
       letterSpacing: 0,
       fontFamily: "raleway",
       color: rawTheme.palette.primary.light,
@@ -71,32 +71,32 @@ const theme = {
     h2: {
       ...rawTheme.typography.h2,
       ...fontHeader,
-      fontSize: 42,
+      fontSize: 39.063,
       fontFamily: "raleway",
       color: rawTheme.palette.primary.main,
     },
     h3: {
       ...rawTheme.typography.h3,
       ...fontHeader,
-      fontSize: 38,
+      fontSize: 31.25,
       fontFamily: "raleway",
-      color: rawTheme.palette.accent.main,
+      color: rawTheme.palette.secondary.light,
     },
 
     subtitle1: {
       ...rawTheme.typography.subtitle1,
-      fontSize: 18,
+      fontSize: 16,
       fontFamily: "chivo-reg",
-      color: rawTheme.palette.primary.light,
+      color: rawTheme.palette.primary.dark,
     },
     body1: {
       ...rawTheme.typography.body2,
       fontWeight: rawTheme.typography.fontWeightRegular,
-      fontSize: 16,
+      fontSize: 12.8,
     },
     body2: {
       ...rawTheme.typography.body1,
-      fontSize: 14,
+      fontSize: 10.24,
     },
   },
 }

@@ -1,4 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { CartContext } from "./shop/context"
+
 import { Link } from "gatsby"
 import Img from "./image"
 import Logo from "../assets/name.svg"
@@ -9,12 +11,14 @@ import Typography from "@material-ui/core/Typography"
 import Divider from "@material-ui/core/Divider"
 import List from "@material-ui/core/List"
 import CurvyLines from "../images/CurvyLines.png"
+import Badge from "@material-ui/core/Badge"
 
 import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
 import IconButton from "@material-ui/core/IconButton"
 import MenuIcon from "@material-ui/icons/Menu"
+import MenuItem from "@material-ui/core/MenuItem"
 import Drawer from "@material-ui/core/Drawer"
 import StarBorder from "@material-ui/icons/StarBorder"
 import Collapse from "@material-ui/core/Collapse"
@@ -24,6 +28,7 @@ import CloseIcon from "@material-ui/icons/Close"
 import ExpandLess from "@material-ui/icons/ExpandLess"
 import ExpandMore from "@material-ui/icons/ExpandMore"
 import MailIcon from "@material-ui/icons/Mail"
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket"
 import { Hidden } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
@@ -41,10 +46,15 @@ const useStyles = makeStyles(theme => ({
   toolbar: {
     minHeight: 73,
   },
+  iconSection: {
+    width: "100%",
+    justifyContent: "space-between",
+  },
 }))
 
 const Header = () => {
   const classes = useStyles()
+  const ctx = useContext(CartContext)
   const [navOpen, setNavOpen] = React.useState(false)
   const [navItemOpen, setNavItemOpen] = useState(false)
 
@@ -56,6 +66,10 @@ const Header = () => {
     return <ListItem button component={Link} {...props} />
   }
 
+  function BadgeLink(props) {
+    return <Badge component={Link} {...props} />
+  }
+
   function openNavItem() {
     setNavItemOpen(!navItemOpen)
   }
@@ -63,7 +77,7 @@ const Header = () => {
   return (
     <>
       <AppBar position="fixed" className={classes.header}>
-        <Toolbar>
+        <Toolbar className={classes.iconSection}>
           <IconButton
             edge="start"
             // className={classes.menuButton}
@@ -71,9 +85,21 @@ const Header = () => {
             aria-label="menu"
             onClick={handleDrawerToggle}
           >
-            <MenuIcon />
+            <MenuIcon color="primary" />
           </IconButton>
-          <Logo className=" h-16 ml-6 my-2" />
+
+          <Img src="../images/name.png" className=" w-32 ml-6 my-2" />
+          <MenuItem>
+            <IconButton aria-label="shopping cart" color="primary">
+              <BadgeLink
+                to="/checkout"
+                badgeContent={ctx.totalItems(ctx.items)}
+                color="secondary"
+              >
+                <ShoppingBasketIcon />
+              </BadgeLink>
+            </IconButton>
+          </MenuItem>
         </Toolbar>
       </AppBar>
       <Drawer

@@ -37,9 +37,7 @@ const Footer = () => {
       <section className="flex flex-col md:flex-row border-t border-gray-200 p-8 overflow-hidden m-auto">
         <div className="flex mb-4">
           <div className=" w-6/12 mr-12">
-            <Typography className="font-semibold garamond margin-bottom whitespace-no-wrap">
-              Have a question?
-            </Typography>
+            <Typography variant="subtitle2">Have a question?</Typography>
             <ButtonLink
               to="/contact"
               className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
@@ -74,7 +72,12 @@ const Footer = () => {
           </div>{" "} */}
         </div>{" "}
         <div className="mr-12 flex-col flex text-left whitespace-no-wrap">
-          <h3 className="font-semibold garamond margin-bottom">Useful Links</h3>
+          <Typography
+            variant="h3"
+            className="font-semibold garamond margin-bottom"
+          >
+            Useful Links
+          </Typography>
           <Link
             to="/"
             className="chivo-reg text-sm text-gray-700 hover:text-gray-800 mb-2"

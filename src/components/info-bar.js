@@ -8,7 +8,7 @@ import autoprefixer from "autoprefixer"
 
 const useStyles = makeStyles(theme => ({
   gridContainer: {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.primary.light,
     display: "flex",
     justifyContent: "center",
     maxWidth: 1970,

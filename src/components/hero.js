@@ -7,7 +7,12 @@ import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles({
   subtitle1: {
+    marginTop: "1.5rem",
+    marginBottom: "1.5rem",
     padding: "0.75rem",
+    width: "75%",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   button: {
     minWidth: 250,
@@ -52,14 +57,14 @@ const Hero = () => {
             style={{ height: "50%" }}
           >
             <Typography variant="h1" className="underlined">
-              Affordable handmade pottery
+              Unique handmade pottery
             </Typography>{" "}
           </section>
           <section
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-start mt-8"
             style={{ height: "50%" }}
           >
-            <Typography variant="subtitle1" className={classes.subtitle1}>
+            <Typography variant="h3" className={classes.subtitle1}>
               Get 15% off our new collection with code PASTEL01
             </Typography>{" "}
             <Link to="/shop-home" className="">
