@@ -33,7 +33,9 @@ const InfoBar = theme => {
           <Typography variant="subtitle1" className={classes.subtitle1}>
             Free shipping
           </Typography>
-          <div>On orders over £35</div>
+          <Typography variant="body1" className={classes.subtitle1}>
+            On orders over £35
+          </Typography>
         </div>
       </Grid>
       <Grid
@@ -46,7 +48,9 @@ const InfoBar = theme => {
             Online Ordering
           </Typography>
 
-          <div>Convenient shopping 24/7</div>
+          <Typography variant="body1" className={classes.subtitle1}>
+            Convenient shopping 24/7
+          </Typography>
         </div>
       </Grid>
       <Grid
@@ -60,7 +64,9 @@ const InfoBar = theme => {
             Online Returns
           </Typography>
 
-          <div>Return within 30 days</div>
+          <Typography variant="body1" className={classes.subtitle1}>
+            Return within 30 days
+          </Typography>
         </div>
       </Grid>
     </Grid>

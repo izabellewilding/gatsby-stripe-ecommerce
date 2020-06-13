@@ -44,7 +44,7 @@ const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
   fontFamily: rawTheme.typography.fontFamilySecondary,
-  textTransform: "uppercase",
+  // textTransform: "uppercase",
 }
 
 const theme = {
@@ -64,22 +64,23 @@ const theme = {
       ...rawTheme.typography.h1,
       ...fontHeader,
       fontSize: 48.828,
-      letterSpacing: 0,
+      letterSpacing: 0.75,
       fontFamily: "raleway",
+      textTransform: "uppercase",
       color: rawTheme.palette.primary.light,
     },
     h2: {
       ...rawTheme.typography.h2,
       ...fontHeader,
       fontSize: 39.063,
-      fontFamily: "raleway",
+      fontFamily: "playfair",
       color: rawTheme.palette.primary.main,
     },
     h3: {
       ...rawTheme.typography.h3,
       ...fontHeader,
-      fontSize: 31.25,
-      fontFamily: "raleway",
+      fontSize: 28.25,
+      fontFamily: "playfair",
       color: rawTheme.palette.secondary.light,
     },
 
@@ -90,12 +91,16 @@ const theme = {
       color: rawTheme.palette.primary.dark,
     },
     body1: {
-      ...rawTheme.typography.body2,
+      ...rawTheme.typography.body1,
+      fontFamily: "chivo-reg",
+
       fontWeight: rawTheme.typography.fontWeightRegular,
       fontSize: 12.8,
     },
     body2: {
-      ...rawTheme.typography.body1,
+      ...rawTheme.typography.body2,
+      fontFamily: "playfair",
+
       fontSize: 10.24,
     },
   },

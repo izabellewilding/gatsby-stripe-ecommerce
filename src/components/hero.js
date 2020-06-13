@@ -45,27 +45,28 @@ const Hero = () => {
       className="sticky bg-gray-900 "
       style={{ top: 56, position: "sticky" }}
     >
-      <div className="w-full  relative m-auto">
+      <div className="w-full relative m-auto ">
         {" "}
         <Img
           className="w-full bg-fixed absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center md:justify-evenly hero items-start h-screen opacity-50"
           fluid={source}
         />
-        <div className="flex justify-center w-full items-center p-6 text-center flex-col absolute top-0 bottom-0 left-0">
+        <div className="flex justify-center w-full items-center p-6 text-center flex-col absolute right-0 top-0 bottom-0 left-0">
           <section
-            className="flex flex-col justify-end"
-            style={{ height: "50%" }}
+            className="flex flex-col justify-end "
+            style={{ height: "50%", maxWidth: 630 }}
           >
             <Typography variant="h1" className="underlined">
               Unique handmade pottery
             </Typography>{" "}
           </section>
           <section
-            className="flex flex-col justify-start mt-8"
-            style={{ height: "50%" }}
+            className="flex flex-col justify-start mt-8 w-8/12"
+            style={{ height: "50%", maxWidth: 746 }}
           >
             <Typography variant="h3" className={classes.subtitle1}>
-              Get 15% off our new collection with code PASTEL01
+              Get 15% off our new collection with code{" "}
+              <span className="text-teal-100">PASTEL01</span>
             </Typography>{" "}
             <Link to="/shop-home" className="">
               <Button

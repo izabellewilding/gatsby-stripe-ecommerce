@@ -1,18 +1,15 @@
 /* fonts */
-.chivo-reg {
-  font-family: "chivo-reg";
-}
-
-.garamond {
-  font-family: "garamond";
-}
-
-.fairplay {
-  font-family: "fairplay";
-}
 
 .raleway {
   font-family: "raleway";
+}
+
+.playfair {
+  font-family: "playfair";
+}
+
+.chivo-reg {
+  font-family: "chivo-reg";
 }
 
 td {
@@ -103,11 +100,12 @@ th:first-child {
   &:after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 19%;
     bottom: -20px;
     height: 2px;
     background-color: #dbdbdb;
-    width: 100%;
+    width: 63%;
+    right: 0;
   }
 }
 
@@ -132,7 +130,7 @@ th:first-child {
 }
 
 .hero {
-  height: 81vh;
+  height: 85vh;
 }
 
 .h-65vh {
