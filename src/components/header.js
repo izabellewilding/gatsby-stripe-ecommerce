@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   toolbar: {
-    minHeight: 73,
+    minHeight: 85,
   },
 
   drawerHeader: {
@@ -77,6 +77,9 @@ const Header = () => {
 
   function ListItemLink(props) {
     return <ListItem button component={Link} {...props} />
+  }
+  function NavLink(props) {
+    return <MenuItem button component={Link} {...props} />
   }
 
   function BadgeLink(props) {
@@ -102,17 +105,17 @@ const Header = () => {
               <MenuIcon color="primary" />
             </IconButton>
             <div className={classes.navBar}>
-              <MenuItem edge="start">
+              <NavLink to="/" edge="start">
                 <Typography variant="subtitle1">Home</Typography>
-              </MenuItem>
+              </NavLink>
 
-              <MenuItem edge="start">
+              <NavLink to="/shop-home" edge="start">
                 <Typography variant="subtitle1">Shop</Typography>
-              </MenuItem>
+              </NavLink>
 
-              <MenuItem edge="start">
+              <NavLink to="/contact" edge="start">
                 <Typography variant="subtitle1">Contact</Typography>
-              </MenuItem>
+              </NavLink>
             </div>
           </div>
           <div className="w-1/3 flex justify-center">
@@ -192,7 +195,7 @@ const Header = () => {
           </ListItemLink>
         </List>
       </Drawer>
-      <Toolbar />
+      <Toolbar className={classes.toolbar} />
     </>
   )
 }
