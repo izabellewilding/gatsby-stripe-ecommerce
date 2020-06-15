@@ -8,6 +8,8 @@ import InfoBar from "../components/info-bar"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+// import GridList from "@material-ui/core/GridList"
+// import GridListTile from "@material-ui/core/GridListTile"
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -17,6 +19,16 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     justifyContent: "center",
     maxWidth: 1970,
+  },
+  root: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    overflow: "hidden",
+  },
+  gridList: {
+    // width: "100%",
+    // height: "100%",
   },
 }))
 
@@ -29,6 +41,10 @@ const StyledScrim = styled.div`
   background-color: black;
   transition: all 0.5s;
 `
+
+// const GridListImg = props => {
+//   return <GridListTile component={Img} {...props} />
+// }
 
 function debounce(func, wait, immediate) {
   var timeout
@@ -86,24 +102,16 @@ const ArtGallery = ({ data }) => {
         <InfoBar />
 
         <Container className={classes.container}>
-          <Typography
-            variant="h2"
-            className="p-8 text-center text-2xl  raleway uppercase text-gray-900 mr-auto ml-auto"
-          >
-            Browse the Pastel Gallery
+          <Typography variant="h2">
+            We make beautiful wheel-thrown pottery at an affordable price.
           </Typography>
           {data.allFile.edges.map(({ node }) => (
-            <div className=" square photo">
+            <div className={classes.gridList}>
               <Img
+                key={node.childImageSharp.name}
+                cols="1"
                 fluid={node.childImageSharp.fluid}
-                className=" img-item w-full h-full"
-                style={{ position: "absolute" }}
-
-                // alt="Robin in the Woods"
               />
-              <div className="chivo-reg image-title absolute left-0 right-0">
-                {/* <p>Robin Duo on Thin Board - Unframed</p> */}
-              </div>
             </div>
           ))}
         </Container>

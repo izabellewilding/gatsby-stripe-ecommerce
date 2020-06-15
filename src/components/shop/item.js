@@ -13,19 +13,21 @@ import Typography from "@material-ui/core/Typography"
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 325,
+    maxWidth: 300,
     margin: "1rem",
-    minWidth: 325,
+    minWidth: 285,
+    boxShadow: "0 0 0 0",
   },
   media: {
-    height: 275,
+    height: 250,
   },
-  cardAction: {
-    padding: 17,
+  cardContent: {
+    textAlign: "center",
   },
   button: {
     borderRadius: 0,
     border: 2,
+    fontWeight: 300,
   },
 })
 
@@ -41,8 +43,8 @@ const Item = ({ sku }) => {
           src={`/images/${sku.id}.jpg`}
           title="Contemplative Reptile"
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+        <CardContent className={classes.cardContent}>
+          <Typography gutterBottom variant="subtitle1">
             {sku.product.name}{" "}
           </Typography>
           <Typography variant="subheading1" color="textSecondary" component="p">
@@ -50,8 +52,8 @@ const Item = ({ sku }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions className={classes.cardAction}>
-        <Link to={`/${sku.product.name.replace(/ /g, "_")}`}>
+      {/* <CardActions className={classes.cardAction}> */}
+      {/* <Link to={`/${sku.product.name.replace(/ /g, "_")}`}>
           <Button
             size="small"
             color="primary"
@@ -61,8 +63,8 @@ const Item = ({ sku }) => {
           >
             View Item
           </Button>
-        </Link>
-      </CardActions>
+        </Link> */}
+      {/* </CardActions> */}
     </Card>
   )
 }

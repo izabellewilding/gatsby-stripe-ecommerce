@@ -9,8 +9,8 @@ const useStyles = makeStyles({
   subtitle1: {
     marginTop: "1.5rem",
     marginBottom: "1.5rem",
-    padding: "0.75rem",
-    width: "75%",
+    padding: "1rem",
+    width: "85%",
     marginLeft: "auto",
     marginRight: "auto",
   },
@@ -61,8 +61,8 @@ const Hero = () => {
             </Typography>{" "}
           </section>
           <section
-            className="flex flex-col justify-start mt-8 w-8/12"
-            style={{ height: "50%", maxWidth: 746 }}
+            className="flex flex-col justify-start mt-8"
+            style={{ height: "50%" }}
           >
             <Typography variant="h3" className={classes.subtitle1}>
               Get 15% off our new collection with code{" "}

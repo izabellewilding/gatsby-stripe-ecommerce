@@ -18,24 +18,13 @@ const rawTheme = createMuiTheme({
     accent: {
       main: white,
     },
-    warning: {
-      main: "#ffc071",
-    },
-    error: {
-      xLight: red[50],
-      main: red[500],
-    },
-    success: {
-      xLight: green[50],
-      main: green[500],
-    },
   },
   typography: {
     fontFamily: "'chivo-reg', sans-serif",
     fontSize: 14,
     fontWeightLight: 300, // Work Sans
     fontWeightRegular: 400, // Work Sans
-    fontWeightMedium: 700, // Roboto Condensed
+    fontWeightMedium: 600, // Roboto Condensed
     fontFamilySecondary: "'raleway', sans-serif",
   },
 })
@@ -59,7 +48,7 @@ const theme = {
   },
   typography: {
     ...rawTheme.typography,
-    fontHeader,
+    // fontHeader,
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
@@ -72,14 +61,15 @@ const theme = {
     h2: {
       ...rawTheme.typography.h2,
       ...fontHeader,
+
       fontSize: 39.063,
       fontFamily: "playfair",
       color: rawTheme.palette.primary.main,
     },
     h3: {
       ...rawTheme.typography.h3,
-      ...fontHeader,
-      fontSize: 28.25,
+      // ...fontHeader,
+      fontSize: 23.25,
       fontFamily: "playfair",
       color: rawTheme.palette.secondary.light,
     },

@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   toolbar: {
-    minHeight: 85,
+    minHeight: 50,
   },
 
   drawerHeader: {
@@ -62,6 +62,9 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between",
     borderBottom: "solid 0.5px white",
     backgroundColor: theme.palette.primary.light,
+  },
+  list: {
+    paddingTop: 0,
   },
 }))
 
@@ -119,7 +122,7 @@ const Header = () => {
             </div>
           </div>
           <div className="w-1/3 flex justify-center">
-            <Img src="../images/name.png" className=" w-24 ml-6 my-2" />
+            <Img src="../images/name.png" className="w-24 my-2" />
           </div>
           <div className="w-1/3 flex justify-end">
             <MenuItem className="w-1/3 flex justify-end">
