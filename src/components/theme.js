@@ -77,7 +77,7 @@ const theme = {
     subtitle1: {
       ...rawTheme.typography.subtitle1,
       fontSize: 16,
-      fontFamily: "chivo-reg",
+      fontFamily: "raleway",
       color: rawTheme.palette.primary.dark,
     },
     body1: {

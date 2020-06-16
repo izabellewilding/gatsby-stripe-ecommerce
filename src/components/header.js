@@ -32,6 +32,7 @@ const useStyles = makeStyles(theme => ({
   header: {
     background: `url(${CurvyLines})` + theme.palette.primary.light,
     backgroundPosition: "center",
+    height: 75,
   },
   menuButton: {
     display: "block",
@@ -54,7 +55,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   toolbar: {
-    minHeight: 85,
+    height: 75,
   },
 
   drawerHeader: {

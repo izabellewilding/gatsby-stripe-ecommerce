@@ -4,6 +4,7 @@ import Img from "../image"
 import { StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
 import { CartContext } from "./context"
+import Typography from "@material-ui/core/Typography"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
@@ -28,9 +29,12 @@ const LatestItems = () => {
       `}
       render={({ skus }) => (
         <div className="flex justify-center bg-gray-100 flex-col m-auto border-gray-800 shadow-md mb-6 max-w-4xl p-2 pb-8">
-          <h1 className="text-center p-4 uppercase text-2xl m-4">
+          <Typography
+            variant="h2"
+            className="text-center p-4 uppercase text-2xl m-4"
+          >
             Latest Shop Items
-          </h1>
+          </Typography>
           <div className="flex flex-col md:flex-row ">
             {skus.edges.map(({ node: sku }) => (
               <LatestItem

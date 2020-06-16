@@ -43,7 +43,7 @@ const Hero = () => {
   return (
     <div
       className="sticky bg-gray-900 "
-      style={{ top: 56, position: "sticky" }}
+      style={{ top: 75, position: "sticky" }}
     >
       <div className="w-full relative m-auto ">
         {" "}
