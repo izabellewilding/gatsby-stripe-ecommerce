@@ -54,7 +54,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   toolbar: {
-    minHeight: 50,
+    minHeight: 85,
   },
 
   drawerHeader: {

@@ -4,9 +4,13 @@
   font-family: "raleway";
 }
 
-.playfair {
-  font-family: "playfair";
+.raleway-light {
+  font-family: "raleway-light";
 }
+
+/* .playfair {
+  font-family: "playfair";
+} */
 
 .chivo-reg {
   font-family: "chivo-reg";
@@ -30,42 +34,6 @@ th:first-child {
 
 .margin-bottom {
   margin-bottom: 1.666rem;
-}
-
-.square {
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  margin: 1.66%;
-  position: relative;
-
-  @media (min-width: 768px) {
-    width: 500px;
-    height: 500px;
-
-    & .img-item {
-      transition: all 0.25s ease-in-out;
-    }
-
-    &:hover .img-item {
-      transform: scale(1.2);
-    }
-  }
-}
-/* 
-.image-title {
-  background-color: rgba(22, 22, 22, 0.781);
-  color: white;
-  transition: all 0.15s;
-  padding: 0.75rem;
-  bottom: -6rem;
-} */
-
-.photo {
-  overflow: hidden;
-}
-.photo:hover .image-title {
-  transform: translateY(-6em);
 }
 
 .removeIcon {
@@ -111,6 +79,11 @@ th:first-child {
 
 .button-padding {
   padding: 0.5rem;
+}
+
+.MuiButton-label {
+  color: white;
+  font-weight: 400;
 }
 
 /* mdc overrides */

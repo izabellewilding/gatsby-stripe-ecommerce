@@ -4,12 +4,17 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: "playfair";
   src: url(../fonts/PlayfairDisplay-VariableFont_wght.ttf);
   font-display: swap;
-}
+} */
 
+@font-face {
+  font-family: "raleway-light";
+  src: url(../fonts/Raleway-Light.ttf);
+  font-display: swap;
+}
 /* @font-face {
   font-family: "avant";
   src: url(../fonts/AvantGardeBookBT.ttf);

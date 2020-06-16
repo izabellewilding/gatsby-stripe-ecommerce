@@ -102,18 +102,33 @@ const ArtGallery = ({ data }) => {
         <InfoBar />
 
         <Container className={classes.container}>
+          <Typography variant="h1">
+            We make beautiful wheel-thrown pottery at an affordable price.
+          </Typography>
           <Typography variant="h2">
             We make beautiful wheel-thrown pottery at an affordable price.
           </Typography>
-          {data.allFile.edges.map(({ node }) => (
-            <div className={classes.gridList}>
-              <Img
-                key={node.childImageSharp.name}
-                cols="1"
-                fluid={node.childImageSharp.fluid}
-              />
-            </div>
-          ))}
+          <Typography variant="h3">
+            We make beautiful wheel-thrown pottery at an affordable price.
+          </Typography>
+          <Typography variant="subtitle1">
+            We make beautiful wheel-thrown pottery at an affordable price.
+          </Typography>
+          <Typography variant="body1">
+            We make beautiful wheel-thrown pottery at an affordable price.
+          </Typography>
+          <Typography variant="body2">
+            We make beautiful wheel-thrown pottery at an affordable price.
+          </Typography>
+          {/* {data.allFile.edges.map(({ node }) => ( */}
+          {/* <div className={classes.gridList}>
+            <Img
+              key={node.childImageSharp.name}
+              cols="1"
+              fluid={node.childImageSharp.fluid}
+            />
+          </div> */}
+          {/* ))} */}
         </Container>
       </div>
     </Layout>

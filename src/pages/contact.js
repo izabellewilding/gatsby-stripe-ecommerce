@@ -3,6 +3,9 @@ import { navigate } from "gatsby-link"
 import Layout from "../components/layout"
 import LatestItems from "../components/shop/latest-items"
 import Map from "../components/map"
+import TextField from "@material-ui/core/TextField"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
 
 function encode(data) {
   return Object.keys(data)
@@ -37,12 +40,10 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <div className="p-6 md:my-16 bg-gray-300 md:bg-white md:shadow-md flex flex-wrap border-white rounded-md w-full ">
+      <div className="p-6 md:my-16  md:shadow-md flex flex-wrap border-white rounded-md w-full ">
         <section className="md:w-1/2 w-full">
-          <div className="font-sans">
-            <h1 className="text-3xl chivo-reg ml-4 mb-4 uppercase text-gray-800 text-center inline ">
-              Contact{" "}
-            </h1>
+          <div className="font-sans pl-3 pb-3">
+            <Typography variant="h2">Contact </Typography>
           </div>
           <form
             name="contact"
@@ -61,16 +62,19 @@ class ContactForm extends React.Component {
                 <input name="bot-field" onChange={this.handleChange} />
               </label>
             </div>
-            <div className="flex flex-col md:flex-row justify-between text-gray-100">
+            <div className="flex flex-col md:flex-row justify-between text-gray-100 mb-3">
               <div className="field w-full md:w-2/5 text-gray-800">
-                <label className="mb-6" htmlFor={"name"}>
+                {/* <label className="mb-6" htmlFor={"name"}>
                   Your name
-                </label>
-                <div className="control">
-                  <input
-                    className="appearance-none mt-3 hover:border-teal-400  block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                </label> */}
+                <div className="control mb-3 md:mb-0">
+                  <TextField
+                    variant="outlined"
+                    label="Name"
+                    color="secondary"
                     type={"text"}
                     name={"name"}
+                    className={"w-full "}
                     onChange={this.handleChange}
                     id={"name"}
                     required={true}
@@ -78,14 +82,17 @@ class ContactForm extends React.Component {
                 </div>
               </div>
               <div className="field w-full md:w-2/4 text-gray-800">
-                <label className="label" htmlFor={"email"}>
+                {/* <label className="label" htmlFor={"email"}>
                   Email
-                </label>
+                </label> */}
                 <div className="control">
-                  <input
-                    className="appearance-none mt-3 hover:border-teal-400  block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  <TextField
+                    variant="outlined"
+                    label="Email"
+                    color="secondary"
                     type={"email"}
                     name={"email"}
+                    className={"w-full"}
                     onChange={this.handleChange}
                     id={"email"}
                     required={true}
@@ -94,12 +101,17 @@ class ContactForm extends React.Component {
               </div>
             </div>
             <div className="field">
-              <label className="label" htmlFor={"message"}>
+              {/* <label className="label" htmlFor={"message"}>
                 Message
-              </label>
+              </label> */}
               <div className="control">
-                <textarea
-                  className="appearance-none mt-3 shadow-sm hover:border-teal-400  block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                <TextField
+                  variant="outlined"
+                  multiline
+                  rows={3}
+                  color="secondary"
+                  label="Message"
+                  className="w-full"
                   name={"message"}
                   onChange={this.handleChange}
                   id={"message"}
@@ -107,13 +119,15 @@ class ContactForm extends React.Component {
                 />
               </div>
             </div>
-            <div className="field flex justify-end">
-              <button
-                className="mt-2 button w-full text-lightPrimary chivo-reg uppercase hover:bg-gray-300 hover:shadow-sm bg-gray-800 hover:text-gray-800 text-white mb-6 rounded p-2 whitespace-no-wrap"
-                type="submit"
+            <div className="field flex justify-end  mt-4">
+              <Button
+                variant="contained"
+                size="large"
+                color="primary"
+                className="w-full"
               >
                 Send
-              </button>
+              </Button>
             </div>
           </form>
         </section>
@@ -130,8 +144,8 @@ const ContactPage = () => {
   return (
     <Layout>
       {" "}
-      <div className=" flex flex-col bg-gray-300 ">
-        <section className="flex justify-center md:max-w-4xl m-auto">
+      <div className=" flex flex-col ">
+        <section className="flex justify-center md:w-4/6  m-auto">
           <ContactForm />
         </section>
         <aside className="">

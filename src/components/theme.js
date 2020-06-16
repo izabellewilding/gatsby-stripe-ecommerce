@@ -33,7 +33,7 @@ const fontHeader = {
   color: rawTheme.palette.text.primary,
   fontWeight: rawTheme.typography.fontWeightMedium,
   fontFamily: rawTheme.typography.fontFamilySecondary,
-  // textTransform: "uppercase",
+  textTransform: "uppercase",
 }
 
 const theme = {
@@ -52,7 +52,7 @@ const theme = {
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
-      fontSize: 48.828,
+      fontSize: 42.828,
       letterSpacing: 0.75,
       fontFamily: "raleway",
       textTransform: "uppercase",
@@ -62,15 +62,15 @@ const theme = {
       ...rawTheme.typography.h2,
       ...fontHeader,
 
-      fontSize: 39.063,
-      fontFamily: "playfair",
+      fontSize: 30.063,
+      fontFamily: "raleway-light",
       color: rawTheme.palette.primary.main,
     },
     h3: {
       ...rawTheme.typography.h3,
       // ...fontHeader,
-      fontSize: 23.25,
-      fontFamily: "playfair",
+      fontSize: 26.25,
+      fontFamily: "chivo-reg",
       color: rawTheme.palette.secondary.light,
     },
 
