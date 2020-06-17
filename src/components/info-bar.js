@@ -13,6 +13,8 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     maxWidth: 1970,
     margin: "auto",
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
   },
   // subtitle1: {
   //   color: theme.palette.primary,

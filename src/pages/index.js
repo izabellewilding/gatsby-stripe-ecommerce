@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useRef } from "react"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Helmet from "react-helmet"
@@ -8,8 +9,9 @@ import InfoBar from "../components/info-bar"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
+
 import LatestItems from "../components/shop/latest-items"
-import AbsoluteImage from "../components/tailwind-components/absolute-image"
 // import GridList from "@material-ui/core/GridList"
 // import GridListTile from "@material-ui/core/GridListTile"
 
@@ -17,12 +19,15 @@ const useStyles = makeStyles(theme => ({
   container: {
     //weird color behaviour need to revisit
     backgroundColor: "#2a333b",
-    display: "flex",
-    flexDirection: "row",
     justifyContent: "center",
-    maxWidth: 1970,
-    height: "100vh",
     padding: 0,
+    height: 440,
+    ["@media (min-width: 768)"]: {
+      height: 660,
+    },
+    maxWidth: "100vw",
+    position: "relative",
+    flexDirection: "column",
   },
   root: {
     display: "flex",
@@ -35,7 +40,16 @@ const useStyles = makeStyles(theme => ({
     // width: "100%",
     // height: "100%",
   },
+  h3: {
+    textAlign: "center",
+    textTransform: "uppercase",
+    color: "white",
+  },
 }))
+
+const ButtonLink = props => {
+  return <Button component={Link} {...props} />
+}
 
 const StyledScrim = styled.div`
   position: fixed;
@@ -78,17 +92,15 @@ const ArtGallery = ({ data }) => {
   const galleryRef = useRef()
   const [scrim, setScrim] = useState(false)
 
-  console.warn("DATA:", data)
-
-  useEffect(() => {
-    const animateScrim = debounce(() => {
-      setScrim(galleryRef.current.getBoundingClientRect().y < 450)
-    }, 10)
-    window.addEventListener("scroll", animateScrim)
-    return () => {
-      window.removeEventListener("scroll", animateScrim)
-    }
-  }, [])
+  // useEffect(() => {
+  //   const animateScrim = debounce(() => {
+  //     setScrim(galleryRef.current.getBoundingClientRect().y < 450)
+  //   }, 10)
+  //   window.addEventListener("scroll", animateScrim)
+  //   return () => {
+  //     window.removeEventListener("scroll", animateScrim)
+  //   }
+  // }, [])
 
   return (
     <Layout page="home">
@@ -99,34 +111,32 @@ const ArtGallery = ({ data }) => {
       </Helmet>
       <Hero />
 
-      <StyledScrim className={`${scrim ? "opacity-75" : "z opacity-0 "}`} />
+      {/* <StyledScrim className={`${scrim ? "opacity-75" : "z opacity-0 "}`} /> */}
 
-      <div
-        className="w-full h-full top relative m-auto z-10"
-        style={{ transform: "translate3d(0px,0px,0px)" }}
-        ref={galleryRef}
-      >
+      <div className="w-full h-full top relative m-auto z-10" ref={galleryRef}>
         <InfoBar />
 
         <Container className={classes.container}>
           {/* <Img fluid={data.childImageSharp.fluid} /> */}
-          <div className="md:w-1/2 w-full h-full p-4">
-            <h1 className="raleway-light text-xl uppercase ">
-              We make beautiful wheel-thrown pottery at an affordable price.
-            </h1>
-            <Typography variant="subtitle1">
-              We make beautiful wheel-thrown pottery at an affordable price.
-            </Typography>
-          </div>
-          {/* <div className=" md-: w-full h-full"> */}
-          <AbsoluteImage
+          <Img
             // key={data.childImageSharp.name}
-            className=""
-            cols="1"
+            className="w-full h-full absolute top-0 bottom-0 right-0 left-0"
             fluid={data.fileName.childImageSharp.fluid}
           />
-          {/* ))} */}
-          {/* </div> */}
+          <div className="flex flex-col absolute md:w-1/2 top-0 right-0 bottom-0 p-8 text-center py-20 items-center justify-evenly">
+            <Typography variant="h3" className={classes.h3}>
+              We make beautiful wheel-thrown pottery at an affordable price.
+            </Typography>
+            <ButtonLink
+              to="/shop-home"
+              variant="contained"
+              color="primary"
+              size="large"
+              className=" w-48"
+            >
+              Shop Now
+            </ButtonLink>
+          </div>
         </Container>
       </div>
     </Layout>
@@ -136,7 +146,7 @@ const ArtGallery = ({ data }) => {
 export const query = graphql`
   query {
     fileName: file(
-      relativePath: { eq: "clarissa-carbungco-Q2MOvf4IZY8-unsplash.jpg" }
+      relativePath: { eq: "oshin-khandelwal-fq839fSNEuo-unsplash.jpg" }
     ) {
       childImageSharp {
         fluid {

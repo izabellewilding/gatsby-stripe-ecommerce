@@ -29,8 +29,9 @@ const useStyles = makeStyles({
     backgroundColor: "black",
   },
   toolbar: {
-    height: 75,
+    height: 95,
   },
+
   // h1: {
   //   [theme.breakpoints.]
   // }

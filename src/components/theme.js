@@ -6,7 +6,7 @@ const rawTheme = createMuiTheme({
     //blues
     primary: {
       light: "#ebecec",
-      main: "#27303c",
+      main: "#858585",
       dark: "#2a333b",
     },
     //pinks

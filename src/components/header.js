@@ -33,14 +33,20 @@ const useStyles = makeStyles(theme => ({
     background: `url(${CurvyLines})` + theme.palette.primary.light,
     backgroundPosition: "center",
     height: 75,
-    transition: "all ease-out 0.5s",
+    transition: "all 0.25s",
   },
   headerFadeOut: {
     transform: "translateY(-91px)",
     background: `url(${CurvyLines})` + theme.palette.primary.light,
     backgroundPosition: "center",
     height: 75,
-    transition: "all ease-out 0.5s",
+    transition: "all 0.25s",
+  },
+  toolbarHidden: {
+    display: "none",
+  },
+  toolbar: {
+    height: 75,
   },
   menuButton: {
     display: "block",
@@ -62,10 +68,6 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: theme.spacing(4),
   },
 
-  toolbar: {
-    height: 75,
-  },
-
   drawerHeader: {
     width: "100%",
     justifyContent: "space-between",
@@ -77,7 +79,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Header = () => {
+const Header = ({ page }) => {
   const classes = useStyles()
   const ctx = useContext(CartContext)
   const [navOpen, setNavOpen] = React.useState(false)
@@ -166,6 +168,10 @@ const Header = () => {
           </div>
         </Toolbar>
       </AppBar>
+      <Toolbar
+        className={page === "home" ? classes.toolbarHidden : classes.toolbar}
+      />
+
       <Drawer
         anchor={"top"}
         open={navOpen}
