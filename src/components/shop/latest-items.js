@@ -4,9 +4,36 @@ import Img from "../image"
 import { StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
 import { CartContext } from "./context"
+import { makeStyles } from "@material-ui/core/styles"
+import Card from "@material-ui/core/Card"
+import CardActionArea from "@material-ui/core/CardActionArea"
+import CardActions from "@material-ui/core/CardActions"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
+import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
+
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 300,
+    margin: "1rem",
+    minWidth: 285,
+    boxShadow: "0 0 0 0",
+  },
+  media: {
+    height: 250,
+  },
+  cardContent: {
+    textAlign: "center",
+  },
+  button: {
+    borderRadius: 0,
+    border: 2,
+    fontWeight: 300,
+  },
+})
 
 const LatestItems = () => {
   return (
@@ -30,7 +57,7 @@ const LatestItems = () => {
       render={({ skus }) => (
         <div className="flex justify-center bg-gray-100 flex-col m-auto border-gray-800 shadow-md mb-6 max-w-4xl p-2 pb-8">
           <Typography
-            variant="h2"
+            variant="h3"
             className="text-center p-4 uppercase text-2xl m-4"
           >
             Latest Shop Items
@@ -50,38 +77,35 @@ const LatestItems = () => {
   )
 }
 
+function CardLink(props) {
+  return <Card component={Link} {...props} />
+}
+
 const LatestItem = ({ sku }) => {
   const ctx = useContext(CartContext)
-  return (
-    <Link
-      to={`/${sku.product.name.replace(/ /g, "_")}`}
-      className="w-full flex justify-center "
-    >
-      <div
-        className=" m-2 bg-white overflow-hidden hover:shadow"
-        style={{ minWidth: 180, maxWidth: 252, maxHeight: 358 }}
-      >
-        <div className="bg-cover w-full flex justify-center">
-          <Img src={`/images/${sku.id}.jpg`} className=" h-40 w-48 m-4" />
-        </div>
-        <div className=" w-full p-4">
-          <h1 className="text-gray-900 font-bold garamond mb-6">
-            {sku.product.name} &nbsp;&nbsp;&nbsp;{" "}
-            {ctx.formatPrice(sku.price, sku.currency)}
-          </h1>
+  const classes = useStyles()
 
-          <div className="flex item-center justify-between mt-3">
-            <Link
-              role="button"
-              className="text-lightPrimary chivo-reg uppercase text-xs border-gray-900 border-2 hover:bg-gray-800 hover:text-white mb-6 py-2 px-3 whitespace-no-wrap"
-              to={`/${sku.product.name.replace(/ /g, "_")}`}
-            >
-              View Item
-            </Link>
-          </div>
-        </div>
-      </div>
-    </Link>
+  return (
+    <CardLink
+      to={`/${sku.product.name.replace(/ /g, "_")}`}
+      className={classes.root}
+    >
+      <CardActionArea>
+        <Img
+          className={classes.media}
+          src={`/images/${sku.id}.jpg`}
+          title="Contemplative Reptile"
+        />
+        <CardContent className={classes.cardContent}>
+          <Typography gutterBottom variant="subtitle1">
+            {sku.product.name}{" "}
+          </Typography>
+          <Typography variant="subheading1" color="textSecondary" component="p">
+            {ctx.formatPrice(sku.price, sku.currency)}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </CardLink>
   )
 }
 export default LatestItems

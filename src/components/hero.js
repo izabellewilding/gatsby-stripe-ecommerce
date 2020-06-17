@@ -4,9 +4,13 @@ import Img from "gatsby-image"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core"
-import theme from "./theme"
+import Toolbar from "@material-ui/core/Toolbar"
+import AbsoluteImage from "./tailwind-components/absolute-image.js"
 
 const useStyles = makeStyles({
+  heroTitle: {
+    fontSize: "3rem",
+  },
   subtitle1: {
     marginTop: "1.5rem",
     marginBottom: "1.5rem",
@@ -21,8 +25,11 @@ const useStyles = makeStyles({
   stickyHero: {
     position: "-webkit-sticky",
     position: "sticky",
-    top: 75,
-    backgroundColor: theme.palette.primary.dark,
+    top: 0,
+    backgroundColor: "black",
+  },
+  toolbar: {
+    height: 75,
   },
   // h1: {
   //   [theme.breakpoints.]
@@ -54,16 +61,15 @@ const Hero = () => {
     <div className={classes.stickyHero}>
       <div className="w-full relative m-auto ">
         {" "}
-        <Img
-          className="w-full bg-fixed absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center md:justify-evenly hero items-start h-screen opacity-50"
-          fluid={source}
-        />
-        <div className="flex justify-center w-full items-center p-6 text-center flex-col absolute right-0 top-0 bottom-0 left-0">
+        <AbsoluteImage fluid={source} style={{ opacity: "0.65" }} />
+        <div className="flex justify-center w-full items-center p-4 text-center flex-col absolute right-0 top-0 bottom-0 left-0">
+          <Toolbar className={classes.toolbar} />
+
           <section
-            className="flex flex-col justify-end "
+            className="flex flex-col justify-end underlined pb-4"
             style={{ height: "50%", maxWidth: 630 }}
           >
-            <Typography variant="h1" className="underlined">
+            <Typography variant="h1" className={classes.heroTitle}>
               Unique handmade pottery
             </Typography>{" "}
           </section>
@@ -71,7 +77,7 @@ const Hero = () => {
             className="flex flex-col justify-start mt-8"
             style={{ height: "50%" }}
           >
-            <Typography variant="h3" className={classes.subtitle1}>
+            <Typography variant="h4" className={classes.subtitle1}>
               Get 15% off our new collection with code{" "}
               <span className="text-teal-100">PASTEL01</span>
             </Typography>{" "}

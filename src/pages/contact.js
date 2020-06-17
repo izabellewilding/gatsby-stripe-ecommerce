@@ -43,7 +43,7 @@ class ContactForm extends React.Component {
       <div className="p-6 md:my-16  md:shadow-md flex flex-wrap border-white rounded-md w-full ">
         <section className=" w-full">
           <div className="font-sans pl-3">
-            <Typography variant="h2">Contact </Typography>
+            <Typography variant="h3">Contact </Typography>
           </div>
           <form
             name="contact"
@@ -132,7 +132,7 @@ class ContactForm extends React.Component {
           </form>
         </section>
         <section className="w-full mt-12 flex flex-col justify-center items-center">
-          <Typography variant="h2">Or find us in store...</Typography>
+          <Typography variant="h3">Or find us in store...</Typography>
           <Map />
         </section>
       </div>

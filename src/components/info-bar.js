@@ -27,15 +27,11 @@ const InfoBar = theme => {
       <Grid
         item
         md
-        className="p-4 flex justify-center items-center text-center opacity-95"
+        className="p-2 flex justify-center items-center text-center opacity-95"
       >
         <div className="ml-2">
-          <Typography variant="subtitle1" className={classes.subtitle1}>
-            Free shipping
-          </Typography>
-          <Typography variant="body1" className={classes.subtitle1}>
-            On orders over £35
-          </Typography>
+          <Typography variant="body1">Free shipping</Typography>
+          <Typography variant="body1">On orders over £35</Typography>
         </div>
       </Grid>
       <Grid
@@ -44,13 +40,9 @@ const InfoBar = theme => {
         className=" p-4 flex justify-center opacity-95 text-center items-center"
       >
         <div className="ml-2">
-          <Typography variant="subtitle1" className={classes.subtitle1}>
-            Online Ordering
-          </Typography>
+          <Typography variant="body1">Online Ordering</Typography>
 
-          <Typography variant="body1" className={classes.subtitle1}>
-            Convenient shopping 24/7
-          </Typography>
+          <Typography variant="body1">Convenient shopping 24/7</Typography>
         </div>
       </Grid>
       <Grid
@@ -60,13 +52,9 @@ const InfoBar = theme => {
         items-center"
       >
         <div className="ml-2">
-          <Typography variant="subtitle1" className={classes.subtitle1}>
-            Online Returns
-          </Typography>
+          <Typography variant="body1">Online Returns</Typography>
 
-          <Typography variant="body1" className={classes.subtitle1}>
-            Return within 30 days
-          </Typography>
+          <Typography variant="body1">Return within 30 days</Typography>
         </div>
       </Grid>
     </Grid>

@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "@material-ui/core/styles"
 // import CssBaseline from "@material-ui/core/CssBaseline"
@@ -22,22 +22,23 @@ import "../styles/all.css"
 const Layout = ({ children, page }) => {
   return (
     <>
+      {" "}
+      <head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </head>
       {/* <SEO /> */}
       <ThemeProvider theme={theme}>
         {/* <CssBaseline /> */}
 
-        <head>
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          />
-        </head>
         <div className="relative ">
-          <Header page={page} />
+          <Header page={page} className=" hidden" />
           <main>{children}</main>
           <Footer />
         </div>

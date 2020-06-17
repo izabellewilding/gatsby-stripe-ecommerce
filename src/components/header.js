@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { CartContext } from "./shop/context"
 
 import { Link } from "gatsby"
@@ -33,6 +33,14 @@ const useStyles = makeStyles(theme => ({
     background: `url(${CurvyLines})` + theme.palette.primary.light,
     backgroundPosition: "center",
     height: 75,
+    transition: "all ease-out 0.5s",
+  },
+  headerFadeOut: {
+    transform: "translateY(-91px)",
+    background: `url(${CurvyLines})` + theme.palette.primary.light,
+    backgroundPosition: "center",
+    height: 75,
+    transition: "all ease-out 0.5s",
   },
   menuButton: {
     display: "block",
@@ -75,6 +83,21 @@ const Header = () => {
   const [navOpen, setNavOpen] = React.useState(false)
   const [navItemOpen, setNavItemOpen] = useState(false)
 
+  const [fadeHeaderOut, setFadeHeaderOut] = useState()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = Math.round(window.scrollY)
+      setFadeHeaderOut(scrollPosition >= 500)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   function handleDrawerToggle() {
     setNavOpen(!navOpen)
   }
@@ -96,7 +119,10 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="fixed" className={classes.header}>
+      <AppBar
+        position="fixed"
+        className={fadeHeaderOut ? classes.headerFadeOut : classes.header}
+      >
         <Toolbar>
           <div className="flex justify-start h-full flex-row w-1/3">
             <IconButton
@@ -199,7 +225,6 @@ const Header = () => {
           </ListItemLink>
         </List>
       </Drawer>
-      <Toolbar className={classes.toolbar} />
     </>
   )
 }

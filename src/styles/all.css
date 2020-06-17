@@ -103,7 +103,10 @@ th:first-child {
 }
 
 .hero {
-  height: 85vh;
+  height: 90vh;
+  @media (min-width: 768px) {
+    height: 92vh;
+  }
 }
 
 .h-65vh {

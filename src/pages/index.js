@@ -8,23 +8,28 @@ import InfoBar from "../components/info-bar"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
+import LatestItems from "../components/shop/latest-items"
+import AbsoluteImage from "../components/tailwind-components/absolute-image"
 // import GridList from "@material-ui/core/GridList"
 // import GridListTile from "@material-ui/core/GridListTile"
 
 const useStyles = makeStyles(theme => ({
   container: {
     //weird color behaviour need to revisit
-    backgroundColor: "#f1f7fd",
+    backgroundColor: "#2a333b",
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
     justifyContent: "center",
     maxWidth: 1970,
+    height: "100vh",
+    padding: 0,
   },
   root: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
     overflow: "hidden",
+    padding: 0,
   },
   gridList: {
     // width: "100%",
@@ -73,6 +78,8 @@ const ArtGallery = ({ data }) => {
   const galleryRef = useRef()
   const [scrim, setScrim] = useState(false)
 
+  console.warn("DATA:", data)
+
   useEffect(() => {
     const animateScrim = debounce(() => {
       setScrim(galleryRef.current.getBoundingClientRect().y < 450)
@@ -102,33 +109,24 @@ const ArtGallery = ({ data }) => {
         <InfoBar />
 
         <Container className={classes.container}>
-          <Typography variant="h1">
-            We make beautiful wheel-thrown pottery at an affordable price.
-          </Typography>
-          <Typography variant="h2">
-            We make beautiful wheel-thrown pottery at an affordable price.
-          </Typography>
-          <Typography variant="h3">
-            We make beautiful wheel-thrown pottery at an affordable price.
-          </Typography>
-          <Typography variant="subtitle1">
-            We make beautiful wheel-thrown pottery at an affordable price.
-          </Typography>
-          <Typography variant="body1">
-            We make beautiful wheel-thrown pottery at an affordable price.
-          </Typography>
-          <Typography variant="body2">
-            We make beautiful wheel-thrown pottery at an affordable price.
-          </Typography>
-          {/* {data.allFile.edges.map(({ node }) => ( */}
-          {/* <div className={classes.gridList}>
-            <Img
-              key={node.childImageSharp.name}
-              cols="1"
-              fluid={node.childImageSharp.fluid}
-            />
-          </div> */}
+          {/* <Img fluid={data.childImageSharp.fluid} /> */}
+          <div className="md:w-1/2 w-full h-full p-4">
+            <h1 className="raleway-light text-xl uppercase ">
+              We make beautiful wheel-thrown pottery at an affordable price.
+            </h1>
+            <Typography variant="subtitle1">
+              We make beautiful wheel-thrown pottery at an affordable price.
+            </Typography>
+          </div>
+          {/* <div className=" md-: w-full h-full"> */}
+          <AbsoluteImage
+            // key={data.childImageSharp.name}
+            className=""
+            cols="1"
+            fluid={data.fileName.childImageSharp.fluid}
+          />
           {/* ))} */}
+          {/* </div> */}
         </Container>
       </div>
     </Layout>
@@ -136,25 +134,16 @@ const ArtGallery = ({ data }) => {
 }
 
 export const query = graphql`
-  {
-    allFile(filter: { sourceInstanceName: { eq: "home-display-items" } }) {
-      edges {
-        node {
-          relativePath
-          childImageSharp {
-            fluid(maxWidth: 1600) {
-              base64
-              tracedSVG
-              srcWebp
-              srcSetWebp
-              originalImg
-              originalName
-            }
-          }
+  query {
+    fileName: file(
+      relativePath: { eq: "clarissa-carbungco-Q2MOvf4IZY8-unsplash.jpg" }
+    ) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
   }
 `
-
 export default ArtGallery
