@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core"
+import theme from "./theme"
 
 const useStyles = makeStyles({
   subtitle1: {
@@ -16,6 +17,12 @@ const useStyles = makeStyles({
   },
   button: {
     minWidth: 250,
+  },
+  stickyHero: {
+    position: "-webkit-sticky",
+    position: "sticky",
+    top: 75,
+    backgroundColor: theme.palette.primary.dark,
   },
   // h1: {
   //   [theme.breakpoints.]
@@ -44,10 +51,7 @@ const Hero = () => {
   const source = [desktopBanner.childImageSharp.fluid]
 
   return (
-    <div
-      className="sticky bg-gray-900 "
-      style={{ top: 75, position: "sticky" }}
-    >
+    <div className={classes.stickyHero}>
       <div className="w-full relative m-auto ">
         {" "}
         <Img
