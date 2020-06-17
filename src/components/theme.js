@@ -52,7 +52,7 @@ const theme = {
     h1: {
       ...rawTheme.typography.h1,
       ...fontHeader,
-      fontSize: 42.828,
+      fontSize: 50,
       letterSpacing: 0.75,
       fontFamily: "raleway",
       textTransform: "uppercase",
@@ -62,36 +62,37 @@ const theme = {
       ...rawTheme.typography.h2,
       ...fontHeader,
 
-      fontSize: 30.063,
+      fontSize: 36,
       fontFamily: "raleway-light",
       color: rawTheme.palette.primary.main,
     },
     h3: {
       ...rawTheme.typography.h3,
       // ...fontHeader,
-      fontSize: 26.25,
+      fontSize: 24,
       fontFamily: "chivo-reg",
       color: rawTheme.palette.secondary.light,
     },
 
     subtitle1: {
       ...rawTheme.typography.subtitle1,
-      fontSize: 16,
+      fontSize: 20,
       fontFamily: "raleway",
       color: rawTheme.palette.primary.dark,
     },
     body1: {
       ...rawTheme.typography.body1,
       fontFamily: "chivo-reg",
+      color: rawTheme.palette.primary.main,
 
       fontWeight: rawTheme.typography.fontWeightRegular,
-      fontSize: 12.8,
+      fontSize: 16,
     },
     body2: {
       ...rawTheme.typography.body2,
       fontFamily: "playfair",
 
-      fontSize: 10.24,
+      fontSize: 14,
     },
   },
 }

@@ -17,6 +17,9 @@ const useStyles = makeStyles({
   button: {
     minWidth: 250,
   },
+  // h1: {
+  //   [theme.breakpoints.]
+  // }
 })
 
 const Hero = () => {

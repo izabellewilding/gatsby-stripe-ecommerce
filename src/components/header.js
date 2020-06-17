@@ -110,15 +110,15 @@ const Header = () => {
             </IconButton>
             <div className={classes.navBar}>
               <NavLink to="/" edge="start">
-                <Typography variant="subtitle1">Home</Typography>
+                <Typography variant="body1">Home</Typography>
               </NavLink>
 
               <NavLink to="/shop-home" edge="start">
-                <Typography variant="subtitle1">Shop</Typography>
+                <Typography variant="body1">Shop</Typography>
               </NavLink>
 
               <NavLink to="/contact" edge="start">
-                <Typography variant="subtitle1">Contact</Typography>
+                <Typography variant="body1">Contact</Typography>
               </NavLink>
             </div>
           </div>
