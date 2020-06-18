@@ -7,10 +7,8 @@ import { CartContext } from "./context"
 import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
-import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
-import Button from "@material-ui/core/Button"
+
 import Typography from "@material-ui/core/Typography"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
@@ -19,7 +17,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 300,
     margin: "1rem",
-    minWidth: 285,
+    minWidth: 250,
     boxShadow: "0 0 0 0",
   },
   media: {
@@ -55,7 +53,7 @@ const LatestItems = () => {
         }
       `}
       render={({ skus }) => (
-        <div className="flex justify-center bg-gray-100 flex-col m-auto border-gray-800 shadow-md mb-6 max-w-4xl p-2 pb-8">
+        <div className="flex justify-center flex-col m-auto mb-6 max-w-4xl p-2 pb-8">
           <Typography
             variant="h3"
             className="text-center p-4 uppercase text-2xl m-4"

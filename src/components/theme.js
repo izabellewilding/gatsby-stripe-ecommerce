@@ -1,13 +1,13 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles"
-import { green, grey, red, white } from "@material-ui/core/colors"
+import { grey, white } from "@material-ui/core/colors"
 
 const rawTheme = createMuiTheme({
   palette: {
-    //blues
+    //browns
     primary: {
       light: "#ebecec",
-      main: "#858585",
-      dark: "#2a333b",
+      main: "#6e6e6e",
+      dark: "#121321",
     },
     //pinks
     secondary: {
@@ -63,21 +63,21 @@ const theme = {
       ...rawTheme.typography.h2,
       ...fontHeader,
 
-      fontSize: 36,
+      fontSize: 38,
       fontFamily: "chivo-reg",
       color: rawTheme.palette.primary.main,
     },
     h3: {
       ...rawTheme.typography.h3,
       ...fontHeader,
-      fontSize: 24,
+      fontSize: 30,
       fontFamily: "raleway-light",
       color: rawTheme.palette.secondary.dark,
     },
     h4: {
       ...rawTheme.typography.h4,
       // ...fontHeader,
-      fontSize: 20,
+      fontSize: 24,
       fontFamily: "chivo-reg",
       color: rawTheme.palette.secondary.light,
     },

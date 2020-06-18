@@ -33,8 +33,8 @@ const useStyles = makeStyles({
 
 const Item = ({ sku }) => {
   const classes = useStyles()
-  console.warn("SKU:", sku)
   const ctx = useContext(CartContext)
+
   return (
     <Card className={classes.root}>
       <CardActionArea>

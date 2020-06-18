@@ -10,7 +10,7 @@ const TestBreadcrumb = () => {
 
   return (
     <div
-      className="w-full chivo-reg border-b border-gray-200 text-sm bg-gray-100 pl-5"
+      className="w-full chivo-reg border-b border-gray-200 text-sm bg-gray-100"
       style={{ height: 60 }}
     >
       <div className="max-w-5xl m-auto w-full h-full p-4 flex ">

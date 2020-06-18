@@ -44,7 +44,6 @@ exports.createPages = async function({ actions, graphql, reporter }) {
   productPages.forEach(({ node }) => {
     const itemPath = node.product.name.replace(/ /g, "_")
 
-    console.warn("item-PATH", itemPath)
     createPage({
       path: itemPath,
       component: productPageTemplate,

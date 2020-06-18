@@ -54,6 +54,9 @@ const useStyles = makeStyles(theme => ({
       display: "none",
     },
   },
+  activeNavLink: {
+    color: theme.palette.primary.dark,
+  },
   navBar: {
     display: "none",
     [theme.breakpoints.up("md")]: {
@@ -76,6 +79,9 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     paddingTop: 0,
+  },
+  basketIcon: {
+    fill: theme.palette.primary.dark,
   },
 }))
 
@@ -137,7 +143,11 @@ const Header = ({ page }) => {
               <MenuIcon color="primary" />
             </IconButton>
             <div className={classes.navBar}>
-              <NavLink to="/" edge="start">
+              <NavLink
+                to="/"
+                edge="start"
+                activeClassName={classes.activeNavLink}
+              >
                 <Typography variant="body1">Home</Typography>
               </NavLink>
 
@@ -161,7 +171,7 @@ const Header = ({ page }) => {
                   badgeContent={ctx.totalItems(ctx.items)}
                   color="secondary"
                 >
-                  <ShoppingBasketIcon />
+                  <ShoppingBasketIcon className={classes.basketIcon} />
                 </BadgeLink>
               </IconButton>
             </MenuItem>
@@ -193,7 +203,7 @@ const Header = ({ page }) => {
                 badgeContent={ctx.totalItems(ctx.items)}
                 color="secondary"
               >
-                <ShoppingBasketIcon />
+                <ShoppingBasketIcon className={classes.basketIcon} />
               </BadgeLink>
             </IconButton>
           </ListItem>
@@ -215,12 +225,16 @@ const Header = ({ page }) => {
               <ListItemLink to="/shop-home" button className={classes.nested}>
                 <ListItemText primary="Home" />
               </ListItemLink>
-              <ListItem button className={classes.nested}>
+              <ListItemLink to="/shop-dining" button className={classes.nested}>
                 <ListItemText primary="Dining" />
-              </ListItem>
-              <ListItem button className={classes.nested}>
+              </ListItemLink>
+              <ListItemLink
+                to="/shop-plantpots"
+                button
+                className={classes.nested}
+              >
                 <ListItemText primary="Plantpots" />
-              </ListItem>
+              </ListItemLink>
             </List>
           </Collapse>
           <ListItemLink to="/contact">

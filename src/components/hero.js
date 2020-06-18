@@ -75,7 +75,7 @@ const Hero = () => {
             </Typography>{" "}
           </section>
           <section
-            className="flex flex-col justify-start mt-8"
+            className="flex flex-col justify-start"
             style={{ height: "50%" }}
           >
             <Typography variant="h4" className={classes.subtitle1}>

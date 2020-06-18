@@ -23,9 +23,7 @@ export default function CartProvider({ children }) {
       const cartItems = window && window.localStorage.getItem("cart")
       try {
         return JSON.parse(cartItems)
-      } catch (error) {
-        console.warn(error)
-      }
+      } catch (error) {}
     }
     if (loadCartItems()) {
       setItems(loadCartItems())
@@ -36,7 +34,6 @@ export default function CartProvider({ children }) {
     newItem.quantity = quantity
     if (!items.find(item => item.id === newItem.id)) {
       const updatedItems = [...items, { ...newItem, sku: newItem.id }]
-      console.warn("ITEMS", items)
       setItems(updatedItems)
       window.localStorage.setItem("cart", JSON.stringify(updatedItems))
       setOpen(!open)

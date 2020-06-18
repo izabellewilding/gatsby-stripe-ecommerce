@@ -22,10 +22,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     padding: 0,
     height: 440,
-    ["@media (min-width: 768)"]: {
-      height: 660,
+    [theme.breakpoints.up(600)]: {
+      height: 700,
     },
-    maxWidth: "100vw",
+    maxWidth: 1970,
     position: "relative",
     flexDirection: "column",
   },
@@ -120,7 +120,7 @@ const ArtGallery = ({ data }) => {
           {/* <Img fluid={data.childImageSharp.fluid} /> */}
           <Img
             // key={data.childImageSharp.name}
-            className="w-full h-full absolute top-0 bottom-0 right-0 left-0"
+            className="w-full h-full absolute top-0 bottom-0 right-0 left-0 m-auto"
             fluid={data.fileName.childImageSharp.fluid}
           />
           <div className="flex flex-col absolute md:w-1/2 top-0 right-0 bottom-0 p-8 text-center py-20 items-center justify-evenly">

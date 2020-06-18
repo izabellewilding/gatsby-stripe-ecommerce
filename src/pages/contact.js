@@ -6,6 +6,8 @@ import Map from "../components/map"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
+import Banner from "../components/contact-banner"
+import ContactRefactored from "./contact-refactored"
 
 function encode(data) {
   return Object.keys(data)
@@ -40,7 +42,10 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <div className="p-6 md:my-16  md:shadow-md flex flex-wrap border-white rounded-md w-full ">
+      <div
+        className="p-6 md:my-16  md:shadow-md flex flex-wrap border-white rounded-md w-full"
+        style={{ maxWidth: 1000 }}
+      >
         <section className=" w-full">
           <div className="font-sans pl-3">
             <Typography variant="h3">Contact </Typography>
@@ -123,7 +128,7 @@ class ContactForm extends React.Component {
               <Button
                 variant="contained"
                 size="large"
-                color="primary"
+                color="secondary"
                 className="w-full"
               >
                 Send
@@ -144,6 +149,7 @@ const ContactPage = () => {
   return (
     <Layout>
       {" "}
+      <Banner />
       <div className=" flex flex-col ">
         <section className="flex justify-center md:w-4/6  m-auto">
           <ContactForm />
@@ -151,6 +157,7 @@ const ContactPage = () => {
         <aside className="">
           <LatestItems />
         </aside>
+        <ContactRefactored />
       </div>
     </Layout>
   )
