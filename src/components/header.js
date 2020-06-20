@@ -167,7 +167,7 @@ const Header = ({ page }) => {
             <MenuItem className="w-1/3 flex justify-end">
               <IconButton aria-label="shopping cart" color="primary">
                 <BadgeLink
-                  to="/checkout"
+                  to="/cart-page"
                   badgeContent={ctx.totalItems(ctx.items)}
                   color="secondary"
                 >
@@ -199,7 +199,7 @@ const Header = ({ page }) => {
 
             <IconButton aria-label="shopping cart" color="primary">
               <BadgeLink
-                to="/checkout"
+                to="/cart-page"
                 badgeContent={ctx.totalItems(ctx.items)}
                 color="secondary"
               >

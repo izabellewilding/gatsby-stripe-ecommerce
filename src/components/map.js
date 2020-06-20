@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react"
 // import MapStyles from "./map-styles"
 import "../styles/all.css"
+import Typography from "@material-ui/core/Typography"
 
 const stores = [
   {
@@ -111,11 +112,13 @@ const GoogleMap = () => {
   })
 
   return (
-    <div className="w-full h-full p-2 md:p-4 mt-4" style={{ height: 350 }}>
+    <div className="p-6 md:my-16  md:shadow-md flex flex-wrap border-white rounded-md w-full">
+      <Typography variant="h3">Or find us in store...</Typography>
+
       <div
         id="google-map"
         ref={googleMapRef}
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: 400, height: 350 }}
       ></div>
     </div>
   )

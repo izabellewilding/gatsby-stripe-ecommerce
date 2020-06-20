@@ -4,21 +4,21 @@ import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const ContactRefactored = () => {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [message, setMessage] = useState()
   const [botField, setBotField] = useState()
   const [submitting, setSubmitting] = useState(false)
-
-  function encode(data) {
-    return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&")
-  }
-
+  console.warn("PROPS or STATE CHANGED IM RE-RENDERING")
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault() //default would be to refresh page and navigte to /thanks
     setSubmitting(true)
     const form = e.target
     fetch("/", {

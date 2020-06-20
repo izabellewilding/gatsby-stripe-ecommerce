@@ -53,14 +53,14 @@ const LatestItems = () => {
         }
       `}
       render={({ skus }) => (
-        <div className="flex justify-center flex-col m-auto mb-6 max-w-4xl p-2 pb-8">
+        <div className="flex  flex-col m-auto mb-6 max-w-4xl p-2 pb-8">
           <Typography
             variant="h3"
             className="text-center p-4 uppercase text-2xl m-4"
           >
             Latest Shop Items
           </Typography>
-          <div className="flex flex-col md:flex-row ">
+          <div className="flex flex-col md:flex-row justify-between ">
             {skus.edges.map(({ node: sku }) => (
               <LatestItem
                 key={sku.id}

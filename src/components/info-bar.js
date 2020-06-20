@@ -11,6 +11,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.light,
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     maxWidth: 1970,
     margin: "auto",
     paddingTop: "1rem",

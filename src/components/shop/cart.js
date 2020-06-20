@@ -3,6 +3,8 @@ import Img from "../image.js"
 import RemoveIcon from "../../assets/cancel.svg"
 import PoweredByStripe from "../../assets/powered_by_stripe.svg"
 import { CartContext } from "./context"
+import Typography from "@material-ui/core/Typography"
+import { makeStyles } from "@material-ui/core/styles"
 import { loadStripe } from "@stripe/stripe-js"
 // import "../../styles/all.css"
 
@@ -12,8 +14,16 @@ function totalPrice(items) {
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
+const useStyles = makeStyles(theme => ({
+  heading: {
+    marginBottom: "1.66rem",
+    textAlign: "center",
+  },
+}))
+
 const Cart = () => {
   const ctx = useContext(CartContext)
+  const classes = useStyles()
 
   const redirectToCheckout = async event => {
     event.preventDefault()
@@ -26,15 +36,19 @@ const Cart = () => {
 
       mode: "payment",
       successUrl: `http://localhost:8000/success/`,
-      cancelUrl: `https://localhost:8000/checkout`,
+      cancelUrl: `https://localhost:8000/cart-page`,
     })
     if (error) {
       console.warn("Error:", error)
     }
   }
+
   return (
-    <div className="px-3 py-16 flex justify-center flex-col max-w-xl m-auto ">
-      <table className=" max-w-xl m-auto text-md bg-white shadow-md rounded mb-4 ">
+    <div className="px-3 py-16 flex justify-center flex-col max-w-4xl m-auto ">
+      <Typography variant="h3" className={classes.heading}>
+        Your Cart
+      </Typography>
+      <table className=" max-w-4xl m-auto text-md bg-white shadow-md rounded mb-4 ">
         <tbody>
           <tr className="text-sm chivo-reg border-b text-gray-700">
             <th className="text-left p-3 pr-0">Item</th>

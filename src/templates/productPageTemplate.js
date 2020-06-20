@@ -94,7 +94,7 @@ const Template = ({ pageContext }) => {
                 </button>
                 <Link
                   className="chivo-reg uppercase text-xs border-gray-800 border-2 hover:bg-white hover:text-gray-800 bg-gray-800 text-white py-2 px-3 whitespace-no-wrap"
-                  to="/checkout"
+                  to="/cart-page"
                 >
                   Checkout{" "}
                 </Link>

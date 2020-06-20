@@ -78,7 +78,7 @@ export default function CartProvider({ children }) {
           action={[
             <SnackbarAction
               label="Checkout"
-              onClick={() => navigate("/checkout")}
+              onClick={() => navigate("/cart-page")}
             />,
             <SnackbarAction
               label="Keep Shopping"
