@@ -8,7 +8,10 @@ const ShopHome = () => {
     <Layout>
       <div className="">
         <ShopNav />
-        <div className="flex justify-center max-w-6xl m-auto">
+        <div
+          className="flex justify-center m-auto"
+          style={{ maxWidth: "63rem" }}
+        >
           <ItemsList />
         </div>
       </div>

@@ -5,10 +5,11 @@ import { Container } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    backgroundColor: theme.palette.primary.dark,
     textAlign: "center",
     padding: "1rem",
     maxWidth: "100vw",
+    // borderBottom: "solid 1px",
+    // borderColor: "grey",
   },
   title: {
     color: theme.palette.secondary.light,
@@ -19,7 +20,7 @@ const ContactBanner = () => {
   const classes = useStyles()
   return (
     <Container className={classes.container}>
-      <Typography variant="subtitle1" className={classes.title}>
+      <Typography variant="h2" className={classes.title}>
         We would love to hear from you!
       </Typography>{" "}
     </Container>

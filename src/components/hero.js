@@ -10,6 +10,7 @@ import AbsoluteImage from "./tailwind-components/absolute-image.js"
 const useStyles = makeStyles({
   heroTitle: {
     fontSize: "3rem",
+    letterSpacing: "10.75px",
   },
   subtitle1: {
     marginTop: "1.5rem",

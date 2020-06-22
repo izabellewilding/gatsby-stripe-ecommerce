@@ -45,20 +45,20 @@ const ContactForm = () => {
 
   return (
     <div
-      className="p-6 md:my-16  md:shadow-md flex flex-wrap border-white rounded-md w-full"
+      className="p-6 flex flex-wrap border-white w-full"
       style={{ maxWidth: 1000 }}
     >
-      <section className=" w-full">
-        <div className="font-sans pl-3">
-          <Typography variant="h3">Contact</Typography>
-        </div>
+      <div className="font-sans pl-3 flex align-bottom">
+        <Typography variant="h3">Contact</Typography>
+      </div>
+      <section className="md:shadow-md rounded-md w-full flex align-middle justify-center">
         <form
           name="contact"
           action="/thanks"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
-          className="mt-6 font-sans p-2 mb-0 "
+          className="mt-6 font-sans mb-0 w-full p-4 "
         >
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
           <input type="hidden" name="form-name" value="contact" />
@@ -155,11 +155,11 @@ const ContactPage = () => {
     <Layout>
       {" "}
       <Banner />
-      <div className="flex flex-col md:flex-row max-w-6xl">
+      <div className="flex flex-col align-top justify-center md:flex-row max-w-6xl ml-auto mr-auto">
         <section className="flex justify-center w-full md:w-1/2 m-auto">
           <ContactForm />
         </section>
-        <section className="w-full mt-12 flex flex-col md:w-1/2 justify-center items-center">
+        <section className="w-full flex flex-col align-center justify-center  md:w-1/2 justify-center items-center">
           <Map />
         </section>
       </div>
