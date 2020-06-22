@@ -5,9 +5,9 @@ import { CartContext } from "../components/shop/context.js"
 import Img from "../components/image"
 import Layout from "../components/layout"
 import Helmet from "react-helmet"
-import QuanitityButton from "../components/shop/quanitity-button"
 import ArrowDown from "../assets/down-arrow.svg"
 import ArrowUp from "../assets/up-arrow.svg"
+import { makeStyles } from "@material-ui/core"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
@@ -20,7 +20,7 @@ const Template = ({ pageContext }) => {
     <Layout stripePromise={stripePromise}>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Original Handmade Art | By Izabelle Wilding</title>
+        <title>Pastel Ceramics | Unique Handmade Pottery</title>
         <meta
           name={pageContext.node.product.name}
           content="Helmet application"

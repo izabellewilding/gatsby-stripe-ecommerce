@@ -9,6 +9,10 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.light,
     boxShadow:
       "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+    paddingLeft: "1.666rem",
+  },
+  navLink: {
+    padding: "1rem",
   },
 }))
 
@@ -25,7 +29,7 @@ const TestBreadcrumb = () => {
       className={classes.header}
     >
       <div className="max-w-5xl m-auto w-full h-full flex ">
-        <NavLink to="/shop-plantpots" edge="start">
+        <NavLink to="/shop-plantpots" edge="start" className={classes.navLink}>
           <Typography variant="body1">Plantpots</Typography>
         </NavLink>
         <NavLink to="/shop-dining" edge="start">
