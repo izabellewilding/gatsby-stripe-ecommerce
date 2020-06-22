@@ -91,7 +91,7 @@ const theme = {
     body1: {
       ...rawTheme.typography.body1,
       fontFamily: "chivo-reg",
-      color: rawTheme.palette.primary.main,
+      color: rawTheme.palette.primary.dark,
 
       fontWeight: rawTheme.typography.fontWeightRegular,
       fontSize: 16,

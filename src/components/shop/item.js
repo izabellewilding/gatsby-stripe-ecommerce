@@ -5,7 +5,6 @@ import { CartContext } from "./context.js"
 import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
-import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
 import Button from "@material-ui/core/Button"
@@ -31,12 +30,19 @@ const useStyles = makeStyles({
   },
 })
 
+const CardLink = props => {
+  return <Card component={Link} {...props} />
+}
+
 const Item = ({ sku }) => {
   const classes = useStyles()
   const ctx = useContext(CartContext)
 
   return (
-    <Card className={classes.root}>
+    <CardLink
+      to={`/${sku.product.name.replace(/ /g, "_")}`}
+      className={classes.root}
+    >
       <CardActionArea>
         <Img
           className={classes.media}
@@ -65,7 +71,7 @@ const Item = ({ sku }) => {
           </Button>
         </Link> */}
       {/* </CardActions> */}
-    </Card>
+    </CardLink>
   )
 }
 
