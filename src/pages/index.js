@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     padding: 0,
     height: 440,
     [theme.breakpoints.up(600)]: {
-      height: 700,
+      height: 600,
     },
     maxWidth: 1970,
     position: "relative",
@@ -44,6 +44,7 @@ const useStyles = makeStyles(theme => ({
     textAlign: "center",
     textTransform: "uppercase",
     color: "white",
+    paddingBottom: "3rem",
   },
 }))
 
@@ -123,7 +124,10 @@ const ArtGallery = ({ data }) => {
             className="w-full h-full absolute top-0 bottom-0 right-0 left-0 m-auto"
             fluid={data.fileName.childImageSharp.fluid}
           />
-          <div className="flex flex-col absolute md:w-1/2 top-0 right-0 bottom-0 p-8 text-center py-20 items-center justify-evenly">
+          <div
+            className="flex flex-col absolute md:w-1/2 top-0 right-0 bottom-0 p-8 text-center py-20 items-center justify-center"
+            style={{ backgroundColor: "#121321d4" }}
+          >
             <Typography variant="h3" className={classes.h3}>
               We make beautiful wheel-thrown pottery at an affordable price.
             </Typography>
