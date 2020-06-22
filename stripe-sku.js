@@ -2,11 +2,11 @@ var stripe = require("stripe")("sk_test_2PECtktQNqsL5vWpIUuWWWh000wvy5gZuc")
 
 stripe.skus.create(
   {
-    price: 8000,
+    price: 0800,
     currency: "gbp",
-    attributes: { name: "Mug" },
+    attributes: { name: "Breakfast Bowl" },
     inventory: { type: "infinite" },
-    product: "prod_HVuCCBY4bW8LRO",
+    product: "prod_HVuQPWkDaCvNVk",
   },
   function(err, sku) {
     if (err) return console.log("Error: ", err)
