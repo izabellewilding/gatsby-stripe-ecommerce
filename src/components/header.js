@@ -116,8 +116,8 @@ const Header = ({ page }) => {
     return <MenuItem button component={Link} {...props} />
   }
 
-  function BadgeLink(props) {
-    return <Badge component={Link} {...props} />
+  function IconButtonLink(props) {
+    return <IconButton component={Link} {...props} />
   }
 
   function openNavItem() {
@@ -164,15 +164,14 @@ const Header = ({ page }) => {
           </div>
           <div className="w-1/3 flex justify-end">
             <MenuItem className="w-1/3 flex justify-end">
-              <IconButton aria-label="shopping cart" color="primary">
-                <BadgeLink
-                  to="/cart-page"
+              <IconButtonLink aria-label="shopping cart" color="primary">
+                <Badge
                   badgeContent={ctx.totalItems(ctx.items)}
                   color="secondary"
                 >
                   <ShoppingBasketIcon className={classes.basketIcon} />
-                </BadgeLink>
-              </IconButton>
+                </Badge>
+              </IconButtonLink>
             </MenuItem>
           </div>
         </Toolbar>
@@ -196,15 +195,15 @@ const Header = ({ page }) => {
           <ListItem className={classes.drawerHeader}>
             <Img src="../images/name.png" className=" w-20 ml-6 my-2" />
 
-            <IconButton aria-label="shopping cart" color="primary">
-              <BadgeLink
+            <IconButtonLink aria-label="shopping cart" color="primary">
+              <Badge
                 to="/cart-page"
                 badgeContent={ctx.totalItems(ctx.items)}
                 color="secondary"
               >
                 <ShoppingBasketIcon className={classes.basketIcon} />
-              </BadgeLink>
-            </IconButton>
+              </Badge>
+            </IconButtonLink>
           </ListItem>
           <ListItemLink to="/">
             <ListItemIcon>

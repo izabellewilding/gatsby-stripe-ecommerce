@@ -70,7 +70,23 @@ th:first-child {
     position: absolute;
     left: 19%;
     bottom: -20px;
-    height: 2px;
+    height: 6px;
+    background-color: #dbdbdb;
+    width: 63%;
+    right: 0;
+  }
+}
+
+.underlinedDark {
+  position: relative;
+  margin: 3px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 19%;
+    bottom: -20px;
+    height: 6px;
     background-color: #dbdbdb;
     width: 63%;
     right: 0;

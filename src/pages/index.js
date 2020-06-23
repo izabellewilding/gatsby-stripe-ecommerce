@@ -42,9 +42,11 @@ const useStyles = makeStyles(theme => ({
   },
   h3: {
     textAlign: "center",
-    textTransform: "uppercase",
     color: "white",
     paddingBottom: "3rem",
+  },
+  textContainer: {
+    backgroundColor: theme.palette.primary.dark,
   },
 }))
 
@@ -88,7 +90,7 @@ function debounce(func, wait, immediate) {
   }
 }
 
-const ArtGallery = ({ data }) => {
+const ArtGallery = ({ data }, theme) => {
   const classes = useStyles()
   const galleryRef = useRef()
   const [scrim, setScrim] = useState(false)
@@ -126,9 +128,9 @@ const ArtGallery = ({ data }) => {
           />
           <div
             className="flex flex-col absolute md:w-1/2 top-0 right-0 bottom-0 p-8 text-center py-20 items-center justify-center"
-            style={{ backgroundColor: "#121321d4" }}
+            style={{ backgroundColor: "#82ada9 " }}
           >
-            <Typography variant="h3" className={classes.h3}>
+            <Typography variant="h2" className={classes.h3}>
               We make beautiful wheel-thrown pottery at an affordable price.
             </Typography>
             <ButtonLink

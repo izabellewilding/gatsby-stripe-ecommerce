@@ -12,14 +12,16 @@ const useStyles = makeStyles(theme => ({
     // borderColor: "grey",
   },
   title: {
-    color: theme.palette.secondary.light,
+    color: theme.palette.secondary.dark,
+    textAlign: "center",
+    marginTop: "1rem",
   },
 }))
 
 const ContactBanner = () => {
   const classes = useStyles()
   return (
-    <Container className={classes.container}>
+    <Container className={classes.container && "underlined"}>
       <Typography variant="h2" className={classes.title}>
         We would love to hear from you!
       </Typography>{" "}

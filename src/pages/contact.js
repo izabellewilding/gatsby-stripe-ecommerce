@@ -49,7 +49,9 @@ const ContactForm = () => {
       style={{ maxWidth: 1000 }}
     >
       <div className="font-sans pl-3 flex align-bottom">
-        <Typography variant="h3">Contact</Typography>
+        <Typography className="" variant="h3">
+          Contact
+        </Typography>
       </div>
       <section className="md:shadow-md rounded-md w-full flex align-middle justify-center">
         <form

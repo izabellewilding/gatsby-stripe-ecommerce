@@ -5,16 +5,39 @@ import { CartContext } from "../components/shop/context.js"
 import Img from "../components/image"
 import Layout from "../components/layout"
 import Helmet from "react-helmet"
-import ArrowDown from "../assets/down-arrow.svg"
-import ArrowUp from "../assets/up-arrow.svg"
 import { makeStyles } from "@material-ui/core"
+import Typography from "@material-ui/core/Typography"
+import Input from "@material-ui/core/Input"
+import Button from "@material-ui/core/Button"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    marginBottom: "1.666rem",
+  },
+  button: {
+    whiteSpace: "nowrap",
+    width: "33.3333%",
+    marginRight: "1rem",
+  },
+  imgHeader: {
+    position: "absolute",
+    top: "1rem",
+    display: "block",
+    "@media (min-width: 768px)": {
+      display: "none",
+    },
+  },
+}))
+
+const ButtonLink = props => {
+  return <Button component={Link} {...props} />
+}
 const Template = ({ pageContext }) => {
   const [quantity, setQuantity] = useState(1)
-
   const ctx = useContext(CartContext)
+  const classes = useStyles()
 
   return (
     <Layout stripePromise={stripePromise}>
@@ -26,33 +49,34 @@ const Template = ({ pageContext }) => {
           content="Helmet application"
         />
       </Helmet>
-      <div className=" relative bg-white w-screen py-6 flex m-auto justify-center">
-        <div className="flex flex-col md:flex-row bg-white overflow-hidden  shadow-md">
-          <div className="w-full flex items-center justify-center  md:p-4">
+      <div className="bg-white w-screen py-6 flex m-auto justify-center">
+        <div className="flex flex-col md:flex-row bg-white overflow-hidden shadow-md md:w-8/12">
+          <div className="w-full relative md:w-5/12 flex items-center justify-center md:p-4">
             <Img
               src={`/images/${pageContext.node.id}.jpg`}
-              style={{
-                minWidth: 310,
-                minHeight: 350,
-                maxHeight: 450,
-                maxWidth: 250,
-              }}
+              className="w-full h-full"
             />
-          </div>
-          <div className="w-full p-4 flex flex-col justify-start p-10">
-            <h1 className="text-gray-900 font-bold text-3xl garamond mb-8">
+            <Typography variant="h3" className={classes.imgHeader}>
               {pageContext.node.product.name}
-            </h1>
-            <h1 className="text-gray-700 font-bold text-lg garamond mb-6">
+            </Typography>
+          </div>
+          <div
+            className="w-full p-4 flex flex-col justify-start p-10 md:w-8/12"
+            style={{ maxWidth: 480 }}
+          >
+            <Typography variant="h3" className={classes.root}>
+              {pageContext.node.product.name}
+            </Typography>
+            <Typography variant="subtitle1" className={classes.root}>
               {ctx.formatPrice(
                 pageContext.node.price,
                 pageContext.node.currency
               )}
-            </h1>
-            <p className="mt-2 text-gray-700 garamond mb-5">
+            </Typography>
+            <Typography variant="body2" className={classes.root}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit In odit
               exercitationem fuga id nam quia
-            </p>
+            </Typography>
             <section className="flex flex-row  text-gray-600 text-sm chivo-reg mb-6">
               <span className="flex items-center rounded-lg bg-gray-100 px-3 mr-6 mb-4 h-8">
                 Color: {pageContext.node.product.metadata.color}
@@ -61,44 +85,42 @@ const Template = ({ pageContext }) => {
                 Width: {pageContext.node.product.metadata.width}
               </span>
             </section>
-            <section className="flex flex-row items-center w-10 mb-6">
-              <p className="flex flex-col">
-                <button
-                  className="flex justify-center"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  <ArrowUp className=" w-6" />
-                </button>
-                <input
+            <section className="flex flex-row justify-start w-full items-center mb-6">
+              <button
+                className="flex justify-center"
+                onClick={() => setQuantity(quantity + 1)}
+              ></button>
+              <p className="flex justify-start w-2/6">
+                <Input
                   type="number"
-                  value={quantity}
-                  className="bg-gray-200 w-10 text-center pl-3 py-1"
+                  // value={quantity}
+                  className="bg-gray-200 w-10 text-center py-1"
                   // onChange={event => updateQuantity(event.target.value)}
                 />
-                <button
+              </p>
+              {/* <Button
                   className="flex justify-center"
                   onClick={() => setQuantity(quantity - 1)}
-                >
-                  <ArrowDown className="w-6" />
-                </button>
-              </p>
-              <div className="flex item-center justify-start h-10 ml-6">
-                <button
-                  className="chivo-reg uppercase text-xs bg-gray-800 text-white border-gray-800 border-2 hover:bg-white hover:text-gray-800 py-2 px-3 whitespace-no-wrap mr-6"
-                  onClick={() => {
-                    ctx.addToCart(pageContext.node, quantity)
-                  }}
-                >
-                  {" "}
-                  Add to Cart
-                </button>
-                <Link
-                  className="chivo-reg uppercase text-xs border-gray-800 border-2 hover:bg-white hover:text-gray-800 bg-gray-800 text-white py-2 px-3 whitespace-no-wrap"
-                  to="/cart-page"
-                >
-                  Checkout{" "}
-                </Link>
-              </div>
+                ></Button> */}
+              <Button
+                color="secondary"
+                className={classes.button}
+                variant="contained"
+                onClick={() => {
+                  ctx.addToCart(pageContext.node, quantity)
+                }}
+              >
+                {" "}
+                Add to Cart
+              </Button>
+              <ButtonLink
+                className={classes.button}
+                color="secondary"
+                variant="contained"
+                to="/cart-page"
+              >
+                Checkout{" "}
+              </ButtonLink>
             </section>
           </div>
         </div>

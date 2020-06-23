@@ -11,9 +11,9 @@ const rawTheme = createMuiTheme({
     },
     //pinks
     secondary: {
-      light: "#ffd9ca",
-      main: "#e2a799",
-      dark: "#af786b",
+      light: "#e5ffff",
+      main: "#80cbc4",
+      dark: "#82ada9",
     },
 
     accent: {
@@ -61,8 +61,6 @@ const theme = {
     },
     h2: {
       ...rawTheme.typography.h2,
-      ...fontHeader,
-
       fontSize: 38,
       fontFamily: "chivo-reg",
       color: rawTheme.palette.primary.main,

@@ -112,11 +112,11 @@ const GoogleMap = () => {
   })
 
   return (
-    <div className="p-6 flex justify-center flex-wrap border-white rounded-md w-full">
+    <div className="p-6 md:pt-20 flex justify-center flex-wrap border-white rounded-md w-full">
       <Typography variant="h3">Or find us in store...</Typography>
 
       <div
-        className="shadow-md"
+        className="shadow-md pt-2"
         id="google-map"
         ref={googleMapRef}
         style={{ width: 400, height: 350 }}
