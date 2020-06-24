@@ -60,7 +60,7 @@ const LatestItems = () => {
           >
             Latest Shop Items
           </Typography>
-          <div className="flex flex-col md:flex-row justify-between ">
+          <div className="flex flex-col md:flex-row items-center justify-between ">
             {skus.edges.map(({ node: sku }) => (
               <LatestItem
                 key={sku.id}

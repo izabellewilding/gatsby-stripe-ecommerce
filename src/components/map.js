@@ -112,8 +112,10 @@ const GoogleMap = () => {
   })
 
   return (
-    <div className="p-6 md:pt-20 flex justify-center flex-wrap border-white rounded-md w-full">
-      <Typography variant="h3">Or find us in store...</Typography>
+    <div className="p-6 flex justify-center flex-wrap border-white rounded-md w-full">
+      <Typography variant="h3" className=" pb-3 text-center">
+        Or come and visit us in store...
+      </Typography>
 
       <div
         className="shadow-md pt-2"

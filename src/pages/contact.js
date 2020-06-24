@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import LatestItems from "../components/shop/latest-items"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
-import Typography from "@material-ui/core/Typography"
 import Banner from "../components/contact-banner"
 import Map from "../components/map"
 
@@ -48,19 +47,19 @@ const ContactForm = () => {
       className="p-6 flex flex-wrap border-white w-full"
       style={{ maxWidth: 1000 }}
     >
-      <div className="font-sans pl-3 flex align-bottom">
+      {/* <div className="font-sans pl-3 flex align-bottom">
         <Typography className="" variant="h3">
           Contact
         </Typography>
-      </div>
-      <section className="md:shadow-md rounded-md w-full flex align-middle justify-center">
+      </div> */}
+      <section className="w-full flex align-middle justify-center">
         <form
           name="contact"
           action="/thanks"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
-          className="mt-6 font-sans mb-0 w-full p-4 "
+          className=" font-sans mb-0 w-full p-4 "
         >
           {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
           <input type="hidden" name="form-name" value="contact" />
@@ -94,7 +93,7 @@ const ContactForm = () => {
                 />
               </div>
             </div>
-            <div className="field w-full md:w-2/4 text-gray-800">
+            <div className="field w-full text-gray-800 email-field">
               {/* <label className="label" htmlFor={"email"}>
                   Email
                 </label> */}
@@ -157,11 +156,11 @@ const ContactPage = () => {
     <Layout>
       {" "}
       <Banner />
-      <div className="flex flex-col align-top justify-center md:flex-row max-w-6xl ml-auto mr-auto">
-        <section className="flex justify-center w-full md:w-1/2 m-auto">
+      <div className="align-top justify-center md:flex-row max-w-6xl ml-auto mr-auto">
+        <section className="flex justify-center w-full md:w-2/3 m-auto">
           <ContactForm />
         </section>
-        <section className="w-full flex flex-col align-center justify-center  md:w-1/2 justify-center items-center">
+        <section className="w-full flex flex-col align-center justify-center m-auto md:w-1/2 justify-center items-center">
           <Map />
         </section>
       </div>
