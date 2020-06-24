@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   header: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.secondary.main,
     boxShadow:
       "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
     paddingLeft: "1.666rem",
@@ -29,11 +29,25 @@ const TestBreadcrumb = () => {
       className={classes.header}
     >
       <div className="max-w-5xl m-auto w-full h-full flex ">
-        <NavLink to="/shop-plantpots" edge="start" className={classes.navLink}>
-          <Typography variant="body1">Plantpots</Typography>
+        <NavLink
+          to="/shop-plantpots"
+          activeStyle={{ color: "white" }}
+          edge="start"
+          className={classes.navLink}
+        >
+          <Typography variant="body1" color="inherit">
+            Plantpots
+          </Typography>
         </NavLink>
-        <NavLink to="/shop-dining" edge="start">
-          <Typography variant="body1">Dining</Typography>
+        <NavLink
+          className={classes.navLink}
+          to="/shop-dining"
+          edge="start"
+          activeStyle={{ color: "white" }}
+        >
+          <Typography variant="body1" color="inherit">
+            Dining
+          </Typography>
         </NavLink>
       </div>
     </div>
