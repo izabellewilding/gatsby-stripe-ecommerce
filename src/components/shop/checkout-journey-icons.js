@@ -32,9 +32,12 @@ const useStyles = makeStyles(theme => ({
     lineHeight: "1.75",
     borderRadius: "50%",
     textTransform: "uppercase",
-    flexBasis: "1",
+    "@media (min-width: 960px)": {
+      flexGrow: 0,
+      maxWidth: "100%",
+      flexBasis: "auto",
+    },
   },
-
   gridItemActive: {
     backgroundColor: theme.palette.secondary.main,
     boxShadow:

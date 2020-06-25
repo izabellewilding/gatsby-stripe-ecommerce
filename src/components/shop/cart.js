@@ -6,6 +6,7 @@ import { CartContext } from "./context"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import { loadStripe } from "@stripe/stripe-js"
+import Button from "@material-ui/core/Button"
 // import "../../styles/all.css"
 
 function totalPrice(items) {
@@ -115,12 +116,13 @@ const Cart = () => {
           </tr>
         </tbody>{" "}
       </table>
-      <button
-        className="mt-2 button w-full text-lightPrimary chivo-reg uppercase  border-gray-900 border-2 hover:bg-white bg-gray-800 hover:text-gray-800 text-white rounded p-2 whitespace-no-wrap"
+      <Button
+        color="secondary"
         onClick={redirectToCheckout}
+        variant="contained"
       >
         Pay Now
-      </button>
+      </Button>
     </div>
   )
 }
