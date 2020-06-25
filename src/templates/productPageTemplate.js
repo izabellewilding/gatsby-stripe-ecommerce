@@ -7,7 +7,12 @@ import Layout from "../components/layout"
 import Helmet from "react-helmet"
 import { makeStyles } from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
-import Input from "@material-ui/core/Input"
+import Select from "@material-ui/core/Select"
+import InputLabel from "@material-ui/core/InputLabel"
+import FormControl from "@material-ui/core/FormControl"
+import MenuItem from "@material-ui/core/MenuItem"
+import ListSubheader from "@material-ui/core/ListSubheader"
+
 import Button from "@material-ui/core/Button"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
@@ -85,23 +90,34 @@ const Template = ({ pageContext }) => {
                 Width: {pageContext.node.product.metadata.width}
               </span>
             </section>
-            <section className="flex flex-row justify-start w-full items-center mb-6">
-              <button
-                className="flex justify-center"
-                onClick={() => setQuantity(quantity + 1)}
-              ></button>
+            <section className="flex flex-row justify-start w-full items-baseline mb-6">
+              {/* quantity input */}
               <p className="flex justify-start w-2/6">
-                <Input
-                  type="number"
-                  // value={quantity}
-                  className="bg-gray-200 w-10 text-center py-1"
-                  // onChange={event => updateQuantity(event.target.value)}
-                />
+                <FormControl className={classes.formControl}>
+                  <InputLabel shrink htmlFor="quantity">
+                    Quantity
+                  </InputLabel>
+                  <Select
+                    type="number"
+                    id="quantity"
+                    value={quantity}
+                    inputProps={{ name: " quantity" }}
+                    className="bg-gray-200 text-center p-2"
+                    onChange={event => setQuantity(Number(event.target.value))}
+                  >
+                    <ListSubheader>Quantity</ListSubheader>
+
+                    {/* Default each cart item to have maximum 5 quatity for demo purposes */}
+                    {Array(5)
+                      .fill()
+                      .map((_, index) => {
+                        const value = index + 1
+                        return <MenuItem value={value}>{value}</MenuItem>
+                      })}
+                  </Select>
+                </FormControl>
               </p>
-              {/* <Button
-                  className="flex justify-center"
-                  onClick={() => setQuantity(quantity - 1)}
-                ></Button> */}
+
               <Button
                 color="secondary"
                 className={classes.button}

@@ -9,7 +9,7 @@ const Shop = () => {
     <Layout>
       <div className="">
         <ShopNav />
-        <div className="flex justify-center max-w-6xl m-auto">
+        <div className="flex justify-center max-w-6xl m-auto pt-12">
           <DiningItemsList />
         </div>
         <ThanksBreadcrumb />

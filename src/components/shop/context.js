@@ -16,6 +16,7 @@ export default function CartProvider({ children }) {
   const [items, setItems] = useState([])
   const [open, setOpen] = useState(false)
   const [removedNotification, setRemovedNotification] = useState(false)
+  const [quantityUpdated, setQuantityUpdated] = useState(false)
 
   //
   useEffect(() => {
@@ -32,14 +33,27 @@ export default function CartProvider({ children }) {
 
   function addToCart(newItem, quantity) {
     newItem.quantity = quantity
+    let updatedItems = []
     if (!items.find(item => item.id === newItem.id)) {
-      const updatedItems = [...items, { ...newItem, sku: newItem.id }]
-      setItems(updatedItems)
-      window.localStorage.setItem("cart", JSON.stringify(updatedItems))
+      // add new item to the cart array
+      updatedItems = [...items, { ...newItem, sku: newItem.id }]
       setOpen(!open)
     } else {
-      alert("Already in basket!")
+      // update existing item
+      updatedItems = items.map(item => {
+        if (item.id === newItem.id) {
+          // merge in new item
+          return {
+            ...item,
+            ...newItem,
+          }
+        }
+        return item
+      })
+      setQuantityUpdated(!quantityUpdated)
     }
+    setItems(updatedItems)
+    window.localStorage.setItem("cart", JSON.stringify(updatedItems))
   }
 
   function formatPrice(price) {
@@ -70,6 +84,7 @@ export default function CartProvider({ children }) {
       {children}
       <>
         {/* progress notifications */}
+        {/* To do: Reuse single snackbar for multiple notifications by updating the message in state */}
         <Snackbar
           open={open}
           onClose={evt => setOpen(false)}
@@ -102,6 +117,25 @@ export default function CartProvider({ children }) {
           ]}
           stacked
           timeout={5000}
+        />
+
+        <Snackbar
+          open={quantityUpdated}
+          onClose={evt => setQuantityUpdated(false)}
+          message="Item quantity successfully updated!"
+          dismissesOnAction
+          action={[
+            <SnackbarAction
+              label="Checkout"
+              onClick={() => navigate("/cart-page")}
+            />,
+            <SnackbarAction
+              label="Keep Shopping"
+              onClick={() => navigate("/shop-home")}
+            />,
+          ]}
+          stacked
+          timeout={4000}
         />
       </>
     </CartContext.Provider>

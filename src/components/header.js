@@ -164,7 +164,11 @@ const Header = ({ page }) => {
           </div>
           <div className="w-1/3 flex justify-end">
             <MenuItem className="w-1/3 flex justify-end">
-              <IconButtonLink aria-label="shopping cart" color="primary">
+              <IconButtonLink
+                to="/cart-page"
+                aria-label="shopping cart"
+                color="primary"
+              >
                 <Badge
                   badgeContent={ctx.totalItems(ctx.items)}
                   color="secondary"
