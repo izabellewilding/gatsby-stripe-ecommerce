@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Img from "../image"
 import { StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"

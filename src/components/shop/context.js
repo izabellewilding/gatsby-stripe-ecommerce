@@ -39,7 +39,7 @@ export default function CartProvider({ children }) {
       updatedItems = [...items, { ...newItem, sku: newItem.id }]
       setOpen(!open)
     } else {
-      // update existing item
+      // update quantity of item if it already exists
       updatedItems = items.map(item => {
         if (item.id === newItem.id) {
           // merge in new item
