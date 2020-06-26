@@ -3,19 +3,13 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Pastel Pottery`,
-    description: `Ecommerce Website`,
+    description: `Gatsby Stripe Ecommerce Website`,
     author: `@izabellewilding`,
     image: "/images/name.png", // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `home-display-items`,
-        path: `${__dirname}/src/home-display-items`,
-      },
-    },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -66,6 +60,7 @@ module.exports = {
     //   },
     // },
     `gatsby-transformer-remark`,
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
