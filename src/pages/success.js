@@ -31,7 +31,7 @@ const Success = () => {
       <Box className="min-h-screen">
         <CheckoutJourneyIcons page="success" />
         <div
-          className="flex flex-col justify-center align-middle m-auto w-2/5"
+          className="flex flex-col justify-center align-middle m-auto w-4/5 md:w-2/5"
           color="primary"
         >
           <Typography
