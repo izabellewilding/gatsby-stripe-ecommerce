@@ -11,6 +11,7 @@ const useStyles = makeStyles({
   heroTitle: {
     fontSize: "3rem",
     letterSpacing: "10.75px",
+    padding: "1rem",
   },
   subtitle1: {
     marginTop: "1.5rem",
