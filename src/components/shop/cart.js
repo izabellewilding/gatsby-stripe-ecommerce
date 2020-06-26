@@ -35,8 +35,8 @@ const Cart = () => {
       })),
 
       mode: "payment",
-      successUrl: `http://localhost:8000/success/`,
-      cancelUrl: `https://localhost:8000/cart-page`,
+      successUrl: `https://pottery-ecommerce.netlify.app/success/`,
+      cancelUrl: `https://pottery-ecommerce.netlify.app/cart-page`,
     })
     if (error) {
       console.warn("Error:", error)
