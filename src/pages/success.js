@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-let number = new window.Date()
+let number = new Date()
 let time = number.getTime()
 let refNo = time
 
