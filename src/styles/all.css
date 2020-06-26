@@ -143,11 +143,6 @@ th:first-child {
   opacity: 0.95;
 }
 
-.bg-pattern {
-  background-image: url(../images/concrete-texture/concrete-texture.png);
-  background-position: center;
-}
-
 .right-05 {
   right: 0.5rem;
 }
