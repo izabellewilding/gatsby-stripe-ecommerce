@@ -23,8 +23,10 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     whiteSpace: "nowrap",
-    width: "33.3333%",
-    marginRight: "1rem",
+    width: "100%",
+    marginBottom: "0.75rem",
+    marginTop: "0.75rem",
+    marginRight: "0.25rem",
   },
   imgHeader: {
     position: "absolute",
@@ -54,19 +56,16 @@ const Template = ({ pageContext }) => {
           content="Helmet application"
         />
       </Helmet>
-      <div className="bg-white w-screen py-6 flex m-auto justify-center">
+      <div className="bg-white w-screen pb-6 md:py-6 flex m-auto justify-center">
         <div className="flex flex-col md:flex-row bg-white overflow-hidden shadow-md md:w-8/12">
           <div className="w-full relative md:w-5/12 flex items-center justify-center md:p-4">
             <Img
               src={`/images/${pageContext.node.id}.jpg`}
               className="w-full h-full"
             />
-            <Typography variant="h3" className={classes.imgHeader}>
-              {pageContext.node.product.name}
-            </Typography>
           </div>
           <div
-            className="w-full p-4 flex flex-col justify-start p-10 md:w-8/12"
+            className="w-full p-8 flex flex-col justify-start md:w-8/12"
             style={{ maxWidth: 480 }}
           >
             <Typography variant="h3" className={classes.root}>
@@ -82,7 +81,7 @@ const Template = ({ pageContext }) => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit In odit
               exercitationem fuga id nam quia
             </Typography>
-            <section className="flex flex-row  text-gray-600 text-sm chivo-reg mb-6">
+            <section className="flex flex-row  text-gray-600 text-sm chivo-reg">
               <span className="flex items-center rounded-lg bg-gray-100 px-3 mr-6 mb-4 h-8">
                 Color: {pageContext.node.product.metadata.color}
               </span>
@@ -90,7 +89,7 @@ const Template = ({ pageContext }) => {
                 Width: {pageContext.node.product.metadata.width}
               </span>
             </section>
-            <section className="flex flex-row justify-start w-full items-baseline mb-6">
+            <section className="flex flex-col  md:flex-row justify-start w-full items-baseline mb-6">
               {/* quantity input */}
               <p className="flex justify-start w-2/6">
                 <FormControl className={classes.formControl}>
@@ -102,7 +101,7 @@ const Template = ({ pageContext }) => {
                     id="quantity"
                     value={quantity}
                     inputProps={{ name: " quantity" }}
-                    className="bg-gray-200 text-center p-2"
+                    className="bg-gray-200 text-center p-2 mr-3"
                     onChange={event => setQuantity(Number(event.target.value))}
                   >
                     <ListSubheader>Quantity</ListSubheader>

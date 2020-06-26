@@ -7,7 +7,6 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import { loadStripe } from "@stripe/stripe-js"
 import Button from "@material-ui/core/Button"
-// import "../../styles/all.css"
 
 function totalPrice(items) {
   return items.reduce((acc, item) => acc + item.quantity * item.price, 0.0)
@@ -104,15 +103,6 @@ const Cart = () => {
               Total:<span>&nbsp;</span>
               <span>{ctx.formatPrice(totalPrice(ctx.items))}</span>
             </td>
-            {/* <td className="flex justify-center">
-              <button
-                className="checkoutButton flex flex-row items-center chivo-reg uppercase text-xs border-gray-800 border-2 hover:bg-white hover:text-gray-800 bg-gray-800 text-white py-1 px-2 whitespace-no-wrap"
-                onClick={redirectToCheckout}
-              >
-                {" "}
-                Checkout <Basket className="ml-2 h-4 basket" />
-              </button>
-            </td> */}
           </tr>
         </tbody>{" "}
       </table>

@@ -1,8 +1,8 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
-import Fab from "@material-ui/core/Fab"
 import { Container } from "@material-ui/core"
+import cx from "classnames"
 
 const useStyles = makeStyles(theme => ({
   gridContainer: {
@@ -40,19 +40,23 @@ const useStyles = makeStyles(theme => ({
   },
   gridItemActive: {
     backgroundColor: theme.palette.secondary.main,
-    boxShadow:
-      "0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12)",
   },
 }))
 
-const CheckoutJourneyIcons = () => {
+const CheckoutJourneyIcons = ({ page }) => {
   const classes = useStyles()
 
   return (
     <Container>
       <Grid container className={classes.gridContainer}>
         <Grid item md className={classes.gridItemContainer} spacing={2}>
-          <Grid item md className={classes.gridItem}>
+          <Grid
+            item
+            md
+            className={cx(classes.gridItem, {
+              [classes.gridItemActive]: page === "cartPage",
+            })}
+          >
             <span>1</span>
           </Grid>
           <p className="raleway text-center">Shopping Cart</p>
@@ -64,7 +68,13 @@ const CheckoutJourneyIcons = () => {
           <p className="raleway text-center">Check out</p>
         </Grid>
         <Grid item md className={classes.gridItemContainer} spacing={2}>
-          <Grid item md className={classes.gridItem}>
+          <Grid
+            item
+            md
+            className={cx(classes.gridItem, {
+              [classes.gridItemActive]: page === "success",
+            })}
+          >
             <span>3</span>
           </Grid>
           <p className="raleway text-center">Order Complete</p>

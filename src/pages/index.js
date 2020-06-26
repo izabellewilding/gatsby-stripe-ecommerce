@@ -116,7 +116,7 @@ const ArtGallery = ({ data }, theme) => {
 
       {/* <StyledScrim className={`${scrim ? "opacity-75" : "z opacity-0 "}`} /> */}
 
-      <div className="w-full h-full top relative m-auto z-10" ref={galleryRef}>
+      <div className="w-full h-full top relative m-auto z-50" ref={galleryRef}>
         <InfoBar />
 
         <Container className={classes.container}>

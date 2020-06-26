@@ -15,10 +15,6 @@ const rawTheme = createMuiTheme({
       main: "#a1ccc8",
       dark: "#82ada9",
     },
-
-    accent: {
-      main: white,
-    },
   },
   typography: {
     fontFamily: "'chivo-reg', sans-serif",

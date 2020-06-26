@@ -28,6 +28,7 @@ const useStyles = makeStyles({
     position: "sticky",
     top: 0,
     backgroundColor: "black",
+    zIndex: "0",
   },
   toolbar: {
     height: 95,
