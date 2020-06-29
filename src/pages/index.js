@@ -21,13 +21,16 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#2a333b",
     justifyContent: "center",
     padding: 0,
-    height: 440,
-    [theme.breakpoints.up(600)]: {
-      height: 600,
+    height: "auto",
+    [theme.breakpoints.up(768)]: {
+      height: "80vh",
     },
-    maxWidth: 1970,
-    position: "relative",
-    flexDirection: "column",
+    maxWidth: "100vw",
+    display: "flex",
+    flexDirection: "row",
+    [theme.breakpoints.down(768)]: {
+      flexDirection: "column",
+    },
   },
   root: {
     display: "flex",
@@ -123,11 +126,11 @@ const ArtGallery = ({ data }, theme) => {
           {/* <Img fluid={data.childImageSharp.fluid} /> */}
           <Img
             // key={data.childImageSharp.name}
-            className="w-full h-full absolute top-0 bottom-0 right-0 left-0 m-auto"
+            className="w-full md:w-1/2 h-full m-auto"
             fluid={data.fileName.childImageSharp.fluid}
           />
           <div
-            className="flex flex-col absolute md:w-1/2 top-0 right-0 bottom-0 p-8 text-center py-20 items-center justify-center"
+            className="flex flex-col md:w-1/2  p-8 text-center py-20 items-center justify-center"
             style={{ backgroundColor: "#82ada9 " }}
           >
             <Typography variant="h2" className={classes.h3}>
