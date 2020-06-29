@@ -95,6 +95,7 @@ const GoogleMap = () => {
       // const filterMyArray = (myArr, condition) => {
       //   return myArr.map(element => element[condition])
       // }
+      let activeWindow
 
       stores.map(store => {
         const marker = addMarker(store.coord, map)
@@ -104,8 +105,15 @@ const GoogleMap = () => {
           <h1 className="text-2xl infoHeading">${store.storeName}</h1>
           <p>${store.address}</p>`,
         })
+
         marker.addListener("click", function() {
+          if (activeWindow) {
+            activeWindow.close()
+          }
           infowindow.open(map, marker)
+          activeWindow = infowindow
+
+          console.warn("ACTIVEwINDOW:", activeWindow)
         })
       })
     })
