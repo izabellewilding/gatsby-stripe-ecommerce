@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import { loadStripe } from "@stripe/stripe-js"
 import Button from "@material-ui/core/Button"
+import Box from "@material-ui/core/Box"
 
 //calculate total cost of cart items
 function totalPrice(items) {
@@ -19,6 +20,12 @@ const useStyles = makeStyles(theme => ({
   heading: {
     marginBottom: "1.66rem",
     textAlign: "center",
+  },
+  infoBox: {
+    backgroundColor: theme.palette.primary.light,
+    textAlign: "center",
+    marginTop: "1rem",
+    padding: "1rem",
   },
 }))
 
@@ -114,7 +121,14 @@ const Cart = () => {
         variant="contained"
       >
         Pay Now
-      </Button>
+      </Button>{" "}
+      <Box className={classes.infoBox}>
+        <Typography>Fake card details to test the next step</Typography>
+        <br />
+        <Typography variant="body2">Card no: 4242 4242 4242 4242 </Typography>
+        <Typography variant="body2">CVC: Any numbers</Typography>
+        <Typography variant="body2">Expiry Date: Any future date</Typography>
+      </Box>
     </div>
   )
 }

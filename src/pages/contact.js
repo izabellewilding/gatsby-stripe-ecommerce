@@ -160,7 +160,7 @@ const ContactPage = () => {
         <section className="flex justify-center w-full md:w-2/3 m-auto">
           <ContactForm />
         </section>
-        <section className="w-full flex flex-col align-center justify-center m-auto md:w-1/2 justify-center items-center">
+        <section className="w-full flex flex-col align-center  m-auto md:w-1/2 justify-center items-center">
           <Map />
         </section>
       </div>

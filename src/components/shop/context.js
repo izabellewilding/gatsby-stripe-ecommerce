@@ -73,16 +73,6 @@ export default function CartProvider({ children }) {
     return items.reduce((acc, item) => acc + item.quantity, 0)
   }
 
-  // progess notification styling
-
-  // const useStyles = makeStyles(theme => ({
-  //   button: {
-  //     color: theme.palette.secondary.main,
-  //   },
-  // }))
-
-  // const classes = useStyles()
-
   const checkoutButton = (
     <Button
       onClick={() => navigate("/cart-page")}
@@ -98,7 +88,6 @@ export default function CartProvider({ children }) {
       onClick={() => navigate("/shop-home")}
       color="secondary"
       size="small"
-      // className={classes.button}
     >
       Back to shop
     </Button>
@@ -109,16 +98,6 @@ export default function CartProvider({ children }) {
       {continueShoppingButton}
     </>
   )
-
-  // const keepShoppingButton = (
-  //   <Button
-  //     onClick={() => navigate("/cart-page")}
-  //     color="secondary"
-  //     size="small"
-  //   >
-  //     Checkout
-  //   </Button>
-  // )
 
   return (
     <CartContext.Provider

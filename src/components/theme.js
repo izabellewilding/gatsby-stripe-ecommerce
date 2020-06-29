@@ -66,7 +66,7 @@ const theme = {
       ...fontHeader,
       fontSize: 30,
       fontFamily: "raleway-light",
-      color: rawTheme.palette.secondary.dark,
+      color: rawTheme.palette.primary.dark,
     },
     h4: {
       ...rawTheme.typography.h4,
@@ -92,8 +92,8 @@ const theme = {
     },
     body2: {
       ...rawTheme.typography.body2,
-      fontFamily: "playfair",
-
+      fontFamily: "chivo-reg",
+      color: rawTheme.palette.primary.main,
       fontSize: 14,
     },
   },

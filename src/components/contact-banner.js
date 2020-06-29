@@ -12,11 +12,9 @@ const useStyles = makeStyles(theme => ({
     // borderColor: "grey",
   },
   title: {
-    color: theme.palette.primary.dark,
     textAlign: "center",
     marginTop: "2rem",
     marginBottom: "1.666rem",
-    fontSize: "1.8rem",
   },
 }))
 
@@ -24,7 +22,7 @@ const ContactBanner = () => {
   const classes = useStyles()
   return (
     <Container className={classes.container}>
-      <Typography variant="h1" className={classes.title}>
+      <Typography variant="h3" className={classes.title}>
         We would love to hear from you
       </Typography>{" "}
       <Typography variant="subtitle1" className={classes.subtitle}>

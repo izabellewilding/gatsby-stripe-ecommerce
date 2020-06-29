@@ -54,10 +54,6 @@ const Footer = () => {
           <TypographyLink to="/contact" className={classes.link}>
             Contact
           </TypographyLink>
-          {/* <Img
-          src="./../images/three-birds-web.jpg"
-          className="hidden md:block w-screen h-full object-scale-down w-full"
-        /> */}
         </div>{" "}
         <div className="flex flex-col garamond mt-4 md:mt-0 pt-4 md:pt-0 border-t border-gray-400 md:border-transparent">
           <Typography variant="subtitle1" className={classes.subtitle1}>
@@ -71,18 +67,6 @@ const Footer = () => {
           </div>
         </div>
       </section>
-      {/* <div className="relative bg-gray-900">
-        <p className="text-white p-10 text-center raleway">
-          This project was made by{" "}
-          <a
-            href="https://www.izzywilding.com/"
-            target="_blank"
-            className="text-indigo-400"
-          >
-            Izzy Wilding
-          </a>{" "}
-        </p>
-      </div> */}
     </footer>
   )
 }

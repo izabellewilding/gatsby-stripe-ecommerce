@@ -9,9 +9,9 @@ import AbsoluteImage from "./tailwind-components/absolute-image.js"
 
 const useStyles = makeStyles({
   heroTitle: {
-    // fontSize: "3rem",
     letterSpacing: "10.75px",
     padding: "1rem",
+    color: "white",
   },
   subtitle1: {
     marginTop: "1.5rem",
@@ -34,10 +34,6 @@ const useStyles = makeStyles({
   toolbar: {
     height: 95,
   },
-
-  // h1: {
-  //   [theme.breakpoints.]
-  // }
 })
 
 const Hero = () => {
