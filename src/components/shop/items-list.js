@@ -42,7 +42,7 @@ const Products = () => {
       render={({ skus }) => {
         return (
           <div className=" justify-evenly">
-            <div className="w-full flex justify-end max-w-5xl">
+            <div className="w-full flex justify-end max-w-6xl">
               <div className="text-center w-full" style={{ maxWidth: 200 }}>
                 <Typography variant="subtitle1">Filter by Price</Typography>
                 <Typography variant="body2">Max Price £{value}</Typography>
