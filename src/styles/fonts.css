@@ -1,27 +1,17 @@
 @font-face {
-  font-family: "chivo-reg";
+  font-family: "chivo-reg", Arial, Helvetica, sans-serif;
   src: url(../fonts/Chivo-Regular.ttf);
   font-display: swap;
 }
 
-/* @font-face {
-  font-family: "playfair";
-  src: url(../fonts/PlayfairDisplay-VariableFont_wght.ttf);
-  font-display: swap;
-} */
-
 @font-face {
-  font-family: "raleway-light";
+  font-family: "raleway-light", Arial, Helvetica, sans-serif;
   src: url(../fonts/Raleway-Light.ttf);
   font-display: swap;
 }
-/* @font-face {
-  font-family: "avant";
-  src: url(../fonts/AvantGardeBookBT.ttf);
-  font-display: swap;
-} */
 
 @font-face {
-  font-family: "raleway";
+  font-family: "raleway", Arial, Helvetica, sans-serif;
   src: url("../fonts/Raleway-Medium.ttf");
+  font-display: swap;
 }
