@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { loadStripe } from "@stripe/stripe-js"
 import Button from "@material-ui/core/Button"
 
+//calculate total cost of cart items
 function totalPrice(items) {
   return items.reduce((acc, item) => acc + item.quantity * item.price, 0.0)
 }
@@ -56,10 +57,9 @@ const Cart = () => {
             <th className="text-left p-3 pr-0">Price</th>
             <th className="text-left p-3">Remove</th>
           </tr>
-
+          {/* map through the cart context items and add to cart table */}
           {ctx.items.map(item => (
             <tr className="border-b hover:bg-blue-100 bg-gray-100">
-              {/* <td className="p-3 px-5"></td> */}
               <td className="pr-0">
                 <Img
                   src={`/images/${item.sku}.jpg`}
@@ -73,6 +73,8 @@ const Cart = () => {
                 </div>
               </td>
               <td className="p-3  chivo-reg">{ctx.formatPrice(item.price)}</td>
+
+              {/* remove item from cart button */}
               <td className="p-3 ">
                 <button
                   onClick={() => {
@@ -93,12 +95,12 @@ const Cart = () => {
           </tr>
           <tr>
             <td colSpan="2">
-              <PoweredByStripe className="" />
+              <PoweredByStripe />
             </td>
             <td
-              className="chivo-reg"
+              className="chivo-reg text-right"
               colSpan="2"
-              style={{ textAlign: "right" }}
+              // style={{ textAlign: "right" }}
             >
               Total:<span>&nbsp;</span>
               <span>{ctx.formatPrice(totalPrice(ctx.items))}</span>

@@ -3,7 +3,9 @@ import { navigate } from "gatsby"
 import "@stripe/stripe-js"
 import "@rmwc/snackbar/styles"
 import "@rmwc/button/styles"
-import { Snackbar, SnackbarAction } from "@rmwc/snackbar"
+import Snackbar from "@material-ui/core/Snackbar"
+import SnackbarContent from "@material-ui/core/SnackbarContent"
+import Button from "@material-ui/core/Button"
 
 export const CartContext = createContext({
   items: [],
@@ -71,6 +73,53 @@ export default function CartProvider({ children }) {
     return items.reduce((acc, item) => acc + item.quantity, 0)
   }
 
+  // progess notification styling
+
+  // const useStyles = makeStyles(theme => ({
+  //   button: {
+  //     color: theme.palette.secondary.main,
+  //   },
+  // }))
+
+  // const classes = useStyles()
+
+  const checkoutButton = (
+    <Button
+      onClick={() => navigate("/cart-page")}
+      color="secondary"
+      size="small"
+    >
+      Checkout
+    </Button>
+  )
+
+  const continueShoppingButton = (
+    <Button
+      onClick={() => navigate("/shop-home")}
+      color="secondary"
+      size="small"
+      // className={classes.button}
+    >
+      Back to shop
+    </Button>
+  )
+  const addedToCartButtons = (
+    <>
+      {checkoutButton}
+      {continueShoppingButton}
+    </>
+  )
+
+  // const keepShoppingButton = (
+  //   <Button
+  //     onClick={() => navigate("/cart-page")}
+  //     color="secondary"
+  //     size="small"
+  //   >
+  //     Checkout
+  //   </Button>
+  // )
+
   return (
     <CartContext.Provider
       value={{
@@ -83,60 +132,41 @@ export default function CartProvider({ children }) {
     >
       {children}
       <>
-        {/* progress notifications */}
         {/* To do: Reuse single snackbar for multiple notifications by updating the message in state */}
+        {/* Added to cart notification */}
         <Snackbar
           open={open}
           onClose={evt => setOpen(false)}
-          message="Item successfully added to cart!"
-          dismissesOnAction
-          action={[
-            <SnackbarAction
-              label="Checkout"
-              onClick={() => navigate("/cart-page")}
-            />,
-            <SnackbarAction
-              label="Keep Shopping"
-              onClick={() => navigate("/shop-home")}
-            />,
-          ]}
-          stacked
-          timeout={4000}
-        />
-
+          autoHideDuration={6000}
+        >
+          <SnackbarContent
+            message="Item successfully added to cart!"
+            action={addedToCartButtons}
+          />
+        </Snackbar>
+        {/* item removed from cart */}
         <Snackbar
           open={removedNotification}
           onClose={evt => setRemovedNotification(false)}
-          message="Item removed from cart"
-          dismissesOnAction
-          action={[
-            <SnackbarAction
-              label="back to shop"
-              onClick={() => navigate("/shop-home")}
-            />,
-          ]}
-          stacked
-          timeout={5000}
-        />
-
+          autoHideDuration={6000}
+        >
+          <SnackbarContent
+            message="Item successfully removed from cart"
+            label="back to shop"
+            action={continueShoppingButton}
+          />
+        </Snackbar>
+        {/* Item quantity updated */}
         <Snackbar
           open={quantityUpdated}
           onClose={evt => setQuantityUpdated(false)}
-          message="Item quantity successfully updated!"
-          dismissesOnAction
-          action={[
-            <SnackbarAction
-              label="Checkout"
-              onClick={() => navigate("/cart-page")}
-            />,
-            <SnackbarAction
-              label="Keep Shopping"
-              onClick={() => navigate("/shop-home")}
-            />,
-          ]}
-          stacked
-          timeout={4000}
-        />
+          autoHideDuration={6000}
+        >
+          <SnackbarContent
+            message="Item quantity successfully updated!"
+            action={addedToCartButtons}
+          />
+        </Snackbar>
       </>
     </CartContext.Provider>
   )

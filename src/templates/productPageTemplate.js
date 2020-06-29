@@ -56,7 +56,7 @@ const Template = ({ pageContext }) => {
           content="Helmet application"
         />
       </Helmet>
-      <div className="bg-white w-screen pb-6 md:py-6 flex m-auto justify-center">
+      <div className="bg-white pb-6 md:py-6 flex m-auto justify-center">
         <div className="flex flex-col md:flex-row bg-white overflow-hidden shadow-md md:w-8/12">
           <div className="w-full relative md:w-5/12 flex items-center justify-center md:p-4">
             <Img

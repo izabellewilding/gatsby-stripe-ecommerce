@@ -7,7 +7,7 @@ const Checkout = () => {
   return (
     <Layout>
       <CheckoutJourneyIcons page="cartPage" />
-      <div className="h-screen bg-white">
+      <div className=" min-h-screen bg-white">
         <Cart />
       </div>
     </Layout>
