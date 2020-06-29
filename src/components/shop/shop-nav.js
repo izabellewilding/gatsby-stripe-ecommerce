@@ -12,12 +12,14 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: "1.666rem",
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-between",
   },
   navLink: {
     padding: "1rem",
   },
-  h1: {
-    color: "white",
+  h3: {
+    color: theme.palette.secondary.light,
+    fontSize: "1.25rem",
   },
 }))
 
@@ -33,7 +35,7 @@ const ShopNav = props => {
       // className="w-full chivo-reg border-b border-gray-200 text-sm bg-gray-100"
       className={classes.header}
     >
-      <div className="max-w-5xl m-auto w-full md:w-1/5 h-full flex ">
+      <div className="max-w-5xl m-auto w-full h-full flex flex-row  ">
         <NavLink
           to="/shop-plantpots"
           activeStyle={{ color: "white" }}
@@ -56,12 +58,11 @@ const ShopNav = props => {
         </NavLink>
       </div>
 
-      <div className=" md:flex hidden w-3/5 justify-center items-center">
-        <Typography variant="h3" className={classes.h1}>
+      {/* <div className="md:flex hidden justify-end items-center">
+        <Typography variant="h3" className={classes.h3}>
           {props.message}
         </Typography>
-      </div>
-      <div className="w-1/5"></div>
+      </div> */}
     </div>
   )
 }

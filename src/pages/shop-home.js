@@ -11,13 +11,8 @@ const ShopHome = () => {
       <div className="">
         <ShopNav message="All Collections" />
         <br />
-        <div
-          className="flex justify-center m-auto"
-          style={{ maxWidth: "63rem" }}
-        >
-          {" "}
-          <ItemsList />
-        </div>{" "}
+
+        <ItemsList />
         <LatestItems />
       </div>
     </Layout>
