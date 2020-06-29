@@ -8,12 +8,12 @@ import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
-
+import Box from "@material-ui/core/Box"
 import Typography from "@material-ui/core/Typography"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 300,
     margin: "1rem",
@@ -31,9 +31,14 @@ const useStyles = makeStyles({
     border: 2,
     fontWeight: 300,
   },
-})
+  box: {
+    backgroundColor: theme.palette.secondary.light,
+  },
+}))
 
 const LatestItems = () => {
+  const classes = useStyles()
+
   return (
     <StaticQuery
       query={graphql`
@@ -53,14 +58,14 @@ const LatestItems = () => {
         }
       `}
       render={({ skus }) => (
-        <div className="flex  flex-col m-auto mb-6 max-w-4xl p-2 pb-8">
+        <Box className={classes.box}>
           <Typography
             variant="h3"
             className="text-center p-4 uppercase text-2xl m-4"
           >
             Latest Shop Items
           </Typography>
-          <div className="flex flex-col md:flex-row items-center justify-between ">
+          <div className="flex flex-col md:flex-row items-center justify-between  max-w-4xl m-auto">
             {skus.edges.map(({ node: sku }) => (
               <LatestItem
                 key={sku.id}
@@ -69,7 +74,7 @@ const LatestItems = () => {
               />
             ))}
           </div>
-        </div>
+        </Box>
       )}
     />
   )
