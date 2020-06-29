@@ -56,7 +56,7 @@ const ShopNav = props => {
         </NavLink>
       </div>
 
-      <div className="flex hidden md:block w-3/5 justify-center items-center">
+      <div className=" md:flex hidden w-3/5 justify-center items-center">
         <Typography variant="h3" className={classes.h1}>
           {props.message}
         </Typography>
