@@ -7,7 +7,7 @@ import { loadStripe } from "@stripe/stripe-js"
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
 const ItemsListTemplate = props => {
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(80)
 
   return (
     <div className="w-full flex flex-col m-auto max-w-5xl items-center">
@@ -19,13 +19,12 @@ const ItemsListTemplate = props => {
           <Typography variant="subtitle1">Filter by Price</Typography>
           <Typography variant="body2">Max Price £{value}</Typography>
           <Slider
+            min={8}
+            max={80}
             value={value}
             onChange={(event, newValue) => setValue(newValue)}
             valueLabelDisplay="auto"
             aria-labelledby="continuous-slider"
-            min={8}
-            max={80}
-            defaultValue={50}
           />
         </div>
       </div>

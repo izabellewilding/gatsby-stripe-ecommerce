@@ -10,7 +10,6 @@ const ShopHome = () => {
     <Layout>
       <div className="">
         <ShopNav message="All Collections" />
-        <br />
         <ItemsList message="All Shop Items" />
         <LatestItems />
       </div>
