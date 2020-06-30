@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby-link"
 import Layout from "../components/layout"
-import LatestItems from "../components/shop/latest-items"
+import LatestItems from "../components/shop/ProductsLatest"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Banner from "../components/contact-banner"

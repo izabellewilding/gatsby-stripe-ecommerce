@@ -11,7 +11,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 
-import LatestItems from "../components/shop/latest-items"
+import LatestItems from "../components/shop/ProductsLatest"
 // import GridList from "@material-ui/core/GridList"
 // import GridListTile from "@material-ui/core/GridListTile"
 
@@ -147,6 +147,7 @@ const ArtGallery = ({ data }, theme) => {
             </ButtonLink>
           </div>
         </Container>
+        <LatestItems />
       </div>
     </Layout>
   )

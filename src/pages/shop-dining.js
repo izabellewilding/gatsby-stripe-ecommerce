@@ -3,7 +3,7 @@ import DiningItemsList from "../components/shop/ProductsDining"
 import Layout from "../components/layout"
 import ShopNav from "../components/shop/shop-nav.js"
 import ThanksBreadcrumb from "../components/shop/thanks-breadcrumb"
-import LatestItems from "../components/shop/latest-items"
+import LatestItems from "../components/shop/ProductsLatest"
 
 const Shop = () => {
   return (
