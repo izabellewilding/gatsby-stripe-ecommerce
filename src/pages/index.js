@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   },
   h3: {
     textAlign: "center",
-    color: "white",
+    color: "#d5ebe9",
     paddingBottom: "3rem",
   },
   textContainer: {

@@ -15,16 +15,13 @@ const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 300,
-    margin: "1rem",
+    maxWidth: 195,
+    margin: "3rem",
     minWidth: 250,
     boxShadow: "0 0 0 0",
   },
   media: {
-    height: 250,
-  },
-  cardContent: {
-    textAlign: "center",
+    height: 210,
   },
   button: {
     borderRadius: 0,
@@ -34,9 +31,13 @@ const useStyles = makeStyles(theme => ({
   box: {
     backgroundColor: theme.palette.secondary.light,
   },
+  cardContent: {
+    backgroundColor: "transparent",
+    textAlign: "center",
+  },
 }))
 
-const LatestItems = () => {
+const ProductsLatest = () => {
   const classes = useStyles()
 
   return (
@@ -61,13 +62,13 @@ const LatestItems = () => {
         <Box className={classes.box}>
           <Typography
             variant="h3"
-            className="text-center p-4 uppercase text-2xl m-4"
+            className="text-center pt-12 uppercase text-2xl m-4"
           >
             Latest Shop Items
           </Typography>
-          <div className="flex flex-col md:flex-row items-center justify-between  max-w-4xl m-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl m-auto overflow-x-scroll">
             {skus.edges.map(({ node: sku }) => (
-              <LatestItem
+              <ProductLatest
                 key={sku.id}
                 sku={sku}
                 stripePromise={stripePromise}
@@ -84,7 +85,7 @@ function CardLink(props) {
   return <Card component={Link} {...props} />
 }
 
-const LatestItem = ({ sku }) => {
+const ProductLatest = ({ sku }) => {
   const ctx = useContext(CartContext)
   const classes = useStyles()
 
@@ -94,11 +95,7 @@ const LatestItem = ({ sku }) => {
       className={classes.root}
     >
       <CardActionArea>
-        <Img
-          className={classes.media}
-          src={`/images/${sku.id}.jpg`}
-          title="Contemplative Reptile"
-        />
+        <Img className={classes.media} src={`/images/${sku.id}.jpg`} />
         <CardContent className={classes.cardContent}>
           <Typography gutterBottom variant="subtitle1">
             {sku.product.name}{" "}
@@ -111,4 +108,4 @@ const LatestItem = ({ sku }) => {
     </CardLink>
   )
 }
-export default LatestItems
+export default ProductsLatest
