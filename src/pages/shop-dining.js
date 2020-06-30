@@ -1,5 +1,5 @@
-import React, { useContext } from "react"
-import DiningItemsList from "../components/shop/dining-items-list"
+import React from "react"
+import DiningItemsList from "../components/shop/ProductsDining"
 import Layout from "../components/layout"
 import ShopNav from "../components/shop/shop-nav.js"
 import ThanksBreadcrumb from "../components/shop/thanks-breadcrumb"
@@ -10,9 +10,7 @@ const Shop = () => {
     <Layout>
       <div className="">
         <ShopNav message="Dining Collection" />
-        <div className="flex justify-center max-w-6xl m-auto pt-12">
-          <DiningItemsList />
-        </div>
+        <DiningItemsList />
         <ThanksBreadcrumb />
         <LatestItems />
       </div>

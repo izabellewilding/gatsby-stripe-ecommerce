@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import ItemsList from "../components/shop/items-list.js"
+import ItemsList from "../components/shop/ProductsAll.js"
 import Layout from "../components/layout"
 import ShopNav from "../components/shop/shop-nav.js"
 import Typography from "@material-ui/core/Typography"
@@ -11,7 +11,6 @@ const ShopHome = () => {
       <div className="">
         <ShopNav message="All Collections" />
         <br />
-
         <ItemsList message="All Shop Items" />
         <LatestItems />
       </div>

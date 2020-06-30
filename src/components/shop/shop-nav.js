@@ -37,6 +37,16 @@ const ShopNav = props => {
     >
       <div className="max-w-5xl m-auto w-full h-full flex flex-row  ">
         <NavLink
+          to="/shop-home"
+          activeStyle={{ color: "white" }}
+          edge="start"
+          className={classes.navLink}
+        >
+          <Typography variant="body1" color="inherit">
+            All
+          </Typography>
+        </NavLink>
+        <NavLink
           to="/shop-plantpots"
           activeStyle={{ color: "white" }}
           edge="start"

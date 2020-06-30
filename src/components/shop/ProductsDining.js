@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import Item from "./item"
 import { loadStripe } from "@stripe/stripe-js"
+import ItemsListTemplate from "../shop/item-list-template"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
@@ -9,9 +9,9 @@ const Products = () => {
   return (
     <StaticQuery
       query={graphql`
-        query PlantpotItems {
+        query DiningItems {
           skus: allStripeSku(
-            filter: { product: { metadata: { range: { in: "plantpots" } } } }
+            filter: { product: { metadata: { range: { in: "dining" } } } }
           ) {
             edges {
               node {
@@ -27,13 +27,7 @@ const Products = () => {
         }
       `}
       render={({ skus }) => {
-        return (
-          <div className="flex justify-evenly flex-wrap">
-            {skus.edges.map(({ node: sku }) => (
-              <Item key={sku.id} sku={sku} stripePromise={stripePromise} />
-            ))}
-          </div>
-        )
+        return <ItemsListTemplate skus={skus} message="Dining Collection" />
       }}
     />
   )
