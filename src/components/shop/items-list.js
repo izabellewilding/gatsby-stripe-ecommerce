@@ -14,9 +14,10 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Products = () => {
+const Products = props => {
   const classes = useStyles()
   const [value, setValue] = useState(0)
+
   return (
     <StaticQuery
       query={graphql`
@@ -40,23 +41,37 @@ const Products = () => {
         }
       `}
       render={({ skus }) => {
+        console.warn("SKUS:", skus.edges)
         return (
-          <div className=" justify-evenly">
-            <div className="w-full flex justify-end max-w-6xl">
-              <div className="text-center w-full" style={{ maxWidth: 200 }}>
+          <div className="w-full flex flex-col m-auto max-w-5xl  items-center">
+            <div className="flex md:flex-row w-full justify-between">
+              <div className="flex justify-center items-center">
+                <Typography variant="h1">{props.message}</Typography>
+              </div>
+              <div className="text-center w-full m-5" style={{ maxWidth: 200 }}>
                 <Typography variant="subtitle1">Filter by Price</Typography>
                 <Typography variant="body2">Max Price £{value}</Typography>
                 <Slider
                   value={value}
                   onChange={(event, newValue) => setValue(newValue)}
+                  valueLabelDisplay="auto"
                   aria-labelledby="continuous-slider"
+                  min={8}
+                  max={80}
+                  defaultValue={50}
                 />
               </div>
             </div>
-            <div className="flex flex-wrap m-auto max-w-4xl">
-              {skus.edges.map(({ node: sku }) => (
-                <Item key={sku.id} sku={sku} stripePromise={stripePromise} />
-              ))}
+
+            <div
+              className="flex flex-wrap m-auto justify-center"
+              style={{ maxWidth: "94rem" }}
+            >
+              {skus.edges
+                .filter(({ node }) => node.price <= value * 100)
+                .map(({ node: sku }) => (
+                  <Item key={sku.id} sku={sku} stripePromise={stripePromise} />
+                ))}
             </div>
             {/* <Typography variant="subtitle1">
                 We make all of our products by hand!

@@ -12,7 +12,7 @@ const ShopHome = () => {
         <ShopNav message="All Collections" />
         <br />
 
-        <ItemsList />
+        <ItemsList message="All Shop Items" />
         <LatestItems />
       </div>
     </Layout>

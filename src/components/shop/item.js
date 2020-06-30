@@ -13,7 +13,7 @@ import Typography from "@material-ui/core/Typography"
 const useStyles = makeStyles({
   root: {
     maxWidth: 300,
-    margin: "1rem",
+    margin: "2rem",
     minWidth: 285,
     boxShadow: "0 0 0 0",
   },

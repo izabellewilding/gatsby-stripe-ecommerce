@@ -53,10 +53,11 @@ const theme = {
       letterSpacing: 0.75,
       fontFamily: "raleway, Arial, Helvetica, sans-serif",
       textTransform: "uppercase",
-      color: "white",
+      color: rawTheme.palette.primary.main,
     },
     h2: {
       ...rawTheme.typography.h2,
+      ...fontHeader,
       fontSize: 38,
       fontFamily: "chivo-reg, Arial, Helvetica, sans-serif",
       color: rawTheme.palette.primary.main,
