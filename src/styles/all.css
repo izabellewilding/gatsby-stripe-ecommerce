@@ -2,10 +2,12 @@
 
 .raleway {
   font-family: "raleway";
+  -webkit-font-smoothing: antialiased;
 }
 
 .raleway-light {
   font-family: "raleway-light";
+  -webkit-font-smoothing: antialiased;
 }
 
 /* .playfair {
@@ -14,6 +16,7 @@
 
 .chivo-reg {
   font-family: "chivo-reg";
+  -webkit-font-smoothing: antialiased;
 }
 
 td {

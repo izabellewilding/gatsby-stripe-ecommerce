@@ -66,7 +66,7 @@ const ProductsLatest = () => {
           >
             Latest Shop Items
           </Typography>
-          <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl m-auto overflow-x-scroll">
+          <div className="flex flex-col md:flex-row flex-wrap items-center justify-between max-w-6xl m-auto">
             {skus.edges.map(({ node: sku }) => (
               <ProductLatest
                 key={sku.id}
