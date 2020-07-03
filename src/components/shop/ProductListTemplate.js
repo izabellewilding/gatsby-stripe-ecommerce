@@ -11,7 +11,7 @@ const ItemsListTemplate = props => {
 
   return (
     <div className="w-full flex flex-col m-auto max-w-5xl items-center">
-      <div className="flex flex-col md:flex-row w-full justify-between items-center">
+      <div className="flex flex-col md:flex-row w-full p-4 justify-between items-center">
         <div className="flex justify-center items-center p-4">
           <Typography variant="h1">{props.message}</Typography>
         </div>

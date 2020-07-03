@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
-import ItemsListTemplate from "./item-list-template"
+import ItemsListTemplate from "./ProductListTemplate"
 
 const useStyles = makeStyles(theme => ({
   textBlock: {

@@ -16,9 +16,10 @@ const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 195,
-    margin: "3rem",
+    margin: "2rem",
     minWidth: 250,
     boxShadow: "0 0 0 0",
+    backgroundColor: "transparent",
   },
   media: {
     height: 210,
@@ -32,10 +33,37 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.secondary.light,
   },
   cardContent: {
-    backgroundColor: "transparent",
     textAlign: "center",
   },
 }))
+
+function CardLink(props) {
+  return <Card component={Link} {...props} />
+}
+
+const ProductLatest = ({ sku }) => {
+  const ctx = useContext(CartContext)
+  const classes = useStyles()
+
+  return (
+    <CardLink
+      to={`/${sku.product.name.replace(/ /g, "_")}`}
+      className={classes.root}
+    >
+      <CardActionArea>
+        <Img className={classes.media} src={`/images/${sku.id}.jpg`} />
+        <CardContent className={classes.cardContent}>
+          <Typography gutterBottom variant="subtitle1">
+            {sku.product.name}{" "}
+          </Typography>
+          <Typography variant="subheading1" color="textSecondary" component="p">
+            {ctx.formatPrice(sku.price, sku.currency)}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </CardLink>
+  )
+}
 
 const ProductsLatest = () => {
   const classes = useStyles()
@@ -66,7 +94,7 @@ const ProductsLatest = () => {
           >
             Latest Shop Items
           </Typography>
-          <div className="flex flex-col md:flex-row flex-wrap items-center justify-between max-w-6xl m-auto">
+          <div className="flex flex-col md:flex-row flex-wrap items-center justify-center max-w-6xl m-auto">
             {skus.edges.map(({ node: sku }) => (
               <ProductLatest
                 key={sku.id}
@@ -81,31 +109,4 @@ const ProductsLatest = () => {
   )
 }
 
-function CardLink(props) {
-  return <Card component={Link} {...props} />
-}
-
-const ProductLatest = ({ sku }) => {
-  const ctx = useContext(CartContext)
-  const classes = useStyles()
-
-  return (
-    <CardLink
-      to={`/${sku.product.name.replace(/ /g, "_")}`}
-      className={classes.root}
-    >
-      <CardActionArea>
-        <Img className={classes.media} src={`/images/${sku.id}.jpg`} />
-        <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="subtitle1">
-            {sku.product.name}{" "}
-          </Typography>
-          <Typography variant="subheading1" color="textSecondary" component="p">
-            {ctx.formatPrice(sku.price, sku.currency)}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </CardLink>
-  )
-}
 export default ProductsLatest
