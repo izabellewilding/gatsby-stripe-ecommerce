@@ -1,9 +1,10 @@
 import React, { useContext, useState, useRef } from "react"
 import { Link } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
-import { CartContext } from "../components/shop/context.js"
+import { CartContext } from "../components/shop/Context.js"
 import Img from "../components/image"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Helmet from "react-helmet"
 import { makeStyles } from "@material-ui/core"
 import Typography from "@material-ui/core/Typography"
@@ -48,14 +49,7 @@ const Template = ({ pageContext }) => {
 
   return (
     <Layout stripePromise={stripePromise}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Pastel Ceramics | Unique Handmade Pottery</title>
-        <meta
-          name={pageContext.node.product.name}
-          content="Helmet application"
-        />
-      </Helmet>
+      <SEO title={pageContext.node.product.name} />
       <div className="bg-white pb-6 md:py-6 flex m-auto justify-center">
         <div className="flex flex-col md:flex-row bg-white overflow-hidden shadow-md md:w-8/12">
           <div className="w-full relative md:w-5/12 flex items-center justify-center md:p-4">

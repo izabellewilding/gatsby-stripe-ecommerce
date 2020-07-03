@@ -56,7 +56,7 @@ const ProductLatest = ({ sku }) => {
           <Typography gutterBottom variant="subtitle1">
             {sku.product.name}{" "}
           </Typography>
-          <Typography variant="subheading1" color="textSecondary" component="p">
+          <Typography variant="subtitle1" color="textSecondary" component="p">
             {ctx.formatPrice(sku.price, sku.currency)}
           </Typography>
         </CardContent>

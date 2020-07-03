@@ -8,6 +8,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "@material-ui/core/styles"
+import SEO from "../components/seo"
 // import CssBaseline from "@material-ui/core/CssBaseline"
 import theme from "./theme"
 
@@ -23,17 +24,7 @@ const Layout = ({ children, page }) => {
   return (
     <>
       {" "}
-      <head>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-      </head>
-      {/* <SEO /> */}
+      <SEO title="Gatsby Stripe Ecommerce" />
       <ThemeProvider theme={theme}>
         {/* <CssBaseline /> */}
 
