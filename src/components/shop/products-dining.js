@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
-import ItemsListTemplate from "./ProductListTemplate"
+import ItemsListTemplate from "./product-list-template"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
-const Products = () => {
+const ProductsDining = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -27,10 +27,16 @@ const Products = () => {
         }
       `}
       render={({ skus }) => {
-        return <ItemsListTemplate skus={skus} message="Dining Collection" />
+        return (
+          <ItemsListTemplate
+            skus={skus}
+            stripePromise={stripePromise}
+            message="Dining Collection"
+          />
+        )
       }}
     />
   )
 }
 
-export default Products
+export default ProductsDining

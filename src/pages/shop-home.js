@@ -1,9 +1,8 @@
-import React, { useContext } from "react"
-import ItemsList from "../components/shop/ProductsAll.js"
+import React from "react"
+import ItemsList from "../components/shop/Products-all.js"
 import Layout from "../components/layout"
-import ShopNav from "../components/shop/shop-nav.js"
-import Typography from "@material-ui/core/Typography"
-import LatestItems from "../components/shop/ProductsLatest"
+import ShopNav from "../components/shop/shop-navigaton.js"
+import LatestItems from "../components/shop/products-latest"
 
 const ShopHome = () => {
   return (

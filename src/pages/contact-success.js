@@ -1,9 +1,8 @@
 import React from "react"
 import Layout from "../components/layout"
-import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 
-const useStyles = makeStyles(theme => ({}))
+// const useStyles = makeStyles(theme => ({}))
 const Thanks = () => {
   return (
     <Layout>

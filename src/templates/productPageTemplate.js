@@ -1,12 +1,12 @@
-import React, { useContext, useState, useRef } from "react"
+import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
-import { CartContext } from "../components/shop/Context.js"
-import Img from "../components/image"
+import { CartContext } from "../components/shop/cart-context"
+import Img from "../components/image-query"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Helmet from "react-helmet"
+import SEO from "../components/SEO"
 import { makeStyles } from "@material-ui/core"
+import { formatPrice } from "../components/shop/utils"
 import Typography from "@material-ui/core/Typography"
 import Select from "@material-ui/core/Select"
 import InputLabel from "@material-ui/core/InputLabel"
@@ -42,14 +42,16 @@ const useStyles = makeStyles(theme => ({
 const ButtonLink = props => {
   return <Button component={Link} {...props} />
 }
+
 const Template = ({ pageContext }) => {
   const [quantity, setQuantity] = useState(1)
   const ctx = useContext(CartContext)
-  const classes = useStyles()
+  const classes = useStyles(pageContext.node.price)
 
   return (
     <Layout stripePromise={stripePromise}>
       <SEO title={pageContext.node.product.name} />
+
       <div className="bg-white pb-6 md:py-6 flex m-auto justify-center">
         <div className="flex flex-col md:flex-row bg-white overflow-hidden shadow-md md:w-8/12">
           <div className="w-full relative md:w-5/12 flex items-center justify-center md:p-4">
@@ -66,10 +68,7 @@ const Template = ({ pageContext }) => {
               {pageContext.node.product.name}
             </Typography>
             <Typography variant="subtitle1" className={classes.root}>
-              {ctx.formatPrice(
-                pageContext.node.price,
-                pageContext.node.currency
-              )}
+              {formatPrice(pageContext.node.price, pageContext.node.currency)}
             </Typography>
             <Typography variant="body2" className={classes.root}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit In odit

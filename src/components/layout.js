@@ -8,9 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "@material-ui/core/styles"
-import SEO from "../components/seo"
+import SEO from "../components/SEO"
 // import CssBaseline from "@material-ui/core/CssBaseline"
-import theme from "./theme"
+import theme from "./Theme"
 
 import Header from "./header"
 import Footer from "./footer"

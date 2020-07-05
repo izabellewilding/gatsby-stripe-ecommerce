@@ -1,8 +1,8 @@
-import React, { useContext } from "react"
-import PlantpotItemsList from "../components/shop/ProductsPlantpots"
+import React from "react"
+import PlantpotItemsList from "../components/shop/products-plantpots"
 import Layout from "../components/layout"
-import ShopNav from "../components/shop/shop-nav.js"
-import LatestItems from "../components/shop/ProductsLatest"
+import ShopNav from "../components/shop/shop-navigaton.js"
+import LatestItems from "../components/shop/products-latest"
 
 const Shop = props => {
   return (

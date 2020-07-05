@@ -10,8 +10,6 @@ import Button from "@material-ui/core/Button"
 export const CartContext = createContext({
   items: [],
   addToCart: () => {},
-  totalItems: () => {},
-  formatPrice: () => {},
 })
 
 export default function CartProvider({ children }) {
@@ -20,7 +18,6 @@ export default function CartProvider({ children }) {
   const [removedNotification, setRemovedNotification] = useState(false)
   const [quantityUpdated, setQuantityUpdated] = useState(false)
 
-  //
   useEffect(() => {
     function loadCartItems() {
       const cartItems = window && window.localStorage.getItem("cart")
@@ -58,19 +55,11 @@ export default function CartProvider({ children }) {
     window.localStorage.setItem("cart", JSON.stringify(updatedItems))
   }
 
-  function formatPrice(price) {
-    return `£${(price * 0.01).toFixed(2)}`
-  }
-
   function removeFromCart(unwantedItemId) {
     const filteredItems = items.filter(item => item.id !== unwantedItemId)
     setItems(filteredItems)
     window.localStorage.setItem("cart", JSON.stringify(filteredItems))
     setRemovedNotification(!removedNotification)
-  }
-
-  function totalItems(items) {
-    return items.reduce((acc, item) => acc + item.quantity, 0)
   }
 
   const checkoutButton = (
@@ -104,8 +93,6 @@ export default function CartProvider({ children }) {
       value={{
         items,
         addToCart,
-        totalItems,
-        formatPrice,
         removeFromCart,
       }}
     >

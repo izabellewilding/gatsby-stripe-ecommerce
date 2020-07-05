@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core"
 import Toolbar from "@material-ui/core/Toolbar"
-import AbsoluteImage from "./tailwind-components/absolute-image.js"
+import AbsoluteImage from "./tailwind-components/AbsoluteImage.js"
 
 const useStyles = makeStyles({
   heroTitle: {

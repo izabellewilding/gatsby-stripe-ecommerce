@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import { Link, graphql } from "gatsby"
-import Img from "../image"
+import Img from "../image-query"
 import { StaticQuery } from "gatsby"
 import { loadStripe } from "@stripe/stripe-js"
-import { CartContext } from "./context"
 import { makeStyles } from "@material-ui/core/styles"
+import { formatPrice } from "./utils"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
@@ -42,7 +42,6 @@ function CardLink(props) {
 }
 
 const ProductLatest = ({ sku }) => {
-  const ctx = useContext(CartContext)
   const classes = useStyles()
 
   return (
@@ -57,7 +56,7 @@ const ProductLatest = ({ sku }) => {
             {sku.product.name}{" "}
           </Typography>
           <Typography variant="subtitle1" color="textSecondary" component="p">
-            {ctx.formatPrice(sku.price, sku.currency)}
+            {formatPrice(sku.price, sku.currency)}
           </Typography>
         </CardContent>
       </CardActionArea>

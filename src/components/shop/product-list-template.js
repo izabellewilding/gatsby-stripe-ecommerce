@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Slider from "@material-ui/core/Slider"
 import Typography from "@material-ui/core/Typography"
-import Item from "./ProductTemplate"
+import Item from "./product-template"
 import { loadStripe } from "@stripe/stripe-js"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")

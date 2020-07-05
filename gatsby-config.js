@@ -51,16 +51,7 @@ module.exports = {
         downloadFiles: true,
       },
     },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Material Icons"],
-        },
-      },
-    }// {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
+    //   options: { //   resolve: `gatsby-source-filesystem`, // {
     //     name: `markdown-pages`,
     //     path: `${__dirname}/src/markdown-pages`,
     //   },

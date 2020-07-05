@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
+import ItemsListTemplate from "./product-list-template"
 import { loadStripe } from "@stripe/stripe-js"
-import ItemsListTemplate from "./ProductListTemplate"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
@@ -27,7 +27,13 @@ const Products = () => {
         }
       `}
       render={({ skus }) => {
-        return <ItemsListTemplate skus={skus} message="Planter Collection" />
+        return (
+          <ItemsListTemplate
+            skus={skus}
+            stripePromise={stripePromise}
+            message="Planter Collection"
+          />
+        )
       }}
     />
   )

@@ -6,7 +6,7 @@ import CheckoutJourneyIcons from "../components/shop/checkout-journey-icons"
 const Checkout = () => {
   return (
     <Layout>
-      <CheckoutJourneyIcons page="cartPage" />
+      <CheckoutJourneyIcons page="cart-page" />
       <div className=" min-h-screen bg-white">
         <Cart />
       </div>

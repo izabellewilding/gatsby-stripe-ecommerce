@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react"
-import { CartContext } from "./shop/context"
+import { CartContext } from "./shop/cart-context"
 
 import { Link } from "gatsby"
-import Img from "./image"
-import Logo from "../assets/name.svg"
+import Img from "./image-query"
 import { makeStyles } from "@material-ui/core/styles"
+import { totalItems } from "./shop/utils"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
@@ -169,10 +169,7 @@ const Header = ({ page }) => {
                 aria-label="shopping cart"
                 color="primary"
               >
-                <Badge
-                  badgeContent={ctx.totalItems(ctx.items)}
-                  color="secondary"
-                >
+                <Badge badgeContent={totalItems(ctx.items)} color="secondary">
                   <ShoppingBasketIcon className={classes.basketIcon} />
                 </Badge>
               </IconButtonLink>
@@ -202,7 +199,7 @@ const Header = ({ page }) => {
             <IconButtonLink aria-label="shopping cart" color="primary">
               <Badge
                 to="/cart-page"
-                badgeContent={ctx.totalItems(ctx.items)}
+                badgeContent={totalItems(ctx.items)}
                 color="secondary"
               >
                 <ShoppingBasketIcon className={classes.basketIcon} />
@@ -243,7 +240,7 @@ const Header = ({ page }) => {
             <ListItemIcon>
               <MailIcon />
             </ListItemIcon>
-            <ListItemText primary="Contact" />
+            <ListItemText primary="contact" />
           </ListItemLink>
         </List>
       </Drawer>

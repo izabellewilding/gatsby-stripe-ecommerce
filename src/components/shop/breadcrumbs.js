@@ -1,6 +1,6 @@
 import React from "react"
 
-const ThanksBreadcrumb = () => {
+export const ThanksBreadcrumb = () => {
   return (
     <div className="w-full flex justify-center items-center p-4  chivo-reg border-b border-gray-200 text-sm text-gray-600 bg-gray-100">
       <p>
@@ -17,5 +17,3 @@ const ThanksBreadcrumb = () => {
     </div>
   )
 }
-
-export default ThanksBreadcrumb

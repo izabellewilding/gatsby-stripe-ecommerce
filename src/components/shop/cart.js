@@ -1,18 +1,25 @@
-import React, { useContext } from "react"
-import Img from "../image.js"
+import React, { useContext, useState } from "react"
+import Img from "../image-query"
 import RemoveIcon from "../../assets/cancel.svg"
 import PoweredByStripe from "../../assets/powered_by_stripe.svg"
-import { CartContext } from "./context"
+import { CartContext } from "./cart-context"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import { loadStripe } from "@stripe/stripe-js"
+import { formatPrice, totalPrice } from "./utils"
+
 import Button from "@material-ui/core/Button"
 import Box from "@material-ui/core/Box"
 
 //calculate total cost of cart items
-function totalPrice(items) {
-  return items.reduce((acc, item) => acc + item.quantity * item.price, 0.0)
-}
+
+// useEffect(() => {
+//   function buttonHandle() {
+//     if (ctx.item.quantity === 0) {
+//       setDisabled(true)
+//     }
+//   }
+// })
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
@@ -43,7 +50,7 @@ const Cart = () => {
       })),
 
       mode: "payment",
-      successUrl: `https://pottery-ecommerce.netlify.app/success/`,
+      successUrl: `https://pottery-ecommerce.netlify.app/order-success/`,
       cancelUrl: `https://pottery-ecommerce.netlify.app/cart-page`,
     })
     if (error) {
@@ -64,7 +71,7 @@ const Cart = () => {
             <th className="text-left p-3 pr-0">Price</th>
             <th className="text-left p-3">Remove</th>
           </tr>
-          {/* map through the cart context items and add to cart table */}
+          {/* add cart items from context to cart */}
           {ctx.items.map(item => (
             <tr className="border-b hover:bg-blue-100 bg-gray-100">
               <td className="pr-0">
@@ -79,7 +86,7 @@ const Cart = () => {
                   {item.quantity}
                 </div>
               </td>
-              <td className="p-3  chivo-reg">{ctx.formatPrice(item.price)}</td>
+              <td className="p-3 chivo-reg">{formatPrice(item.price)}</td>
 
               {/* remove item from cart button */}
               <td className="p-3 ">
@@ -104,13 +111,9 @@ const Cart = () => {
             <td colSpan="2">
               <PoweredByStripe />
             </td>
-            <td
-              className="chivo-reg text-right"
-              colSpan="2"
-              // style={{ textAlign: "right" }}
-            >
+            <td className="chivo-reg text-right" colSpan="2">
               Total:<span>&nbsp;</span>
-              <span>{ctx.formatPrice(totalPrice(ctx.items))}</span>
+              <span>{formatPrice(totalPrice(ctx.items))}</span>
             </td>
           </tr>
         </tbody>{" "}
@@ -119,6 +122,7 @@ const Cart = () => {
         color="secondary"
         onClick={redirectToCheckout}
         variant="contained"
+        disabled={ctx.items.length === 0}
       >
         Pay Now
       </Button>{" "}

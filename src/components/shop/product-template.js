@@ -1,15 +1,16 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
-import Img from "../image"
-import { CartContext } from "./Context.js"
+import Img from "../image-query"
+import { CartContext } from "./cart-context"
 import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
+import { formatPrice } from "./utils"
 
 import Typography from "@material-ui/core/Typography"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 300,
     margin: "1rem",
@@ -27,15 +28,14 @@ const useStyles = makeStyles({
     border: 2,
     fontWeight: 300,
   },
-})
+}))
 
 const CardLink = props => {
   return <Card component={Link} {...props} />
 }
 
-const Item = ({ sku }) => {
+const ProductTemplate = ({ sku }) => {
   const classes = useStyles()
-  const ctx = useContext(CartContext)
 
   return (
     <CardLink
@@ -49,29 +49,14 @@ const Item = ({ sku }) => {
           title="Contemplative Reptile"
         />
         <CardContent className={classes.cardContent}>
-          <Typography gutterBottom variant="subtitle1">
-            {sku.product.name}{" "}
-          </Typography>
-          <Typography variant="subtitle1" color="textSecondary" component="p">
-            {ctx.formatPrice(sku.price, sku.currency)}
+          <Typography variant="subtitle1">{sku.product.name} </Typography>
+          <Typography variant="subtitle1">
+            {formatPrice(sku.price, sku.currency)}
           </Typography>
         </CardContent>
       </CardActionArea>
-      {/* <CardActions className={classes.cardAction}> */}
-      {/* <Link to={`/${sku.product.name.replace(/ /g, "_")}`}>
-          <Button
-            size="small"
-            color="primary"
-            variant="outlined"
-            classname={classes.button}
-            style={{ borderRadius: 0, border: "solid 1.5px" }}
-          >
-            View Item
-          </Button>
-        </Link> */}
-      {/* </CardActions> */}
     </CardLink>
   )
 }
 
-export default Item
+export default ProductTemplate

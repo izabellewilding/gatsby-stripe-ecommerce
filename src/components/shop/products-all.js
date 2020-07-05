@@ -1,7 +1,11 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
-import ItemsListTemplate from "./ProductListTemplate"
+import { loadStripe } from "@stripe/stripe-js"
+
+import ItemsListTemplate from "./product-list-template"
+
+const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
 const useStyles = makeStyles(theme => ({
   textBlock: {
@@ -35,7 +39,13 @@ const AllProducts = () => {
         }
       `}
       render={({ skus }) => {
-        return <ItemsListTemplate skus={skus} message="All Shop Items" />
+        return (
+          <ItemsListTemplate
+            skus={skus}
+            stripePromise={stripePromise}
+            message="All Shop Items"
+          />
+        )
       }}
     />
   )

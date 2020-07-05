@@ -49,30 +49,30 @@ const CheckoutJourneyIcons = ({ page }) => {
   return (
     <Container>
       <Grid container className={classes.gridContainer}>
-        <Grid item md className={classes.gridItemContainer} spacing={2}>
+        <Grid item md className={classes.gridItemContainer}>
           <Grid
             item
             md
             className={cx(classes.gridItem, {
-              [classes.gridItemActive]: page === "cartPage",
+              [classes.gridItemActive]: page === "cart-page",
             })}
           >
             <span>1</span>
           </Grid>
           <p className="raleway text-center">Shopping Cart</p>
         </Grid>
-        <Grid item md className={classes.gridItemContainer} spacing={2}>
+        <Grid item md className={classes.gridItemContainer}>
           <Grid item md className={classes.gridItem}>
             <span>2</span>
           </Grid>
           <p className="raleway text-center">Check out</p>
         </Grid>
-        <Grid item md className={classes.gridItemContainer} spacing={2}>
+        <Grid item md className={classes.gridItemContainer}>
           <Grid
             item
             md
             className={cx(classes.gridItem, {
-              [classes.gridItemActive]: page === "success",
+              [classes.gridItemActive]: page === "order-success",
             })}
           >
             <span>3</span>

@@ -49,7 +49,12 @@ function SEO({ description, lang, meta, title }) {
           content: `minimum-scale=1, initial-scale=1, width=device-width`,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      />
+    </Helmet>
   )
 }
 

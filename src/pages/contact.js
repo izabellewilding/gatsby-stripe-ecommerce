@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby-link"
 import Layout from "../components/layout"
-import LatestItems from "../components/shop/ProductsLatest"
+import LatestItems from "../components/shop/products-latest"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
 import Banner from "../components/contact-banner"
@@ -44,7 +44,7 @@ const ContactForm = () => {
 
   return (
     <div
-      className="p-6 flex flex-wrap border-white w-full"
+      className=" md:p-6 flex flex-wrap border-white w-full"
       style={{ maxWidth: 1000 }}
     >
       {/* <div className="font-sans pl-3 flex align-bottom">
@@ -55,7 +55,7 @@ const ContactForm = () => {
       <section className="w-full flex align-middle justify-center">
         <form
           name="contact"
-          action="/thanks"
+          action="/contact-success"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
@@ -93,7 +93,7 @@ const ContactForm = () => {
                 />
               </div>
             </div>
-            <div className="field w-full text-gray-800 email-field">
+            <div className="field w-full text-gray-800 md:ml-3">
               {/* <label className="label" htmlFor={"email"}>
                   Email
                 </label> */}

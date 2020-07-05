@@ -4,14 +4,7 @@ import Layout from "../components/layout"
 import CheckoutJourneyIcons from "../components/shop/checkout-journey-icons"
 import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
-import { makeStyles } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    // backgroundColor: theme.palette.secondary.light,
-  },
-}))
 
 let number = new Date()
 let time = number.getTime()
@@ -23,13 +16,11 @@ const ButtonLink = props => {
   return <Button component={Link} {...props} />
 }
 
-const Success = () => {
-  const classes = useStyles()
-
+const OrderSuccess = () => {
   return (
     <Layout>
       <Box className="min-h-screen">
-        <CheckoutJourneyIcons page="success" />
+        <CheckoutJourneyIcons page="OrderSuccess" />
         <div
           className="flex flex-col justify-center align-middle m-auto w-4/5 md:w-2/5"
           color="primary"
@@ -52,4 +43,4 @@ const Success = () => {
   )
 }
 
-export default Success
+export default OrderSuccess
