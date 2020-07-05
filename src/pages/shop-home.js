@@ -1,5 +1,5 @@
 import React from "react"
-import ItemsList from "../components/shop/Products-all.js"
+import ItemsList from "../components/shop/products-all.js"
 import Layout from "../components/layout"
 import ShopNav from "../components/shop/shop-navigaton.js"
 import LatestItems from "../components/shop/products-latest"

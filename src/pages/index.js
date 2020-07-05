@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
 
-import LatestItems from "../components/shop/products-latest"
+// import LatestItems from "../components/shop/products-latest"
 // import GridList from "@material-ui/core/GridList"
 // import GridListTile from "@material-ui/core/GridListTile"
 
@@ -105,7 +105,7 @@ const Index = ({ data }) => {
             </ButtonLink>
           </div>
         </Container>
-        <LatestItems />
+        {/* <LatestItems /> */}
       </div>
     </Layout>
   )
