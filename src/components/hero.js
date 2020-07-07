@@ -1,17 +1,19 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core"
 import Toolbar from "@material-ui/core/Toolbar"
 import AbsoluteImage from "./tailwind-components/AbsoluteImage.js"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   heroTitle: {
     letterSpacing: "10.75px",
     padding: "1rem",
     color: "white",
+    [theme.breakpoints.down(768)]: {
+      fontSize: "2.7rem",
+    },
   },
   subtitle1: {
     marginTop: "1.5rem",
@@ -34,8 +36,7 @@ const useStyles = makeStyles({
   toolbar: {
     height: 95,
   },
-})
-
+}))
 const Hero = () => {
   const classes = useStyles()
 
@@ -46,7 +47,7 @@ const Hero = () => {
           relativePath: { eq: "jessica-ruscello-G8vPQ-XVxxY-unsplash.jpg" }
         ) {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid(quality: 70) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
