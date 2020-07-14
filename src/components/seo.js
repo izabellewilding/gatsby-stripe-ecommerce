@@ -53,7 +53,7 @@ function SEO({ description, lang, meta, title }) {
       <link
         rel="preload"
         as="style"
-        // onload="this.onload=null;this.rel='preload"
+        onload="this.onload=null;this.rel='preload"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
       {/* <noscript>
