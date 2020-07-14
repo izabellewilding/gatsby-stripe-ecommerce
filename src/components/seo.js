@@ -51,9 +51,18 @@ function SEO({ description, lang, meta, title }) {
       ].concat(meta)}
     >
       <link
-        rel="stylesheet"
+        rel="preload"
+        as="style"
+        // onload="this.onload=null;this.rel='preload"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
+      {/* <noscript>
+        {" "}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </noscript> */}
     </Helmet>
   )
 }
