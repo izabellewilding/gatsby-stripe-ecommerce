@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from "react"
-import { navigate } from "gatsby"
+import { Link } from "gatsby"
 import "@stripe/stripe-js"
 import "@rmwc/snackbar/styles"
 import "@rmwc/button/styles"
@@ -62,28 +62,26 @@ export default function CartProvider({ children }) {
     setRemovedNotification(!removedNotification)
   }
 
-  const checkoutButton = (
-    <Button
-      onClick={() => navigate("/cart-page")}
-      color="secondary"
-      size="small"
-    >
-      Checkout
-    </Button>
-  )
+  // const checkoutButton = (
+  //   <Button onClick={() => navigate("/cart-page")} size="small">
+  //     Checkout
+  //   </Button>
+  // )
 
   const continueShoppingButton = (
-    <Button
-      onClick={() => navigate("/shop-home")}
-      color="secondary"
-      size="small"
-    >
-      Back to shop
-    </Button>
+    <Link to="shop-home" size="small" className="uppercase text-teal-300">
+      Keep Shopping{" "}
+    </Link>
   )
   const addedToCartButtons = (
     <>
-      {checkoutButton}
+      <Link
+        to="cart-page"
+        size="small"
+        className="uppercase mr-4 text-teal-300"
+      >
+        Checkout
+      </Link>
       {continueShoppingButton}
     </>
   )
