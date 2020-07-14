@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     position: "sticky",
     top: 0,
     backgroundColor: "black",
-    zIndex: "0",
+    zIndex: "-10",
   },
   toolbar: {
     height: 95,
