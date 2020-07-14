@@ -111,8 +111,8 @@ const Template = ({ pageContext }) => {
               </p>
 
               <Button
-                color="secondary"
                 className={classes.button}
+                color="secondary"
                 variant="contained"
                 onClick={() => {
                   ctx.addToCart(pageContext.node, quantity)
