@@ -1,6 +1,6 @@
 
 <p align="center">
-  <a href="https://www.izabelleart.com/">
+  <a href="https://pottery-ecommerce.netlify.app/">
   </a>
 </p>
 <h1 align="center">
