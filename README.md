@@ -8,8 +8,6 @@ Gatsby Stripe Ecommerce</h1>
 
 <p align="center">An ecommerce starter website built with GatsyJS and Stripe Payments API.</p>
 <p align="center">Set up so you can test the entire checkout jouney with the provided fake card details</p>
-<p align="center">Material-UI components, color, and typography theming in Theme.js  </p>
-
 
 
 
