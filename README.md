@@ -59,5 +59,4 @@ Project Link: [https://github.com/izabellewilding/gatsby-stripe-ecommerce](https
 
 
 
-# pottery-ecommerce
 
