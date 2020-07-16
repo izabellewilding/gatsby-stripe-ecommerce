@@ -159,9 +159,9 @@ const Header = ({ page }) => {
               </NavLink>
             </div>
           </div>
-          <div className="w-1/3 flex justify-center">
+          <Link to="/" className="w-1/3 flex justify-center">
             <Img src="../images/name.png" className="w-24 my-2" />
-          </div>
+          </Link>
           <div className="w-1/3 flex justify-end">
             <MenuItem className="w-1/3 flex justify-end">
               <IconButtonLink
