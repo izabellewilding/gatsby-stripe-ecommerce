@@ -7,6 +7,10 @@
 Gatsby Stripe Ecommerce</h1>
 
 <p align="center">An ecommerce starter website built with GatsyJS and Stripe Payments API.</p>
+<p align="center">Set up so you can test the entire checkout jouney with the provided fake card details</p>
+<p align="center">Material-UI components, color, and typography theming in Theme.js  </p>
+
+
 
 
 ![Site-screenshot](/src/images/screenshot.JPG)
@@ -19,13 +23,11 @@ Gatsby Stripe Ecommerce</h1>
 
 ## Features
 
-* Stripe for secure Payments 
+* Stripe checkout integration 
 * Gatsby for statically built product pages 
-* Products automatically sourced from stripe
-* Flickr API photo gallery
-* UI theme built with Tailwind
-* Custom GraphQL Image Component (lazy load, size and quality control)   
-* SEO Plugin 
+* gatsby-source-stripe automatically pulls new products into website
+* Color & typography theme built with Tailwind
+* Progressive Web App 
 * Fully responsive UI
 * Prettier Code Styling
 
