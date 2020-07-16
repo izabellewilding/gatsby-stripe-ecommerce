@@ -9,7 +9,7 @@ Gatsby Stripe Ecommerce</h1>
 <p align="center">An ecommerce starter website built with GatsyJS and Stripe Payments API.</p>
 
 
-![Site-screenshot](src/images/site-screenshot.PNG)
+![Site-screenshot](/src/images/screenshot.JPG)
 
 ## Built With
 
