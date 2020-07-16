@@ -6,7 +6,7 @@
 <h1 align="center">
 Gatsby Stripe Ecommerce</h1>
 
-<p align="center">An artist's ecommerce website built with secure payments & statically built product pages.</p>
+<p align="center">An ecommerce starter website built with GatsyJS and Stripe Payments API.</p>
 
 
 ![Site-screenshot](src/images/site-screenshot.PNG)
