@@ -24,7 +24,7 @@ Gatsby Stripe Ecommerce</h1>
 * Stripe checkout integration 
 * Gatsby for statically built product pages 
 * gatsby-source-stripe automatically pulls new products into website
-* Color & typography theme built with Tailwind
+* Material UI Color & typography theme
 * Progressive Web App 
 * Fully responsive UI
 * Prettier Code Styling
