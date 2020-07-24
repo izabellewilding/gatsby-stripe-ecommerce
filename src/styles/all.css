@@ -25,7 +25,9 @@ td {
 td:last-child {
   padding-right: 1.25rem;
 }
-
+td:first-child {
+  padding-left: 0.75rem;
+}
 th:first-child {
   padding-left: 0.75rem;
 }
