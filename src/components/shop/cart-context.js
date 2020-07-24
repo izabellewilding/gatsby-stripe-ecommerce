@@ -5,7 +5,6 @@ import "@rmwc/snackbar/styles"
 import "@rmwc/button/styles"
 import Snackbar from "@material-ui/core/Snackbar"
 import SnackbarContent from "@material-ui/core/SnackbarContent"
-import Button from "@material-ui/core/Button"
 
 export const CartContext = createContext({
   items: [],
@@ -18,13 +17,20 @@ export default function CartProvider({ children }) {
   const [removedNotification, setRemovedNotification] = useState(false)
   const [quantityUpdated, setQuantityUpdated] = useState(false)
 
+  //to load the stored cart items from local storage
   useEffect(() => {
     function loadCartItems() {
+      //if the window is there, run getItem()
       const cartItems = window && window.localStorage.getItem("cart")
+      //try to return the cart items
       try {
         return JSON.parse(cartItems)
-      } catch (error) {}
+        //if there are any errors in the try block, catch processes the error
+      } catch (error) {
+        console.error("error caught loading cart items", error)
+      }
     }
+    //if loadCartItems() is successful, setItems to the value of running the function
     if (loadCartItems()) {
       setItems(loadCartItems())
     }
@@ -33,15 +39,16 @@ export default function CartProvider({ children }) {
   function addToCart(newItem, quantity) {
     newItem.quantity = quantity
     let updatedItems = []
+    //check that the newItem is not present in the existing items array
     if (!items.find(item => item.id === newItem.id)) {
-      // add new item to the cart array
+      //copy the current list of items and add the new item to the updatedItems array
       updatedItems = [...items, { ...newItem, sku: newItem.id }]
       setOpen(!open)
     } else {
-      // update quantity of item if it already exists
+      // update quantity of the item if it already exists calls the function for each item
       updatedItems = items.map(item => {
         if (item.id === newItem.id) {
-          // merge in new item
+          // merge everything from newItem on previous item to update quantity
           return {
             ...item,
             ...newItem,
@@ -61,12 +68,6 @@ export default function CartProvider({ children }) {
     window.localStorage.setItem("cart", JSON.stringify(filteredItems))
     setRemovedNotification(!removedNotification)
   }
-
-  // const checkoutButton = (
-  //   <Button onClick={() => navigate("/cart-page")} size="small">
-  //     Checkout
-  //   </Button>
-  // )
 
   const continueShoppingButton = (
     <Link to="shop-home" size="small" className="uppercase text-teal-300">

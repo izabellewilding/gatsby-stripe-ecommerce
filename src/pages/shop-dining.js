@@ -8,12 +8,10 @@ import LatestItems from "../components/shop/products-latest"
 const ShopDining = () => {
   return (
     <Layout>
-      <div className="">
-        <ShopNav message="Dining Collection" />
-        <DiningItemsList />
-        <ThanksBreadcrumb />
-        <LatestItems />
-      </div>
+      <ShopNav message="Dining Collection" />
+      <DiningItemsList />
+      <ThanksBreadcrumb />
+      <LatestItems />
     </Layout>
   )
 }

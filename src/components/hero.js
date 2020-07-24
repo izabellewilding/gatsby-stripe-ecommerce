@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core"
 import Toolbar from "@material-ui/core/Toolbar"
-import AbsoluteImage from "./tailwind-components/AbsoluteImage.js"
+import Img from "gatsby-image"
 
 const useStyles = makeStyles(theme => ({
   heroTitle: {
@@ -62,7 +62,11 @@ const Hero = () => {
     <div className={classes.stickyHero}>
       <div className="w-full relative m-auto ">
         {" "}
-        <AbsoluteImage fluid={source} style={{ opacity: "0.65" }} />
+        <Img
+          className="w-full bg-fixed absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center md:justify-evenly hero items-start h-screen"
+          fluid={source}
+          style={{ opacity: "0.65" }}
+        />
         <div className="flex justify-center w-full items-center p-4 text-center flex-col absolute right-0 top-0 bottom-0 left-0">
           <Toolbar className={classes.toolbar} />
 

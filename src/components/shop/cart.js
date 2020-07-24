@@ -1,25 +1,15 @@
-import React, { useContext, useState } from "react"
-import Img from "../image-query"
+import React, { useContext } from "react"
 import RemoveIcon from "../../assets/cancel.svg"
 import PoweredByStripe from "../../assets/powered_by_stripe.svg"
 import { CartContext } from "./cart-context"
-import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import { loadStripe } from "@stripe/stripe-js"
 import { formatPrice, totalPrice } from "./utils"
-
+// material UI imports
+import Typography from "@material-ui/core/Typography"
+import Avatar from "@material-ui/core/Avatar"
 import Button from "@material-ui/core/Button"
 import Box from "@material-ui/core/Box"
-
-//calculate total cost of cart items
-
-// useEffect(() => {
-//   function buttonHandle() {
-//     if (ctx.item.quantity === 0) {
-//       setDisabled(true)
-//     }
-//   }
-// })
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
@@ -71,15 +61,12 @@ const Cart = () => {
             <th className="text-left p-3 pr-0">Price</th>
             <th className="text-left p-3">Remove</th>
           </tr>
+
           {/* add cart items from context to cart */}
           {ctx.items.map(item => (
             <tr className="border-b hover:bg-blue-100 bg-gray-100">
-              <td className="pr-0">
-                <Img
-                  src={`/images/${item.sku}.jpg`}
-                  alt="product"
-                  style={{ height: 80, width: 80 }}
-                />
+              <td>
+                <Avatar src={`/images/${item.sku}.jpg`} alt="product" />
               </td>
               <td className="p-3 bg-">
                 <div className="bg-white w-10 flex justify-center chivo-reg pt-4 pb-4">

@@ -1,5 +1,8 @@
 /* fonts */
 
+/* nested media queries are processed by PostCSS nested - currently there isn't a VS code plugin that supports PostCSS sytax 
+this explains the errors you might be seeing */
+
 .raleway {
   font-family: "raleway";
   -webkit-font-smoothing: antialiased;
@@ -10,10 +13,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* .playfair {
-  font-family: "playfair";
-} */
-
 .chivo-reg {
   font-family: "chivo-reg";
   -webkit-font-smoothing: antialiased;
@@ -21,10 +20,6 @@
 
 td {
   border-bottom: 0ch;
-}
-
-td:first-child {
-  padding-left: 0.75rem;
 }
 
 td:last-child {

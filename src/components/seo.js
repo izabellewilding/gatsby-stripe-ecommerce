@@ -70,7 +70,7 @@ function SEO({ description, lang, meta, title }) {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
-  description: `Original Paintings | By Izabelle Wilding`,
+  description: `Gatsby Stripe eCommerce`,
 }
 
 SEO.propTypes = {
