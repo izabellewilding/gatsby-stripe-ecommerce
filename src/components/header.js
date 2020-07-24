@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react"
 import { CartContext } from "./shop/cart-context"
 
-import { Link } from "gatsby"
-import Img from "./image-query"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import { totalItems } from "./shop/utils"
+import Img from "gatsby-image"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
@@ -84,13 +84,27 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Header = ({ page }) => {
+const Header = ({ page, data }) => {
   const classes = useStyles()
   const ctx = useContext(CartContext)
   const [navOpen, setNavOpen] = React.useState(false)
   const [navItemOpen, setNavItemOpen] = useState(false)
 
   const [fadeHeaderOut, setFadeHeaderOut] = useState()
+
+  const { logoImage } = useStaticQuery(
+    graphql`
+      query {
+        logoImage: file(relativePath: { eq: "name.png" }) {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `
+  )
 
   useEffect(() => {
     const handleScroll = () => {
@@ -160,7 +174,10 @@ const Header = ({ page }) => {
             </div>
           </div>
           <Link to="/" className="w-1/3 flex justify-center">
-            <Img src="../images/name.png" className="w-24 my-2" />
+            <Img
+              fluid={logoImage.childImageSharp.fluid}
+              className="w-24 my-2"
+            />
           </Link>
           <div className="w-1/3 flex justify-end">
             <MenuItem className="w-1/3 flex justify-end">
@@ -181,20 +198,12 @@ const Header = ({ page }) => {
         className={page === "home" ? classes.toolbarHidden : classes.toolbar}
       />
 
-      <Drawer
-        anchor={"top"}
-        open={navOpen}
-        // variant="temporary"
-        // ModalProps={{
-        //   keepMounted: true, // Better open performance on mobile.
-        // }}
-        onClose={handleDrawerToggle}
-      >
+      <Drawer anchor={"top"} open={navOpen} onClose={handleDrawerToggle}>
         {" "}
         <List className={classes.list}>
           {" "}
           <ListItem className={classes.drawerHeader}>
-            <Img src="../images/name.png" className=" w-20 ml-6 my-2" />
+            <img src="../images/name.png" className=" w-20 ml-6 my-2" />
 
             <IconButtonLink aria-label="shopping cart" color="primary">
               <Badge
