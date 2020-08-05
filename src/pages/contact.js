@@ -47,11 +47,6 @@ const ContactForm = () => {
       className=" md:p-6 flex flex-wrap border-white w-full"
       style={{ maxWidth: 1000 }}
     >
-      {/* <div className="font-sans pl-3 flex align-bottom">
-        <Typography className="" variant="h3">
-          Contact
-        </Typography>
-      </div> */}
       <section className="w-full flex align-middle justify-center">
         <form
           name="contact"

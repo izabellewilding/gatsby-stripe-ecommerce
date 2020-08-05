@@ -25,13 +25,16 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     minWidth: 250,
+    margin: "auto",
   },
   stickyHero: {
     position: "-webkit-sticky",
     position: "sticky",
     top: 0,
     backgroundColor: "black",
-    zIndex: "-10",
+    [theme.breakpoints.down(768)]: {
+      position: "relative",
+    },
   },
   toolbar: {
     height: 95,
@@ -65,7 +68,6 @@ const Hero = () => {
   return (
     <div className={classes.stickyHero}>
       <div className="w-full relative m-auto ">
-        {" "}
         <Img
           className="w-full bg-fixed absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-center md:justify-evenly hero items-start h-screen"
           fluid={source}
@@ -73,14 +75,13 @@ const Hero = () => {
         />
         <div className="flex justify-center w-full items-center p-4 text-center flex-col absolute right-0 top-0 bottom-0 left-0">
           <Toolbar className={classes.toolbar} />
-
           <section
             className="flex flex-col justify-end underlined pb-4"
             style={{ height: "50%", maxWidth: 630 }}
           >
             <Typography variant="h1" className={classes.heroTitle}>
               Unique handmade pottery
-            </Typography>{" "}
+            </Typography>
           </section>
           <section
             className="flex flex-col justify-start"
@@ -89,7 +90,16 @@ const Hero = () => {
             <Typography variant="h4" className={classes.subtitle1}>
               Get 15% off our new collection with code{" "}
               <span className="text-teal-100">PASTEL01</span>
-            </Typography>{" "}
+            </Typography>
+            <ButtonLink
+              to="/shop-home"
+              variant="contained"
+              size="large"
+              color="secondary"
+              className={classes.button}
+            >
+              Shop Now
+            </ButtonLink>
           </section>
         </div>
       </div>
