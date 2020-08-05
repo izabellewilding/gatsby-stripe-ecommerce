@@ -203,7 +203,10 @@ const Header = ({ page, data }) => {
         <List className={classes.list}>
           {" "}
           <ListItem className={classes.drawerHeader}>
-            <img src="../images/name.png" className=" w-20 ml-6 my-2" />
+            <Img
+              fluid={logoImage.childImageSharp.fluid}
+              className="w-20 ml-6 my-2"
+            />
 
             <IconButtonLink aria-label="shopping cart" color="primary">
               <Badge

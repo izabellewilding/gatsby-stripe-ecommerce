@@ -7,15 +7,13 @@ import ItemsListTemplate from "./product-list-template"
 
 const stripePromise = loadStripe("pk_test_anttTREN4cB8C5RCPRb8vEZL00IHwVyBtk")
 
-const useStyles = makeStyles(theme => ({
-  textBlock: {
-    marginBottom: "1.666rem",
-  },
-}))
+// const useStyles = makeStyles(theme => ({
+//   textBlock: {
+//     marginBottom: "1.666rem",
+//   },
+// }))
 
 const AllProducts = () => {
-  const classes = useStyles()
-
   return (
     <StaticQuery
       query={graphql`
