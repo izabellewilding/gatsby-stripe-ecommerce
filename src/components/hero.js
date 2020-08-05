@@ -58,6 +58,10 @@ const Hero = () => {
 
   const source = [desktopBanner.childImageSharp.fluid]
 
+  const ButtonLink = props => {
+    return <Button component={Link} {...props} />
+  }
+
   return (
     <div className={classes.stickyHero}>
       <div className="w-full relative m-auto ">
@@ -86,16 +90,6 @@ const Hero = () => {
               Get 15% off our new collection with code{" "}
               <span className="text-teal-100">PASTEL01</span>
             </Typography>{" "}
-            <Link to="/shop-home" className="">
-              <Button
-                variant="contained"
-                size="large"
-                color="secondary"
-                className={classes.button}
-              >
-                Shop Now
-              </Button>
-            </Link>
           </section>
         </div>
       </div>
