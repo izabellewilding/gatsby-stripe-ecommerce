@@ -32,7 +32,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.3",
     "gatsby-source-stripe": "^3.1.0",
-    "gatsby-transformer-remark": "^2.8.8",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.2",
     "intersection-observer": "^0.10.0",
     "postcss-cli": "^7.1.1",
